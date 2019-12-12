@@ -1,0 +1,32 @@
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ['html', 'vue']
+
+[[plugins]]
+repo = 'tpope/vim-endwise'
+on_ft = ['ruby']
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = ['go']
+# 保存時にgo importを走らせる
+hook_add = '''
+let g:go_fmt_command = "goimports"
+'''
+
+[[plugins]]
+repo = 'posva/vim-vue'
+on_ft = ['vue']
+
+[[plugins]]
+repo = 'slim-template/vim-slim'
+on_ft = ['slim']
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = ['ts', 'tsx']
+
+[[plugins]]
+repo = 'peitalin/vim-jsx-typescript'
+on_ft = ['ts', 'tsx']
+

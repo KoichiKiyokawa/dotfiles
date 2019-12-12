@@ -1,0 +1,88 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# Syntax checker
+[[plugins]]
+repo = 'w0rp/ale'
+
+# statusline plugin
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+# カッコの補完
+[[plugins]]
+repo = 'cohama/lexima.vim'
+
+# surround by () or "" or ''
+[[plugins]]
+repo = 'tpope/vim-surround'
+
+# open file by filename
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+# .gitignoreに設定されているファイルは無視する
+hook_add = '''
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+'''
+
+# show diff
+[[plugins]]
+repo = 'airblade/vim-gitgutter'
+
+# replace all files
+[[plugins]]
+repo = 'thinca/vim-qfreplace'
+
+# tree
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+# NERDTreeでdotfilesを表示
+hook_add = '''
+let NERDTreeShowHidden=1
+'''
+
+# git in vim
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+# 補完機能
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+hook_add = '''
+if !has('nvim')
+  call dein#add('roxma/nvim-yarp')
+  call dein#add('roxma/vim-hug-neovim-rpc')
+endif
+let g:deoplete#enable_at_startup = 1
+'''
+
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+
+[[plugins]]
+repo = 'tomasiser/vim-code-dark'
+
+# オートセーブ
+[[plugins]]
+repo = 'vim-scripts/vim-auto-save'
+# インサートモードでは自動保存しない(インデントが消されてしまうため)
+hook_add = '''
+let g:auto_save = 1
+let g:auto_save_in_insert_mode = 0
+'''
+
+[[plugins]]
+repo = 'neoclide/coc.nvim'
+rev = 'release'
+
+[[plugins]]
+repo = 'simeji/winresizer'
+
+[[plugins]]
+repo = 'Chiel92/vim-autoformat'
+
+[[plugins]]
+repo = 'rking/ag.vim'
+
+[[plugins]]
+repo = 'rhysd/conflict-marker.vim'
