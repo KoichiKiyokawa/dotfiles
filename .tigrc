@@ -1,2 +1,10 @@
 bind main    R !git rebase -i %(commit)
 bind diff    R !git rebase -i %(commit)
+
+# カラー設定
+# diff-view で境界が見やすくなるように変更
+color  diff-header       default magenta
+color  diff-chunk        black   white
+
+# Pでremoteへpush
+bind generic P      ?git push -u %(remote) %(repo:head)
