@@ -79,7 +79,7 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " *で単語検索したときに、次の単語にジャンプせずにとどまる
-nnoremap <silent> * *``
+nnoremap <silent> * *``b
 
 " 検索結果をQuickFixで開くようにする
 autocmd QuickFixCmdPost *grep* cwindow
