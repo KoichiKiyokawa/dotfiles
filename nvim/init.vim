@@ -19,6 +19,8 @@ set showcmd
 set mouse=a
 " クリップボードにヤンク
 set clipboard+=unnamed
+" 検索結果をQuickFixで開くようにする
+autocmd QuickFixCmdPost *grep* cwindow
 
 " ----------------------------------------------------------------------
 " 見た目系
@@ -81,8 +83,15 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " *で単語検索したときに、次の単語にジャンプせずにとどまる
 nnoremap <silent> * *``b
 
-" 検索結果をQuickFixで開くようにする
-autocmd QuickFixCmdPost *grep* cwindow
+" ----------------------------------------------------------------------
+" キーバインド
+" ----------------------------------------------------------------------
+" mでマクロ
+nnoremap m q
+" 0で行頭
+noremap 0 ^
+" qで行末
+noremap q $
 
 " エイリアス
 command Relativepath echo expand("%:p")
