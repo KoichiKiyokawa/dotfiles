@@ -87,6 +87,9 @@ repo = 'simeji/winresizer'
 
 [[plugins]]
 repo = 'Chiel92/vim-autoformat'
+hook_add = '''
+noremap <F3> :Autoformat<CR>
+'''
 
 [[plugins]]
 repo = 'rking/ag.vim'

@@ -81,7 +81,7 @@ set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " *で単語検索したときに、次の単語にジャンプせずにとどまる
-nnoremap <silent> * *``b
+nnoremap <silent> * *``
 
 " ----------------------------------------------------------------------
 " キーバインド
@@ -92,6 +92,10 @@ nnoremap m q
 noremap 0 ^
 " qで行末
 noremap q $
+" 選択範囲を検索し、その単語にとどまる
+vnoremap * "zy:let @/ = @z<CR>nN
+" 選択範囲を置換
+vmap # *:%s///cg<Left><Left><Left>
 
 " エイリアス
 command Relativepath echo expand("%:p")
