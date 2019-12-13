@@ -41,6 +41,13 @@ hook_add = '''
 let NERDTreeShowHidden=1
 '''
 
+# NERDTreeをタブ間で共有
+[[plugins]]
+repo = 'jistr/vim-nerdtree-tabs'
+hook_add = '''
+map <C-b> <plug>NERDTreeTabsToggle<CR>
+'''
+
 # git in vim
 [[plugins]]
 repo = 'tpope/vim-fugitive'
