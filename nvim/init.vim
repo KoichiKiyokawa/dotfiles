@@ -96,6 +96,9 @@ noremap q $
 vnoremap * "zy:let @/ = @z<CR>nN
 " 選択範囲を置換
 vmap # *:%s///cg<Left><Left><Left>
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
+inoremap <C-l> <Right><BS>
 
 " エイリアス
 command Relativepath echo expand("%:p")
