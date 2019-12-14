@@ -24,9 +24,9 @@ on_ft = ['slim']
 
 [[plugins]]
 repo = 'leafgarland/typescript-vim'
-on_ft = ['ts', 'tsx']
+on_ft = ['typescript']
 
 [[plugins]]
 repo = 'peitalin/vim-jsx-typescript'
-on_ft = ['ts', 'tsx']
+on_ft = ['jsx', 'tsx']
 
