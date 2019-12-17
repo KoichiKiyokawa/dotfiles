@@ -39,6 +39,7 @@ repo = 'scrooloose/nerdtree'
 # NERDTreeでdotfilesを表示
 hook_add = '''
 let NERDTreeShowHidden=1
+noremap <F6> :NERDTreeFind<CR>
 '''
 
 # NERDTreeをタブ間で共有
