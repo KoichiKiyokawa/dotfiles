@@ -102,6 +102,3 @@ inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-l> <Right><BS>
 
-" エイリアス
-command Relativepath echo expand("%:p")
-
