@@ -97,3 +97,6 @@ repo = 'rking/ag.vim'
 
 [[plugins]]
 repo = 'rhysd/conflict-marker.vim'
+
+[[plugins]]
+repo = 'terryma/vim-multiple-cursors'
