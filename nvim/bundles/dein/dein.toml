@@ -100,3 +100,9 @@ repo = 'rhysd/conflict-marker.vim'
 
 [[plugins]]
 repo = 'terryma/vim-multiple-cursors'
+
+[[plugins]]
+repo = 'matze/vim-move'
+hook_add = '''
+let g:move_key_modifier = 'C'
+'''
