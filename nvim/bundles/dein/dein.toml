@@ -106,3 +106,9 @@ repo = 'matze/vim-move'
 hook_add = '''
 let g:move_key_modifier = 'C'
 '''
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'
+hook_add = '''
+nmap s <Plug>(easymotion-s2)
+'''
