@@ -15,7 +15,7 @@ sh init.sh
 #### install packages
 ```
 # (on Mac)
-brew install neovim the_silver_searcher tig fzf
+brew install git neovim the_silver_searcher tig fzf
 ```
 #### install formatter
 ```
