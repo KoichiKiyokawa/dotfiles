@@ -12,3 +12,7 @@ bind generic P      ?git push -u %(remote) %(repo:head)
 # 自動リフレッシュ
 set refresh-mode = periodic
 set refresh-interval = 3
+
+# 単語単位でdiff表示
+set diff-highlight = true
+
