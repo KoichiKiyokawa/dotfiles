@@ -204,7 +204,7 @@
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>373 1416 620 392 -277 900 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>-64 900 1920 1080 -64 900 1920 1080 </string>
+	<string>0 0 1440 900 0 0 1440 900 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -837,26 +837,24 @@
 	</array>
 	<key>NoSyncBFPFavorites</key>
 	<array>
-		<string>Roboto Mono Medium for Powerline</string>
+		<string>Monaco</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
+		<string>Monaco</string>
 		<string>Roboto Mono Medium for Powerline</string>
-		<string>Roboto Mono for Powerline</string>
-		<string>DejaVu Sans Mono for Powerline</string>
-		<string>Fira Mono for Powerline</string>
 	</array>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1440, 900}}</string>
 		<key>topLeft</key>
-		<string>{174, 684}</string>
+		<string>{223, 743}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>EB680BA3-41CE-4679-B195-838B9AC336D7</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>21</integer>
+	<integer>23</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1575,6 +1573,9 @@
 	</dict>
 	<key>NoSyncSearchHistory2</key>
 	<array>
+		<string>create</string>
+		<string>/api/v1/netbase_keywords</string>
+		<string>index</string>
 		<string>cheche</string>
 		<string>puma</string>
 		<string>follower_age</string>
@@ -1589,6 +1590,8 @@
 	<false/>
 	<key>PMPrintingExpandedStateForPrint2</key>
 	<false/>
+	<key>PasteTabToStringTabStopSize</key>
+	<integer>4</integer>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -1635,7 +1638,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-12-12T09:39:53Z</date>
+	<date>2019-12-24T11:37:03Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
@@ -1646,6 +1649,8 @@
 	<false/>
 	<key>SoundForEsc</key>
 	<false/>
+	<key>SwitchPaneModifier</key>
+	<integer>5</integer>
 	<key>UseLionStyleFullscreen</key>
 	<true/>
 	<key>VisualIndicatorForEsc</key>
