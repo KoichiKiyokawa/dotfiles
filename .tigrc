@@ -8,3 +8,7 @@ color  diff-chunk        black   white
 
 # Pでremoteへpush
 bind generic P      ?git push -u %(remote) %(repo:head)
+
+# 自動リフレッシュ
+set refresh-mode = periodic
+set refresh-interval = 3
