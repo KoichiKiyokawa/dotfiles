@@ -114,4 +114,5 @@ nmap # viw#
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-d> <Right><BS>
+inoremap <C-q> <Esc>
 
