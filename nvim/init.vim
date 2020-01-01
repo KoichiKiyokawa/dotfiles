@@ -21,6 +21,8 @@ set mouse=a
 set clipboard+=unnamed
 " 検索結果をQuickFixで開くようにする
 autocmd QuickFixCmdPost *grep* cwindow
+" 対応するHTMLタグに%でジャンプできるようにする
+source $VIMRUNTIME/macros/matchit.vim
 
 " ----------------------------------------------------------------------
 " 見た目系
