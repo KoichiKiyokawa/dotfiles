@@ -1,6 +1,6 @@
 [[plugins]]
 repo = 'mattn/emmet-vim'
-on_ft = ['html', 'vue']
+on_ft = ['html', 'vue', 'jsx', 'tsx']
 
 [[plugins]]
 repo = 'tpope/vim-endwise'
