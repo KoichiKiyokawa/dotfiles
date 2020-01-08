@@ -9,6 +9,7 @@
 
 # Ruby
 status --is-interactive; and source (rbenv init -|psub)
+set -x OBJC_DISABLE_INITIALIZE_FORK_SAFETY YES
 
 # Java
 set -x JAVA_HOME (/usr/libexec/java_home  -v 1.8)
