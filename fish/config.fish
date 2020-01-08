@@ -76,6 +76,7 @@ alias gm='git commit'
 alias gr='git rebase'
 alias gac='git add -A; git commit -m'
 alias gst='git stash'
+alias t='tig'
 
 function gd
 	git diff origin/{$argv}..HEAD
