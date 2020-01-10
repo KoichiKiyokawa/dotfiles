@@ -22,3 +22,10 @@ brew install git neovim the_silver_searcher tig fzf
 npm install -g js-beautify
 gem install rubocop
 ```
+
+### fish style setting
+```
+fish_config
+```
+- colors: `Lava`
+- prompt: `Informative Vcs`
