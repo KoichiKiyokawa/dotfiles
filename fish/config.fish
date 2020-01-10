@@ -85,3 +85,10 @@ end
 # ls のファイル名を青色から緑色に変更
 set -x LSCOLORS  cxfxcxdxbxegedabagacad
 
+
+# ------------------------------------------------------------------------------
+# pecoの設定
+# ------------------------------------------------------------------------------
+function fish_user_key_bindings
+  bind \cr peco_select_history # Ctrl + R
+end

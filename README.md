@@ -16,7 +16,7 @@ fisher
 #### install packages
 ```
 # (on Mac)
-brew install git neovim the_silver_searcher tig fzf
+brew install git neovim the_silver_searcher tig peco
 ```
 #### install formatter
 ```
