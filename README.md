@@ -9,6 +9,7 @@ This repository has following configs.
 cd ~
 git clone https://github.com/KoichiKiyokawa/dotfiles.git
 sh init.sh
+fisher
 ```
 
 ### install dependencies
