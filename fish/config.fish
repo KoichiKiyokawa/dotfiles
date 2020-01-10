@@ -36,18 +36,9 @@ alias x='exit'
 # fzf
 alias f='history | fzf'
 
-# robee関連
-alias cr='cd ~/robee'
-alias crs='cd ~/robee-setting'
-
-# kolony関連
-alias kolony='code ~/prg/macbee/kolony-frontend; code ~/prg/macbee/kolony-backend'
-
 # Docker関連
 alias dc='docker-compose'
 alias dpa='docker ps -a'
-alias dcb='docker-compose run --rm robee bash'
-alias dct='docker-compose run --rm robee env RAILS_ENV=test bash'
 
 # Maven関連
 alias mcc='mvn clean compile'
