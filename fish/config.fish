@@ -48,6 +48,7 @@ alias gac='git add -A; git commit -m'
 alias gst='git stash'
 alias t='tig'
 alias gn='git-now --all'
+alias gnr='git-now rebase'
 
 function gd
 	git diff origin/{$argv}..HEAD
