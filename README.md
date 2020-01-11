@@ -31,7 +31,7 @@ brew install git git-now neovim peco tig the_silver_searcher
 ```
 git clone https://github.com/powerline/fonts.git --depth=1
 cd fonts
-./install.sh
+./install.sh (or open RobotoMono/Roboto\ Mono\ Medium\ for\ Powerline.ttf)
 cd ..
 rm -rf fonts
 ```
