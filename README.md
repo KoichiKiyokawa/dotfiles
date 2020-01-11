@@ -5,7 +5,7 @@ This repository has following configs.
 - tig
 
 ## How to setup
-### Arrange config files
+### Arrange config files and initialize
 ```
 cd ~
 git clone https://github.com/KoichiKiyokawa/dotfiles.git
