@@ -1,6 +1,6 @@
 # dotfiles
 This repository has following configs.
-- fish shell
+- fish shell (managed plugin by fisher)
 - neovim (managed plugin by dein)
 - tig
 
