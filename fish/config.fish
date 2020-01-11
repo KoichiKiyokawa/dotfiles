@@ -14,9 +14,6 @@ alias v='nvim'
 
 alias x='exit'
 
-# fzf
-alias f='history | fzf'
-
 # Docker関連
 alias dc='docker-compose'
 alias dpa='docker ps -a'
