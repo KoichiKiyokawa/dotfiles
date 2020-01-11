@@ -15,9 +15,16 @@ fisher
 
 ### install dependencies
 #### install packages
+- git
+- git-now
+- neovim
+- peco
+- tig
+- the_silver_searcher
+
 ```
 # (on Mac)
-brew install git neovim the_silver_searcher tig peco
+brew install git git-now neovim peco tig the_silver_searcher
 ```
 
 #### install powerline fonts
