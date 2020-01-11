@@ -1,5 +1,5 @@
-bind main    R !git rebase -i %(commit)
-bind diff    R !git rebase -i %(commit)
+bind main    R !git rebase -i %(commit) --autostash
+bind diff    R !git rebase -i %(commit) --autostash
 
 # カラー設定
 # diff-view で境界が見やすくなるように変更
