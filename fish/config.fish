@@ -33,6 +33,7 @@ alias rc='bin/rails c'
 alias rami='bundle exec rake db:migrate'
 
 # git関連
+alias g='git'
 alias gb='git branch'
 alias gc='git checkout'
 alias gf='git fetch'
