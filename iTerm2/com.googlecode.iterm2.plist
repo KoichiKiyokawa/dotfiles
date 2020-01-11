@@ -815,7 +815,7 @@
 			<key>Use Bright Bold</key>
 			<true/>
 			<key>Use Cursor Guide</key>
-			<true/>
+			<false/>
 			<key>Use Italic Font</key>
 			<true/>
 			<key>Use Non-ASCII Font</key>
@@ -838,12 +838,22 @@
 	<key>NoSyncBFPFavorites</key>
 	<array>
 		<string>Monaco</string>
+		<string>Roboto Mono Medium for Powerline</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
-		<string>Monaco</string>
 		<string>Roboto Mono Medium for Powerline</string>
+		<string>Noto Mono for Powerline</string>
+		<string>Meslo LG M for Powerline</string>
+		<string>Go Mono for Powerline</string>
 	</array>
+	<key>NoSyncFrame_SessionsPreferences</key>
+	<dict>
+		<key>screenFrame</key>
+		<string>{{-254, 900}, {1920, 1080}}</string>
+		<key>topLeft</key>
+		<string>{403, 1839}</string>
+	</dict>
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
@@ -854,7 +864,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>EB680BA3-41CE-4679-B195-838B9AC336D7</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>23</integer>
+	<integer>30</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1638,7 +1648,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-12-24T11:37:03Z</date>
+	<date>2020-01-10T18:04:29Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
