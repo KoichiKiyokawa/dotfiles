@@ -2,6 +2,7 @@
 This repository has following configs.
 - fish shell
 - neovim (managed plugin by dein)
+- tig
 
 ## How to setup
 ### Arrange config files
