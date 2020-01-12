@@ -1,8 +1,8 @@
 # dotfiles
 This repository has following configs.
-- fish shell (managed plugin by fisher)
-- neovim (managed plugin by dein)
-- tig
+- [fish shell](https://github.com/fish-shell/fish-shell) (managed plugin by [fisher](https://github.com/jorgebucaran/fisher))
+- [neovim](https://github.com/neovim/neovim) (managed plugin by [dein](https://github.com/Shougo/dein.vim))
+- [tig](https://github.com/jonas/tig)
 
 ## How to setup
 ### Arrange config files and initialize
