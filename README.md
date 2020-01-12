@@ -47,4 +47,12 @@ gem install rubocop
 fish_config
 ```
 - colors: `Lava`
-- prompt: `Informative Vcs`
+
+### iTerm2 setting
+#### Load setting file
+1. Launch iTerm2 and open Preferences.
+1. General > Preferences > Check "Load preferences from a custom folder or URL" 
+1. Push "Browse" button and set folder to ~/dotfiles/iTerm2
+#### Font setting
+1. Profiles > Text > Font select box.
+1. Select "Roboto Mono Medium for Powerline"
