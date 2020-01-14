@@ -70,3 +70,9 @@ set -x LSCOLORS  cxfxcxdxbxegedabagacad
 function fish_user_key_bindings
   bind \cr peco_select_history # Ctrl + R
 end
+
+# ------------------------------------------------------------------------------
+# Ctrl + Fで入力中のコマンドをneovimで編集する
+# ------------------------------------------------------------------------------
+bind \cf edit_command_buffer
+set EDITOR nvim
