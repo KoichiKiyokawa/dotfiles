@@ -127,5 +127,5 @@ nnoremap t9 9gt
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-d> <Right><BS>
-inoremap <C-q> <Esc>
+inoremap jj <Esc>
 
