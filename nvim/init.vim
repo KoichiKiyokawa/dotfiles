@@ -123,9 +123,15 @@ nnoremap t7 7gt
 nnoremap t8 8gt
 nnoremap t9 9gt
 
-
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-d> <Right><BS>
 inoremap jj <Esc>
+
+vmap ' S'
+vmap " S"
+vmap ` S`
+vmap ( S)
+vmap { S}
+vmap [ S]
 
