@@ -9,9 +9,9 @@ This repository has following configs.
 ```
 cd ~
 git clone https://github.com/KoichiKiyokawa/dotfiles.git
+cd dotfiles
 sh init.sh
 fisher
-nvim -c "PlugInstall|:qa"
 ```
 
 ### install dependencies
@@ -26,6 +26,13 @@ nvim -c "PlugInstall|:qa"
 ```
 # (on Mac)
 brew install git git-now neovim peco tig the_silver_searcher
+```
+
+#### install language server
+```
+gem install solargraph
+npm i -g typescript
+nvim -c "CocInstall coc-tsserver coc-solargraph | :qa"
 ```
 
 #### install powerline fonts
