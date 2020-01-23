@@ -1,5 +1,3 @@
-runtime! bundles/dein/dein.vim
-
 " ----------------------------------------------------------------------
 " 基本設定
 " ----------------------------------------------------------------------
@@ -120,4 +118,97 @@ inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-d> <Right><BS>
 inoremap jj <Esc>
+
+" ----------------------------------------------------------------------
+" プラグイン
+" ----------------------------------------------------------------------
+call plug#begin('~/.local/share/nvim/plugged')
+
+" Syntax checker
+Plug 'w0rp/ale'
+
+" statusline plugin
+Plug 'itchyny/lightline.vim'
+
+" カッコの補完
+Plug 'cohama/lexima.vim'
+
+Plug 'tpope/vim-surround'
+vmap ' S'
+vmap " S"
+vmap ` S`
+vmap ( S)
+vmap { S}
+vmap [ S]
+
+" open file by filename
+Plug 'ctrlpvim/ctrlp.vim'
+" .gitignoreに設定されているファイルは無視する
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+" show diff
+Plug 'airblade/vim-gitgutter'
+
+" replace all files
+Plug 'thinca/vim-qfreplace'
+
+" tree
+Plug 'scrooloose/nerdtree'
+" NERDTreeでdotfilesを表示
+let NERDTreeShowHidden=1
+noremap <F6> :NERDTreeFind<CR>
+
+" NERDTreeをタブ間で共有
+Plug 'jistr/vim-nerdtree-tabs'
+map <C-b> <plug>NERDTreeTabsToggle<CR>
+
+" git in vim
+Plug 'tpope/vim-fugitive'
+
+Plug 'tomtom/tcomment_vim'
+
+" オートセーブ
+Plug 'vim-scripts/vim-auto-save'
+" インサートモードでは自動保存しない(インデントが消されてしまうため)
+let g:auto_save = 1
+let g:auto_save_in_insert_mode = 0
+
+Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+Plug 'Chiel92/vim-autoformat'
+noremap <F3> :Autoformat<CR>
+
+Plug 'rking/ag.vim'
+
+Plug 'rhysd/conflict-marker.vim'
+
+Plug 'terryma/vim-multiple-cursors'
+
+" move line
+Plug 'matze/vim-move'
+let g:move_key_modifier = 'C'
+
+Plug 'easymotion/vim-easymotion'
+nmap s <Plug>(easymotion-s2)
+
+Plug 'mattn/emmet-vim', { 'for': ['html', 'vue', 'jsx', 'tsx'] }
+
+Plug 'tpope/vim-endwise', { 'for': ['ruby'] }
+
+Plug 'fatih/vim-go', { 'for': ['go'] }
+" 保存時にgo importを走らせる
+let g:go_fmt_command = "goimports"
+
+Plug 'posva/vim-vue', { 'for': ['vue'] }
+
+Plug 'slim-template/vim-slim', { 'for': ['slim'] }
+
+Plug 'leafgarland/typescript-vim', { 'for': ['typescript'] }
+
+Plug 'peitalin/vim-jsx-typescript', { 'for': ['jsx', 'tsx'] }
+
+Plug 'tomasiser/vim-code-dark'
+
+call plug#end()
+
+colorscheme codedark
 

@@ -11,6 +11,7 @@ cd ~
 git clone https://github.com/KoichiKiyokawa/dotfiles.git
 sh init.sh
 fisher
+nvim -c "PlugInstall|:qa"
 ```
 
 ### install dependencies
