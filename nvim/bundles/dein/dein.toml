@@ -57,10 +57,6 @@ repo = 'tpope/vim-fugitive'
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 hook_add = '''
-if !has('nvim')
-  call dein#add('roxma/nvim-yarp')
-  call dein#add('roxma/vim-hug-neovim-rpc')
-endif
 let g:deoplete#enable_at_startup = 1
 '''
 
@@ -84,9 +80,6 @@ repo = 'neoclide/coc.nvim'
 rev = 'release'
 
 [[plugins]]
-repo = 'simeji/winresizer'
-
-[[plugins]]
 repo = 'Chiel92/vim-autoformat'
 hook_add = '''
 noremap <F3> :Autoformat<CR>
@@ -101,6 +94,7 @@ repo = 'rhysd/conflict-marker.vim'
 [[plugins]]
 repo = 'terryma/vim-multiple-cursors'
 
+# move line
 [[plugins]]
 repo = 'matze/vim-move'
 hook_add = '''
