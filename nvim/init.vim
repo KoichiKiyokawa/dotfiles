@@ -110,28 +110,14 @@ noremap q $
 " 選択範囲を検索し、その単語にとどまる
 vnoremap * "zy:let @/ = @z<CR>nN
 " 選択範囲を置換
-vmap # *:%s///cg<Left><Left><Left>
+vnoremap # *:%s///cg<Left><Left><Left>
 nmap # viw#
 " タブの移動
-nnoremap t1 1gt
-nnoremap t2 2gt
-nnoremap t3 3gt
-nnoremap t4 4gt
-nnoremap t5 5gt
-nnoremap t6 6gt
-nnoremap t7 7gt
-nnoremap t8 8gt
-nnoremap t9 9gt
+nnoremap <C-t> gt
+nnoremap <C-g> gT
 
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-d> <Right><BS>
 inoremap jj <Esc>
-
-vmap ' S'
-vmap " S"
-vmap ` S`
-vmap ( S)
-vmap { S}
-vmap [ S]
 

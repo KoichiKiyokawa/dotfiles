@@ -16,6 +16,14 @@ repo = 'cohama/lexima.vim'
 # surround by () or "" or ''
 [[plugins]]
 repo = 'tpope/vim-surround'
+hook_add = '''
+vmap ' S'
+vmap " S"
+vmap ` S`
+vmap ( S)
+vmap { S}
+vmap [ S]
+'''
 
 # open file by filename
 [[plugins]]
