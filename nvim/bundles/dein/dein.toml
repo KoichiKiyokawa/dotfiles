@@ -53,13 +53,6 @@ map <C-b> <plug>NERDTreeTabsToggle<CR>
 [[plugins]]
 repo = 'tpope/vim-fugitive'
 
-# 補完機能
-[[plugins]]
-repo = 'Shougo/deoplete.nvim'
-hook_add = '''
-let g:deoplete#enable_at_startup = 1
-'''
-
 [[plugins]]
 repo = 'tomtom/tcomment_vim'
 
