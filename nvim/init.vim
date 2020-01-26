@@ -164,6 +164,8 @@ noremap <F6> :NERDTreeFind<CR>
 Plug 'jistr/vim-nerdtree-tabs'
 map <C-b> <plug>NERDTreeTabsToggle<CR>
 
+Plug 'Xuyuanp/nerdtree-git-plugin'
+
 " git in vim
 Plug 'tpope/vim-fugitive'
 
@@ -211,6 +213,8 @@ Plug 'leafgarland/typescript-vim', { 'for': ['typescript'] }
 Plug 'peitalin/vim-jsx-typescript', { 'for': ['jsx', 'tsx'] }
 
 Plug 'tomasiser/vim-code-dark'
+
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 

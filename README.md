@@ -35,14 +35,8 @@ npm i -g typescript
 nvim -c "CocInstall coc-tsserver coc-solargraph | :qa"
 ```
 
-#### install powerline fonts
-```
-git clone https://github.com/powerline/fonts.git --depth=1
-cd fonts
-./install.sh (or open RobotoMono/Roboto\ Mono\ Medium\ for\ Powerline.ttf)
-cd ..
-rm -rf fonts
-```
+#### install nerd fonts
+Download [RobotoMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/RobotoMono/Medium/complete/Roboto%20Mono%20Medium%20Nerd%20Font%20Complete.ttf)
 
 #### install formatter
 ```
