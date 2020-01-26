@@ -108,6 +108,9 @@ nnoremap X Vx
 " -----------------------------------------------------------------------------
 call plug#begin('~/.local/share/nvim/plugged')
 
+" color scheme
+Plug 'tomasiser/vim-code-dark'
+
 " Syntax checker
 Plug 'w0rp/ale'
 
@@ -193,8 +196,6 @@ Plug 'slim-template/vim-slim', { 'for': ['slim'] }
 Plug 'leafgarland/typescript-vim', { 'for': ['typescript'] }
 
 Plug 'peitalin/vim-jsx-typescript', { 'for': ['jsx', 'tsx'] }
-
-Plug 'tomasiser/vim-code-dark'
 
 Plug 'ryanoasis/vim-devicons'
 
