@@ -101,6 +101,7 @@ inoremap <C-d> <Right><BS>
 inoremap jj <Esc>
 " F5 : e! command
 noremap <F5> :e!<CR>
+nnoremap X Vx
 
 " -----------------------------------------------------------------------------
 " Plugins
