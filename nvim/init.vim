@@ -114,6 +114,8 @@ nmap # viw#
 nnoremap <C-t> gt
 nnoremap <C-g> gT
 
+inoremap <C-k> <Up>
+inoremap <C-j> <Down>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-d> <Right><BS>
