@@ -113,13 +113,15 @@ nmap # viw#
 " タブの移動
 nnoremap <C-t> gt
 nnoremap <C-g> gT
-
+" インサートモードでの移動
 inoremap <C-k> <Up>
 inoremap <C-j> <Down>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-d> <Right><BS>
 inoremap jj <Esc>
+" F5でe!コマンド
+noremap <F5> :e!<CR>
 
 " ----------------------------------------------------------------------
 " プラグイン
