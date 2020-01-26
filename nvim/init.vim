@@ -1,91 +1,70 @@
-" ----------------------------------------------------------------------
-" 基本設定
-" ----------------------------------------------------------------------
-"文字コードをUFT-8に設定
+" -----------------------------------------------------------------------------
+" Basic
+" -----------------------------------------------------------------------------
+" set file encording to UTF=-8
 set fenc=utf-8
-" バックアップファイルを作らない
-set nobackup
-" スワップファイルを作らない
-set noswapfile
-" 編集中のファイルが変更されたら自動で読み直す
-set autoread
-" バッファが編集中でもその他のファイルを開けるように
+" do not make buckup file or swapfile
+set nobackup noswapfile
+" enable to open another file when edditing
 set hidden
-" 入力中のコマンドをステータスに表示する
-set showcmd
-" マウスを有効にする
+" enable mouse
 set mouse=a
-" クリップボードにヤンク
+" yank to clipboard
 set clipboard+=unnamed
-" 検索結果をQuickFixで開くようにする
+" open search result in QuickFix
 autocmd QuickFixCmdPost *grep* cwindow
-" 対応するHTMLタグに%でジャンプできるようにする
+" enable to jump HTML tag by %
 source $VIMRUNTIME/macros/matchit.vim
 
-" ----------------------------------------------------------------------
-" 見た目系
-" ----------------------------------------------------------------------
-" 行番号を表示
+" -----------------------------------------------------------------------------
+" Appearance
+" -----------------------------------------------------------------------------
+" show line number
 set number
-" 現在の行を強調表示
-set cursorline
-" 現在の行を強調表示（縦）
-set cursorcolumn
-" 行末の1文字先までカーソルを移動できるように
+" highlighting line and column
+set cursorline cursorcolumn
+" enable to move cursor to one more forward to last word of the line
 set virtualedit=onemore
-" インデントはスマートインデント
+" auto indent for programming
 set smartindent
-" ビープ音を可視化
-set visualbell
-" 括弧入力時の対応する括弧を表示
+" show ) when input (
 set showmatch
-" ステータスラインを常に表示
-set laststatus=2
-" コマンドラインの補完
+" autocomplete comand line
 set wildmode=list:longest
-" ターミナルの色設定
-set termguicolors
-" 折り返し時に表示行単位での移動できるようにする
-nnoremap j gj
-nnoremap k gk
-" シンタックスハイライトの有効化
-syntax enable
-" Statusline
+" show statusline
 set laststatus=2
 
-" ----------------------------------------------------------------------
-" Tab系
-" ----------------------------------------------------------------------
-" 不可視文字を可視化(タブが「▸-」と表示される)
+" -----------------------------------------------------------------------------
+" Tab
+" -----------------------------------------------------------------------------
+" visualize tab to ▸-
 set list listchars=tab:\▸\-
-" Tab文字を半角スペースにする
+" set tab to white space
 set expandtab
-" 行頭以外のTab文字の表示幅（スペースいくつ分）
-set tabstop=2
-" 行頭でのTab文字の表示幅
-set shiftwidth=2
+" set Tab to two spaces
+set tabstop=2 shiftwidth=2
 
-" ----------------------------------------------------------------------
-" 検索系
-" ----------------------------------------------------------------------
-" 検索文字列が小文字の場合は大文字小文字を区別なく検索する
+" -----------------------------------------------------------------------------
+" Search
+" -----------------------------------------------------------------------------
+" search without distincting letter case when searching string is lowercase
 set ignorecase
-" 検索文字列に大文字が含まれている場合は区別して検索する
+" search with distincting letter case when searching string includes uppercaseh
 set smartcase
-" 検索文字列入力時に順次対象文字列にヒットさせる
+" incremental search
 set incsearch
-" 検索時に最後まで行ったら最初に戻る
+" return to the beginning when reached the ending
 set wrapscan
-" 検索語をハイライト表示
+" highlighte matched words
 set hlsearch
-" ESC連打でハイライト解除
-nmap <Esc><Esc> :nohlsearch<CR><Esc>
-" *で単語検索したときに、次の単語にジャンプせずにとどまる
+" push escape key twice to cancel highlighte matched word
+nmap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
+" do not move to the next matched word when searching by * key
 nnoremap <silent> * *``
 
-" ----------------------------------------------------------------------
-"  特定条件でヤンクしないように
-" ----------------------------------------------------------------------
+" -----------------------------------------------------------------------------
+" Avoid yank
+" -----------------------------------------------------------------------------
 nnoremap c "_c
 vnoremap c "_c
 nnoremap C "_C
@@ -96,36 +75,36 @@ nnoremap D "_D
 vnoremap D "_D
 vnoremap p "_dP
 
-" ----------------------------------------------------------------------
-" キーバインド
-" ----------------------------------------------------------------------
-" mでマクロ
+" -----------------------------------------------------------------------------
+" Kepmap
+" -----------------------------------------------------------------------------
+" m : macro
 nnoremap m q
-" 0で行頭
+" 0 : move to head of line
 noremap 0 ^
-" qで行末
+" q : move to end of line
 noremap q $
-" 選択範囲を検索し、その単語にとどまる
+" serach selected without moving next matched word
 vnoremap * "zy:let @/ = @z<CR>nN
-" 選択範囲を置換
+" replace selected
 vnoremap # *:%s///cg<Left><Left><Left>
 nmap # viw#
-" タブの移動
+" tab moving
 nnoremap <C-t> gt
 nnoremap <C-g> gT
-" インサートモードでの移動
+" move in insert mode
 inoremap <C-k> <Up>
 inoremap <C-j> <Down>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-d> <Right><BS>
 inoremap jj <Esc>
-" F5でe!コマンド
+" F5 : e! command
 noremap <F5> :e!<CR>
 
-" ----------------------------------------------------------------------
-" プラグイン
-" ----------------------------------------------------------------------
+" -----------------------------------------------------------------------------
+" Plugins
+" -----------------------------------------------------------------------------
 call plug#begin('~/.local/share/nvim/plugged')
 
 " Syntax checker
@@ -134,7 +113,7 @@ Plug 'w0rp/ale'
 " statusline plugin
 Plug 'itchyny/lightline.vim'
 
-" カッコの補完
+" autocomplete brackets
 Plug 'cohama/lexima.vim'
 
 Plug 'tpope/vim-surround'
@@ -147,7 +126,7 @@ vmap [ S]
 
 " open file by filename
 Plug 'ctrlpvim/ctrlp.vim'
-" .gitignoreに設定されているファイルは無視する
+" ignore file setted in .gitignore
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " show diff
@@ -158,11 +137,11 @@ Plug 'thinca/vim-qfreplace'
 
 " tree
 Plug 'scrooloose/nerdtree'
-" NERDTreeでdotfilesを表示
+" show dotfiles in NERDTree
 let NERDTreeShowHidden=1
 noremap <F6> :NERDTreeFind<CR>
 
-" NERDTreeをタブ間で共有
+" share NERDTree with other tabs
 Plug 'jistr/vim-nerdtree-tabs'
 map <C-b> <plug>NERDTreeTabsToggle<CR>
 
@@ -173,9 +152,8 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'tomtom/tcomment_vim'
 
-" オートセーブ
 Plug 'vim-scripts/vim-auto-save'
-" インサートモードでは自動保存しない(インデントが消されてしまうため)
+" disable auto save in insert mode to avoid deleting indent
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 
@@ -185,6 +163,7 @@ map <silent> <F2> <Plug>(coc-rename)
 Plug 'Chiel92/vim-autoformat'
 noremap <F3> :Autoformat<CR>
 
+" Multi file serach
 Plug 'rking/ag.vim'
 
 Plug 'rhysd/conflict-marker.vim'
@@ -203,7 +182,7 @@ Plug 'mattn/emmet-vim', { 'for': ['html', 'vue', 'jsx', 'tsx'] }
 Plug 'tpope/vim-endwise', { 'for': ['ruby'] }
 
 Plug 'fatih/vim-go', { 'for': ['go'] }
-" 保存時にgo importを走らせる
+" run go import when file save
 let g:go_fmt_command = "goimports"
 
 Plug 'posva/vim-vue', { 'for': ['vue'] }
