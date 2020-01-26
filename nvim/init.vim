@@ -174,6 +174,8 @@ let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
+map <silent> <F2> <Plug>(coc-rename)
+
 Plug 'Chiel92/vim-autoformat'
 noremap <F3> :Autoformat<CR>
 
