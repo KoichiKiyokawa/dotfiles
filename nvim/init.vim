@@ -57,11 +57,12 @@ nnoremap m q
 " 0 : move to head of line
 noremap 0 ^ 
 " q : move to end of line
-noremap q $ 
+noremap q $
 " serach selected without moving next matched word
 vnoremap * "zy:let @/ = @z<CR>nN 
 " replace selected
-vnoremap # *:%s///cg<Left><Left><Left>
+vmap # *:%s///cg<Left><Left><Left>
+nmap * viw*
 nmap # viw#
 " tab moving
 nnoremap <C-t> gt
