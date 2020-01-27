@@ -1,66 +1,40 @@
 " -----------------------------------------------------------------------------
 " Basic
 " -----------------------------------------------------------------------------
-" set file encording to UTF=-8
-set fenc=utf-8
-" do not make buckup file or swapfile
-set nobackup noswapfile
-" enable to open another file when edditing
-set hidden
-" enable mouse
-set mouse=a
-" yank to clipboard
-set clipboard+=unnamed
-" open search result in QuickFix
-autocmd QuickFixCmdPost *grep* cwindow
-" enable to jump HTML tag by %
-source $VIMRUNTIME/macros/matchit.vim
+set fenc=utf-8 " set file encording to UTF=-8
+set nobackup noswapfile " do not make buckup file or swapfile
+set hidden " enable to open another file when edditing
+set mouse=a " enable mouse
+set clipboard+=unnamed " yank to clipboard
+autocmd QuickFixCmdPost *grep* cwindow " open search result in QuickFix
+source $VIMRUNTIME/macros/matchit.vim " enable to jump HTML tag by %
 
 " -----------------------------------------------------------------------------
 " Appearance
 " -----------------------------------------------------------------------------
-" show line number
-set number
-" highlighting line and column
-set cursorline cursorcolumn
-" enable to move cursor to one more forward to last word of the line
-set virtualedit=onemore
-" auto indent for programming
-set smartindent
-" show ) when input (
-set showmatch
-" autocomplete comand line
-set wildmode=list:longest
-" show statusline
-set laststatus=2
+set number " show line number
+set cursorline cursorcolumn " highlighting line and column
+set virtualedit=onemore " enable to move cursor to one more forward to last word of the line
+set smartindent " auto indent for programming
+set showmatch " show ) when input (
+set wildmode=list:longest " autocomplete comand line
+set laststatus=2 " show statusline
 
 " -----------------------------------------------------------------------------
 " Tab
 " -----------------------------------------------------------------------------
-" visualize tab to ▸-
-set list listchars=tab:\▸\-
-" set tab to white space
-set expandtab
-" set Tab to two spaces
-set tabstop=2 shiftwidth=2
+set list listchars=tab:\▸\- " visualize tab to ▸-
+set expandtab " set tab to white space
+set tabstop=2 shiftwidth=2 " set Tab to two spaces
 
 " -----------------------------------------------------------------------------
 " Search
 " -----------------------------------------------------------------------------
-" search without distincting letter case when searching string is lowercase
-set ignorecase
-" search with distincting letter case when searching string includes uppercaseh
-set smartcase
-" incremental search
-set incsearch
-" return to the beginning when reached the ending
-set wrapscan
-" highlighte matched words
-set hlsearch
-" push escape key twice to cancel highlighte matched word
-nmap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
-" do not move to the next matched word when searching by * key
-nnoremap <silent> * *``
+set ignorecase " search without distincting letter case when searching string is lowercase
+set smartcase " search with distincting letter case when searching string includes uppercaseh
+set incsearch " incremental search
+set wrapscan " return to the beginning when reached the ending
+set hlsearch " highlighte matched words
 
 " -----------------------------------------------------------------------------
 " Avoid yank
@@ -79,20 +53,20 @@ vnoremap p "_dP
 " Kepmap
 " -----------------------------------------------------------------------------
 " m : macro
-nnoremap m q
+nnoremap m q 
 " 0 : move to head of line
-noremap 0 ^
+noremap 0 ^ 
 " q : move to end of line
-noremap q $
+noremap q $ 
 " serach selected without moving next matched word
-vnoremap * "zy:let @/ = @z<CR>nN
+vnoremap * "zy:let @/ = @z<CR>nN 
 " replace selected
 vnoremap # *:%s///cg<Left><Left><Left>
 nmap # viw#
 " tab moving
 nnoremap <C-t> gt
 nnoremap <C-g> gT
-" move in insert mode
+" moves in insert mode
 inoremap <C-k> <Up>
 inoremap <C-j> <Down>
 inoremap <C-b> <Left>
@@ -102,23 +76,23 @@ inoremap jj <Esc>
 " F5 : e! command
 noremap <F5> :e!<CR>
 nnoremap X Vx
+" push escape key twice to cancel highlighte matched word
+nmap <silent> <Esc><Esc> :nohlsearch<CR><Esc> 
+" do not move to the next matched word when searching by * key
+nnoremap <silent> * *`` 
 
 " -----------------------------------------------------------------------------
 " Plugins
 " -----------------------------------------------------------------------------
 call plug#begin('~/.local/share/nvim/plugged')
 
-" color scheme
-Plug 'tomasiser/vim-code-dark'
+Plug 'tomasiser/vim-code-dark' " color scheme
 
-" Syntax checker
-Plug 'w0rp/ale'
+Plug 'w0rp/ale' " Syntax checker
 
-" statusline plugin
-Plug 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim' " statusline plugin
 
-" autocomplete brackets
-Plug 'cohama/lexima.vim'
+Plug 'cohama/lexima.vim' " autocomplete brackets
 
 Plug 'tpope/vim-surround'
 vmap ' S'
@@ -128,38 +102,29 @@ vmap ( S)
 vmap { S}
 vmap [ S]
 
-" open file by filename
-Plug 'ctrlpvim/ctrlp.vim'
-" ignore file setted in .gitignore
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+Plug 'ctrlpvim/ctrlp.vim' " open file by filename
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard'] " ignore file setted in .gitignore
 
-" show diff
-Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter' " show diff
 
-" replace all files
-Plug 'thinca/vim-qfreplace'
+Plug 'thinca/vim-qfreplace' " replace all files
 
-" tree
-Plug 'scrooloose/nerdtree'
-" show dotfiles in NERDTree
-let NERDTreeShowHidden=1
+Plug 'scrooloose/nerdtree' " tree
+let NERDTreeShowHidden=1 " show dotfiles in NERDTree
 noremap <F6> :NERDTreeFind<CR>
 
-" share NERDTree with other tabs
-Plug 'jistr/vim-nerdtree-tabs'
+Plug 'jistr/vim-nerdtree-tabs' " share NERDTree with other tabs
 map <C-b> <plug>NERDTreeTabsToggle<CR>
 
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
-" git in vim
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive' " git in vim
 
 Plug 'tomtom/tcomment_vim'
 
 Plug 'vim-scripts/vim-auto-save'
-" disable auto save in insert mode to avoid deleting indent
-let g:auto_save = 1
-let g:auto_save_in_insert_mode = 0
+let g:auto_save = 1 
+let g:auto_save_in_insert_mode = 0 " disable auto save in insert mode to avoid deleting indent
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 map <silent> <F2> <Plug>(coc-rename)
@@ -167,15 +132,13 @@ map <silent> <F2> <Plug>(coc-rename)
 Plug 'Chiel92/vim-autoformat'
 noremap <F3> :Autoformat<CR>
 
-" Multi file serach
-Plug 'rking/ag.vim'
+Plug 'rking/ag.vim' " Multi file serach
 
 Plug 'rhysd/conflict-marker.vim'
 
 Plug 'terryma/vim-multiple-cursors'
 
-" move line
-Plug 'matze/vim-move'
+Plug 'matze/vim-move' " move line
 let g:move_key_modifier = 'C'
 
 Plug 'easymotion/vim-easymotion'
@@ -186,8 +149,7 @@ Plug 'mattn/emmet-vim', { 'for': ['html', 'vue', 'jsx', 'tsx'] }
 Plug 'tpope/vim-endwise', { 'for': ['ruby'] }
 
 Plug 'fatih/vim-go', { 'for': ['go'] }
-" run go import when file save
-let g:go_fmt_command = "goimports"
+let g:go_fmt_command = "goimports" " run go import when file save
 
 Plug 'posva/vim-vue', { 'for': ['vue'] }
 
