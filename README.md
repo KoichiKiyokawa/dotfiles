@@ -5,6 +5,21 @@ This repository has following configs.
 - [tig](https://github.com/jonas/tig)
 
 ## How to setup
+### Install packages
+- fish
+- git
+- git-now
+- neovim
+- node
+- peco
+- tig
+- the_silver_searcher
+
+```
+# (on Mac)
+brew install fish git git-now neovim node peco tig the_silver_searcher
+```
+
 ### Arrange config files and initialize
 ```
 cd ~
@@ -14,31 +29,17 @@ sh init.sh
 fisher
 ```
 
-### install dependencies
-#### install packages
-- git
-- git-now
-- neovim
-- peco
-- tig
-- the_silver_searcher
-
-```
-# (on Mac)
-brew install git git-now neovim peco tig the_silver_searcher
-```
-
-#### install language server
+### Install language server
 ```
 gem install solargraph
 npm i -g typescript
 nvim -c "CocInstall coc-tsserver coc-solargraph | :qa"
 ```
 
-#### install nerd fonts
+### Install nerd fonts
 Download [RobotoMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/RobotoMono/Medium/complete/Roboto%20Mono%20Medium%20Nerd%20Font%20Complete.ttf)
 
-#### install formatter
+### Install formatter
 ```
 npm install -g js-beautify
 gem install rubocop
