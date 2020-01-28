@@ -7,56 +7,53 @@ source ~/.config/fish/env.fish
 # エイリアス
 # ------------------------------------------------------------------------------
 # ll
-alias ll='ls -al'
+abbr -a ll ls -al
 
 # use nvim instead of vim
-alias v='nvim'
+abbr -a v nvim
 
-alias x='exit'
+abbr -a x exit
 
 # Docker関連
-alias dc='docker-compose'
-alias dpa='docker ps -a'
-
-# Maven関連
-alias mcc='mvn clean compile'
-alias mcct='mvn clean compile test'
+abbr -a dc docker-compose
+abbr -a dpa docker ps -a
 
 # Postgres関連
-alias pgc='pg_ctl -D /usr/local/var/postgres'
+abbr -a pgc pg_ctl -D /usr/local/var/postgres
 
 # Rails関連
-alias be='bundle exec'
-alias br='bin/rails'
-alias rs='bundle exec rails s'
-alias rc='bin/rails c'
-alias rami='bundle exec rake db:migrate'
+abbr -a be bundle exec
+abbr -a br bin/rails
+abbr -a rs bundle exec rails s
+abbr -a rc bin/rails c
+abbr -a rami bundle exec rake db:migrate
 
 # git関連
-alias g='git'
-alias gb='git branch'
-alias gc='git checkout'
-alias gf='git fetch'
-alias gl='git log --oneline'
-alias gll='git log --graph --all --format="%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s"'
-alias gs='git status'
-alias gp='git push -u origin HEAD'
-alias ga='git add'
-alias gm='git commit'
-alias gr='git rebase'
-alias gac='git add -A; git commit -m'
-alias gst='git stash'
-alias t='tig'
-alias gn='git-now --all'
-alias gnr='git-now rebase'
+abbr -a g git
+abbr -a gb git branch
+abbr -a gc git checkout
+abbr -a gf git fetch
+abbr -a gl git log --oneline
+abbr -a gll "git log --graph --all --format='%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s'"
+abbr -a gs git status
+abbr -a gp git push -u origin HEAD
+abbr -a ga git add
+abbr -a gm git commit
+abbr -a gr git rebase
+abbr -a gac "git add -A; git commit -m"
+abbr -a gst git stash
+abbr -a t tig
+abbr -a gn git-now --all
+abbr -a gnr git-now rebase
+abbr -a gri git rebase -i HEAD~
 
 function gd
 	git diff origin/{$argv}..HEAD
 end
 
-function gri
-	git rebase -i HEAD~{$argv}
-end
+# function gri
+# 	git rebase -i HEAD~{$argv}
+# end
 
 # ------------------------------------------------------------------------------
 # カラー設定
