@@ -162,6 +162,8 @@ Plug 'peitalin/vim-jsx-typescript', { 'for': ['jsx', 'tsx'] }
 
 Plug 'ryanoasis/vim-devicons'
 
+Plug 'digitaltoad/vim-pug', { 'for': 'vue' }
+
 call plug#end()
 
 colorscheme codedark
