@@ -1,19 +1,19 @@
-bind main    R !git rebase -i %(commit) --autostash
-bind diff    R !git rebase -i %(commit) --autostash
+bind main R !git rebase -i %(commit) --autostash
+bind diff R !git rebase -i %(commit) --autostash
 bind status D ?rm %(file)
 
-# カラー設定
-# diff-view で境界が見やすくなるように変更
-color  diff-header       default magenta
-color  diff-chunk        black   white
+# color setting
+# change color to make it easy to see boundaries by diff-view
+color diff-header default magenta
+color diff-chunk black white
 
-# Pでremoteへpush
-bind generic P      ?git push -u %(remote) %(repo:head)
+# P: push to remote
+bind generic P ?git push -u %(remote) %(repo:head)
 
-# 自動リフレッシュ
+# auto refresh
 set refresh-mode = periodic
 set refresh-interval = 3
 
-# 単語単位でdiff表示
+# show diff in units of words
 set diff-highlight = true
 
