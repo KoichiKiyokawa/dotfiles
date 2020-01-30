@@ -50,7 +50,7 @@ vnoremap D "_D
 vnoremap p "_dP
 
 " -----------------------------------------------------------------------------
-" Kepmap
+" Keymap
 " -----------------------------------------------------------------------------
 " m : macro
 nnoremap m q 
@@ -145,6 +145,11 @@ let g:move_key_modifier = 'C'
 Plug 'easymotion/vim-easymotion'
 nmap s <Plug>(easymotion-s2)
 
+Plug 'ryanoasis/vim-devicons'
+
+Plug 'osyo-manga/vim-over'
+nnoremap <C-s> :OverCommandLine<CR>%s/
+
 Plug 'mattn/emmet-vim', { 'for': ['html', 'vue', 'jsx', 'tsx'] }
 
 Plug 'tpope/vim-endwise', { 'for': ['ruby'] }
@@ -160,11 +165,12 @@ Plug 'leafgarland/typescript-vim', { 'for': ['typescript'] }
 
 Plug 'peitalin/vim-jsx-typescript', { 'for': ['jsx', 'tsx'] }
 
-Plug 'ryanoasis/vim-devicons'
-
 Plug 'digitaltoad/vim-pug', { 'for': 'vue' }
 
 call plug#end()
 
+" color
 colorscheme codedark
+highlight Search ctermbg=24
+highlight Search ctermfg=None
 
