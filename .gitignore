@@ -1,4 +1,5 @@
 fish/*
 !fish/config.fish
 !fish/env.fish
+!fish/abbr.fish
 !fish/fishfile
