@@ -96,12 +96,6 @@ Plug 'itchyny/lightline.vim' " statusline plugin
 Plug 'cohama/lexima.vim' " autocomplete brackets
 
 Plug 'tpope/vim-surround'
-vmap ' S'
-vmap " S"
-vmap ` S`
-vmap ( S)
-vmap { S}
-vmap [ S]
 
 Plug 'ctrlpvim/ctrlp.vim' " open file by filename
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard'] " ignore file setted in .gitignore
