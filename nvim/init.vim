@@ -106,6 +106,7 @@ Plug 'thinca/vim-qfreplace' " replace all files
 
 Plug 'scrooloose/nerdtree' " tree
 let NERDTreeShowHidden=1 " show dotfiles in NERDTree
+let g:NERDTreeIgnore = ['.DS_Store']
 noremap <F6> :NERDTreeFind<CR>
 
 Plug 'jistr/vim-nerdtree-tabs' " share NERDTree with other tabs
