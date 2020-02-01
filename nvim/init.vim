@@ -54,8 +54,6 @@ vnoremap p "_dP
 " -----------------------------------------------------------------------------
 " m : macro
 nnoremap m q 
-" 0 : move to head of line
-noremap 0 ^ 
 " q : move to end of line
 noremap q $
 " serach selected without moving next matched word
@@ -67,6 +65,8 @@ nmap # viw#
 " tab moving
 nnoremap <C-t> gt
 nnoremap <C-g> gT
+inoremap <C-t> <Esc>gt
+inoremap <C-g> <Esc>gT
 " moves in insert mode
 inoremap <C-k> <Up>
 inoremap <C-j> <Down>
