@@ -77,7 +77,7 @@ inoremap jj <Esc>
 " F5 : e! command
 noremap <F5> :e!<CR>
 nnoremap X Vx
-" push escape key twice to cancel highlighte matched word
+" push escape key twice to cancel highlight of matched word
 nmap <silent> <Esc><Esc> :nohlsearch<CR><Esc> 
 " do not move to the next matched word when searching by * key
 nnoremap <silent> * *`` 
