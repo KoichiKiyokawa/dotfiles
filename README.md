@@ -8,7 +8,6 @@ This repository has following configs.
 ### Install packages
 - fish
 - git
-- git-now
 - neovim
 - node
 - peco
@@ -17,7 +16,7 @@ This repository has following configs.
 
 ```
 # (on Mac)
-brew install fish git git-now neovim node peco tig the_silver_searcher
+brew install fish git neovim node peco tig the_silver_searcher
 ```
 
 ### Arrange config files and initialize

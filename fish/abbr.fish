@@ -33,12 +33,11 @@ abbr -a ga git add
 abbr -a gm git commit
 abbr -a gr git rebase
 abbr -a gac "git add -A; git commit -m"
+abbr -a gt "git add -A; git commit -m 'temporary commit'"
 abbr -a gst git stash
 abbr -a t tig
-abbr -a gn git-now --all
-abbr -a gnr git-now rebase
 
 function gd
-	git diff origin/{$argv}..HEAD
+  git diff origin/{$argv}..HEAD
 end
 
