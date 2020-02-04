@@ -202,9 +202,13 @@
 	<key>NSWindow Frame NSNavPanelAutosaveName</key>
 	<string>320 339 799 448 0 0 1440 900 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>373 1416 620 392 -277 900 1920 1080 </string>
+	<string>410 381 620 392 0 0 1440 900 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1440 900 0 0 1440 900 </string>
+	<key>NeverWarnAboutShortLivedSessions_97AC4F60-6D01-4A0F-88DE-07F3A807B000</key>
+	<true/>
+	<key>NeverWarnAboutShortLivedSessions_97AC4F60-6D01-4A0F-88DE-07F3A807B000_selection</key>
+	<integer>0</integer>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -863,7 +867,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>EB680BA3-41CE-4679-B195-838B9AC336D7</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>37</integer>
+	<integer>40</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1582,6 +1586,7 @@
 	</dict>
 	<key>NoSyncSearchHistory2</key>
 	<array>
+		<string>client</string>
 		<string>create</string>
 		<string>/api/v1/netbase_keywords</string>
 		<string>index</string>
@@ -1647,11 +1652,11 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-01-26T06:46:38Z</date>
+	<date>2020-02-03T13:39:27Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
-	<false/>
+	<true/>
 	<key>SeparateWindowTitlePerTab</key>
 	<true/>
 	<key>ShowFullScreenTabBar</key>
