@@ -85,7 +85,7 @@ nnoremap Y ggVGy
 nnoremap c ci
 nnoremap v vi
 nnoremap d di
-vnoremap q $<Left>
+nnoremap vq v$<Left>
 
 " -----------------------------------------------------------------------------
 " Plugins
