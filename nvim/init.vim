@@ -82,9 +82,9 @@ nmap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
 " do not move to the next matched word when searching by * key
 nnoremap <silent> * *`` 
 nnoremap Y ggVGy
-nnoremap cw ciw
-nnoremap vw viw
-nnoremap dw diw
+nnoremap c ci
+nnoremap v vi
+nnoremap d di
 vnoremap q $<Left>
 
 " -----------------------------------------------------------------------------
