@@ -6,6 +6,8 @@
 	<true/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
+	<key>ApplePressAndHoldEnabled</key>
+	<false/>
 	<key>AppleScrollAnimationEnabled</key>
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
@@ -763,7 +765,7 @@
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
-			<integer>0</integer>
+			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
 			<false/>
 			<key>Right Option Key Sends</key>
@@ -838,6 +840,7 @@
 	<array>
 		<string>3.3.6</string>
 		<string>3.3.7</string>
+		<string>3.3.8</string>
 	</array>
 	<key>NoSyncBFPFavorites</key>
 	<array>
@@ -867,7 +870,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>EB680BA3-41CE-4679-B195-838B9AC336D7</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>40</integer>
+	<integer>41</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -1584,18 +1587,6 @@
 			</dict>
 		</array>
 	</dict>
-	<key>NoSyncSearchHistory2</key>
-	<array>
-		<string>client</string>
-		<string>create</string>
-		<string>/api/v1/netbase_keywords</string>
-		<string>index</string>
-		<string>cheche</string>
-		<string>puma</string>
-		<string>follower_age</string>
-		<string>followr</string>
-		<string>keywo</string>
-	</array>
 	<key>NoSyncTipOfTheDayEligibilityBeganTime</key>
 	<real>594608373.88891006</real>
 	<key>OpenArrangementAtStartup</key>
@@ -1656,7 +1647,7 @@
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SUUpdateRelaunchingMarker</key>
-	<true/>
+	<false/>
 	<key>SeparateWindowTitlePerTab</key>
 	<true/>
 	<key>ShowFullScreenTabBar</key>
@@ -1672,7 +1663,7 @@
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
 	<key>iTerm Version</key>
-	<string>3.3.7</string>
+	<string>3.3.8</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
