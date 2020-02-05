@@ -83,11 +83,15 @@ nmap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
 " do not move to the next matched word when searching by * key
 nnoremap <silent> * *`` 
 nnoremap Y ggVGy
-nnoremap c ci
-nnoremap v vi
-nnoremap d di
 nnoremap vq v$<Left>
 nnoremap <Space>r :source ~/.config/nvim/init.vim<CR>
+
+" vw to viw
+for each_surround in ['(', '{', '[', '<', '"', "'"]
+  for each_command in ['c', 'd', 'v']
+    execute 'nnoremap ' . each_command . each_surround ' ' . each_command . 'i' . each_surround
+  endfor
+endfor
 
 " -----------------------------------------------------------------------------
 " Plugins
