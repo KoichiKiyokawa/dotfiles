@@ -8,6 +8,7 @@ set mouse=a " enable mouse
 set clipboard+=unnamed " yank to clipboard
 autocmd QuickFixCmdPost *grep* cwindow " open search result in QuickFix
 source $VIMRUNTIME/macros/matchit.vim " enable to jump HTML tag by %
+set isk+=- " interpret words chained by `-` as one word
 
 " -----------------------------------------------------------------------------
 " Appearance
