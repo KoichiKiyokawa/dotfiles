@@ -80,9 +80,7 @@ inoremap jj <Esc>
 noremap <F5> :e!<CR>
 nnoremap X Vx
 " push escape key twice to cancel highlight of matched word
-nmap <silent> <Esc><Esc> :nohlsearch<CR><Esc> 
-" do not move to the next matched word when searching by * key
-nnoremap <silent> * *`` 
+nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc> 
 nnoremap Y ggVGy
 nnoremap vq v$<Left>
 nnoremap <Space>r :source ~/.config/nvim/init.vim<CR>
