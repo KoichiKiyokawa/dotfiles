@@ -68,6 +68,7 @@ nnoremap <C-t> gt
 nnoremap <C-g> gT
 inoremap <C-t> <Esc>gt
 inoremap <C-g> <Esc>gT
+nnoremap T :tabnew<CR>
 " moves in insert mode
 inoremap <C-a> <Home>
 inoremap <C-e> <End>
