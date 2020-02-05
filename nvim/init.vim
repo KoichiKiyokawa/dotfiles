@@ -85,7 +85,6 @@ nnoremap Y ggVGy
 nnoremap vq v$<Left>
 nnoremap <Space>r :source ~/.config/nvim/init.vim<CR>
 nnoremap <M-a> ggVG
-
 " enable to omit `i` eg. c(i)w
 let surrounds = ['(', ')', '{', '}', '[', ']', '<', '"', '`', "'"]
 for each_surround in add(surrounds, 'w')
@@ -93,6 +92,13 @@ for each_surround in add(surrounds, 'w')
     execute 'nnoremap ' . each_command . each_surround . ' ' . each_command . 'i' . each_surround
   endfor
 endfor
+" e.g. foo bar baz -> 'foo', 'bar', 'baz'
+nnoremap <silent> <Space>' :s/<Space>/',<Space>'/g<CR>A'<Esc>I'<Esc>:nohlsearch<CR>
+nnoremap <silent> <Space>" :s/<Space>/",<Space>"/g<CR>A"<Esc>I"<Esc>:nohlsearch<CR>
+vnoremap <silent> <Space>" "zxi""<Esc>"zPvi":s/\%V<Space>/",<Space>"/g<CR>:nohlsearch<CR>
+vnoremap <silent> <Space>' "zxi''<Esc>"zPvi':s/\%V<Space>/',<Space>'/g<CR>:nohlsearch<CR>
+" add comma to the end of selected lines
+vnoremap <silent> <Space>, :s/\n/,\r/g<CR>:nohlsearch<CR> 
 
 " -----------------------------------------------------------------------------
 " Plugins
