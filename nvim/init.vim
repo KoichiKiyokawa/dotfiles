@@ -86,10 +86,11 @@ nnoremap Y ggVGy
 nnoremap vq v$<Left>
 nnoremap <Space>r :source ~/.config/nvim/init.vim<CR>
 
-" vw to viw
-for each_surround in ['(', '{', '[', '<', '"', "'"]
+" enable to omit `i` eg. c(i)w
+let surrounds = ['(', '{', '[', '<', '"', '`', "'"]
+for each_surround in add(surrounds, 'w')
   for each_command in ['c', 'd', 'v']
-    execute 'nnoremap ' . each_command . each_surround ' ' . each_command . 'i' . each_surround
+    execute 'nnoremap ' . each_command . each_surround . ' ' . each_command . 'i' . each_surround
   endfor
 endfor
 
