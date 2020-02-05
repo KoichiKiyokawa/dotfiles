@@ -69,6 +69,8 @@ nnoremap <C-g> gT
 inoremap <C-t> <Esc>gt
 inoremap <C-g> <Esc>gT
 " moves in insert mode
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
 inoremap <C-k> <Up>
 inoremap <C-j> <Down>
 inoremap <C-b> <Left>
