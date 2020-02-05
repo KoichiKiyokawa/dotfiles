@@ -87,7 +87,7 @@ nnoremap vq v$<Left>
 nnoremap <Space>r :source ~/.config/nvim/init.vim<CR>
 
 " enable to omit `i` eg. c(i)w
-let surrounds = ['(', '{', '[', '<', '"', '`', "'"]
+let surrounds = ['(', ')', '{', '}', '[', ']', '<', '"', '`', "'"]
 for each_surround in add(surrounds, 'w')
   for each_command in ['c', 'd', 'v']
     execute 'nnoremap ' . each_command . each_surround . ' ' . each_command . 'i' . each_surround
@@ -109,7 +109,7 @@ Plug 'cohama/lexima.vim' " autocomplete brackets
 
 Plug 'tpope/vim-surround'
 " enable to omit leader `S`
-for each_surround in surrounds + [')', '}', ']']
+for each_surround in surrounds
   execute 'vmap ' . each_surround . ' ' . 'S' . each_surround
 endfor
 
