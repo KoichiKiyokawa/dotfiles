@@ -76,6 +76,7 @@ inoremap <C-j> <Down>
 inoremap <C-b> <Left>
 inoremap <C-f> <Right>
 inoremap <C-d> <Right><BS>
+inoremap kk <Esc>
 inoremap jj <Esc>
 " F5 : e! command
 noremap <F5> :e!<CR>
