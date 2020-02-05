@@ -57,7 +57,7 @@ noremap q $
 " serach selected without moving next matched word
 vnoremap * "zy:let @/ = @z<CR>nN 
 " replace selected
-vmap # *:%s///cg<Left><Left><Left>
+vmap # *:%s///cg<Left><Left><Left><C-r>/
 nmap * viw*
 nmap # viw#
 " tab moving
