@@ -87,6 +87,7 @@ nnoremap c ci
 nnoremap v vi
 nnoremap d di
 nnoremap vq v$<Left>
+nnoremap <Space>r :source ~/.config/nvim/init.vim<CR>
 
 " -----------------------------------------------------------------------------
 " Plugins
