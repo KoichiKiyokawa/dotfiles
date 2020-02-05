@@ -40,14 +40,11 @@ set hlsearch " highlighte matched words
 " -----------------------------------------------------------------------------
 " Avoid yank
 " -----------------------------------------------------------------------------
-nnoremap c "_c
-vnoremap c "_c
-nnoremap C "_C
-vnoremap C "_C
-nnoremap d "_d
-vnoremap d "_d
-nnoremap D "_D
-vnoremap D "_D
+for each_mode in ['n', 'v']
+  for each_command in ['c', 'C', 'd', 'D']
+    execute each_mode . 'noremap ' . each_command . ' "_' . each_command
+  endfor
+endfor
 vnoremap p "_dP
 
 " -----------------------------------------------------------------------------
