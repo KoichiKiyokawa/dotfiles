@@ -160,6 +160,7 @@ Plug 'ryanoasis/vim-devicons'
 
 Plug 'osyo-manga/vim-over'
 nnoremap <C-s> :OverCommandLine<CR>%s/
+vnoremap <C-s> "zy:OverCommandLine<CR>%s/<C-r>z//cg<Left><Left><Left>
 
 Plug 'mattn/emmet-vim', { 'for': ['html', 'vue', 'jsx', 'tsx'] }
 
