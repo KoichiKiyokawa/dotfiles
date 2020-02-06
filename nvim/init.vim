@@ -71,8 +71,8 @@ inoremap <C-a> <Home>
 inoremap <C-e> <End>
 inoremap <C-k> <Up>
 inoremap <C-j> <Down>
-inoremap <C-b> <Left>
 inoremap <C-f> <Right>
+inoremap <C-b> <Left>
 inoremap <C-d> <Right><BS>
 inoremap kk <Esc>
 inoremap jj <Esc>
@@ -100,7 +100,7 @@ nnoremap <silent> <Space>" :s/<Space>/",<Space>"/g<CR>A"<Esc>I"<Esc>:nohlsearch<
 vnoremap <silent> <Space>" "zxi""<Esc>"zPvi":s/\%V<Space>/",<Space>"/g<CR>:nohlsearch<CR>
 " e.g. foo bar baz -> :foo, :bar, :baz
 nnoremap <silent> <Space>: :s/<Space>/,<Space>:/g<CR>I:<Esc>:nohlsearch<CR>
-vnoremap <silent> <Space>: "zx:execute ":normal i" . join(map(split(z), '":" . v:val'), ", ")<CR>
+vnoremap <silent> <Space>: "zx:execute ":normal i" . join(map(split(@z), '":" . v:val'), ", ")<CR>
 " add comma to the end of selected lines
 vnoremap <silent> <Space>, :s/\n/,\r/g<CR>:nohlsearch<CR> 
 
