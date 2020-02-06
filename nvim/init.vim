@@ -84,6 +84,7 @@ nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
 nnoremap Y ggVGy
 nnoremap vq v$<Left>
 nnoremap <Space>r :source ~/.config/nvim/init.vim<CR>
+nnoremap <Space>q :qa!<CR>
 nnoremap <M-a> ggVG
 " enable to omit `i` eg. c(i)w
 let surrounds = ['(', ')', '{', '}', '[', ']', '<', '"', '`', "'"]
