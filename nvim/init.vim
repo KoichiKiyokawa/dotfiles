@@ -94,13 +94,13 @@ for each_surround in add(surrounds, 'w')
   endfor
 endfor
 " e.g. foo bar baz -> 'foo', 'bar', 'baz'
-nnoremap <silent> <Space>' :s/<Space>/',<Space>'/g<CR>A'<Esc>I'<Esc>:nohlsearch<CR>
-vnoremap <silent> <Space>' "zxi''<Esc>"zPvi':s/\%V<Space>/',<Space>'/g<CR>:nohlsearch<CR>
-nnoremap <silent> <Space>" :s/<Space>/",<Space>"/g<CR>A"<Esc>I"<Esc>:nohlsearch<CR>
-vnoremap <silent> <Space>" "zxi""<Esc>"zPvi":s/\%V<Space>/",<Space>"/g<CR>:nohlsearch<CR>
+vnoremap <Space>' "zx:execute ":normal i '" . join(split(@z), "', '") . "'"<CR>
+nmap <Space>' V<Space>'
+vnoremap <Space>" "zx:execute ':normal i "' . join(split(@z), '", "') . '"'<CR>
+nmap <Space>" V<Space>"
 " e.g. foo bar baz -> :foo, :bar, :baz
-nnoremap <silent> <Space>: :s/<Space>/,<Space>:/g<CR>I:<Esc>:nohlsearch<CR>
 vnoremap <silent> <Space>: "zx:execute ":normal i" . join(map(split(@z), '":" . v:val'), ", ")<CR>
+nmap <silent> <Space>: V<Space>:
 " add comma to the end of selected lines
 vnoremap <silent> <Space>, :s/\n/,\r/g<CR>:nohlsearch<CR> 
 
