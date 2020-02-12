@@ -90,7 +90,7 @@ nnoremap <M-a> ggVG
 let surrounds = ['(', ')', '{', '}', '[', ']', '<', '"', '`', "'"]
 for each_surround in add(surrounds, 'w')
   for each_command in ['c', 'd', 'v', 'y']
-    execute 'nnoremap ' . each_command . each_surround . ' ' . each_command . 'i' . each_surround
+    execute 'nmap ' . each_command . each_surround . ' ' . each_command . 'i' . each_surround
   endfor
 endfor
 " e.g. foo bar baz -> 'foo', 'bar', 'baz'
