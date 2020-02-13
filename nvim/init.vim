@@ -88,7 +88,7 @@ nnoremap <Space>q :qa!<CR>
 nnoremap <M-a> ggVG
 " enable to omit `i` eg. c(i)w
 let surrounds = ['(', ')', '{', '}', '[', ']', '"', '`', "'"]
-for each_surround in add(surrounds, 'w')
+for each_surround in (surrounds + ['w', 't'])
   for each_command in ['c', 'd', 'v', 'y']
     execute 'nmap ' . each_command . each_surround . ' ' . each_command . 'i' . each_surround
   endfor
