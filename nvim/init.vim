@@ -77,7 +77,7 @@ inoremap <C-d> <Right><BS>
 inoremap kk <Esc>
 inoremap jj <Esc>
 " F5 : e! command
-noremap <F5> :e!<CR>:CocRestart<CR>
+noremap <F5> :e!<CR>:CocRestart<CR><CR>
 nnoremap X Vx
 " push escape key twice to cancel highlight of matched word
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc> 
