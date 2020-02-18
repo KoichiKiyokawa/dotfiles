@@ -136,7 +136,7 @@ let g:NERDTreeIgnore = ['.DS_Store']
 noremap <F6> :NERDTreeFind<CR>
 
 Plug 'jistr/vim-nerdtree-tabs' " share NERDTree with other tabs
-map <C-b> <plug>NERDTreeTabsToggle<CR>
+nmap <C-b> <plug>NERDTreeTabsToggle<CR>
 
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
@@ -149,7 +149,19 @@ let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0 " disable auto save in insert mode to avoid deleting indent
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-map <silent> <F2> <Plug>(coc-rename)
+nmap <silent> <F2> <Plug>(coc-rename)
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
 Plug 'Chiel92/vim-autoformat'
 noremap <F3> :Autoformat<CR>
