@@ -8,6 +8,8 @@ This repository has following configs.
 
 
 ## How to setup
+### Install iTerm2
+Download [iTerm2](https://iterm2.com/)
 ### Install packages
 - fish
 - git
@@ -20,6 +22,8 @@ This repository has following configs.
 ```
 # (on Mac)
 brew install fish git neovim node peco tig the_silver_searcher
+sudo sh -c 'echo $(which fish) >> /etc/shells'
+sh -c 'chsh -s $(which fish)'
 ```
 
 ### Arrange config files and initialize
