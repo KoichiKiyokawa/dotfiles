@@ -25,6 +25,7 @@ brew install fish git neovim node peco tig the_silver_searcher
 sudo sh -c 'echo $(which fish) >> /etc/shells'
 sh -c 'chsh -s $(which fish)'
 ```
+Then relaunch your terminal.
 
 ### Arrange config files and initialize
 ```
