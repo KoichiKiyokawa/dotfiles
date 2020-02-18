@@ -39,7 +39,7 @@ fisher
 ```
 gem install solargraph
 npm i -g typescript
-nvim -c "CocInstall coc-tsserver coc-solargraph | :qa"
+nvim -c "CocInstall coc-json coc-css coc-tsserver coc-solargraph | :qa"
 ```
 
 ### Install nerd fonts
