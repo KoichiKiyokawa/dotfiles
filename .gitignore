@@ -1,5 +1,2 @@
 fish/*
-!fish/config.fish
-!fish/env.fish
-!fish/abbr.fish
-!fish/fishfile
+!fish/((config|env|abbr).fish|fishfile)
