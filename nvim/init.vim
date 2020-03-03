@@ -51,7 +51,7 @@ vnoremap p "_dP
 " Keymaps
 " -----------------------------------------------------------------------------
 " m : macro
-nnoremap m q 
+noremap m q
 " q : move to end of the line
 noremap q $
 " serach selected without moving next matched word
