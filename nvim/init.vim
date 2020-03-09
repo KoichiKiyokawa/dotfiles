@@ -188,9 +188,6 @@ Plug 'mattn/emmet-vim', { 'for': ['html', 'vue', 'jsx', 'tsx'] }
 
 Plug 'tpope/vim-endwise', { 'for': ['ruby'] }
 
-Plug 'fatih/vim-go', { 'for': ['go'] }
-let g:go_fmt_command = "goimports" " run go import when file save
-
 Plug 'posva/vim-vue', { 'for': ['vue'] }
 
 Plug 'slim-template/vim-slim', { 'for': ['slim'] }
@@ -200,6 +197,8 @@ Plug 'leafgarland/typescript-vim', { 'for': ['typescript'] }
 Plug 'peitalin/vim-jsx-typescript', { 'for': ['jsx', 'tsx'] }
 
 Plug 'digitaltoad/vim-pug', { 'for': 'vue' }
+
+Plug 'evanleck/vim-svelte', { 'for': 'svelte' }
 
 call plug#end()
 
