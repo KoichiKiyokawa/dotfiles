@@ -184,7 +184,7 @@ Plug 'osyo-manga/vim-over'
 nnoremap <C-s> :OverCommandLine<CR>%s/
 vnoremap <C-s> "zy:OverCommandLine<CR>%s/<C-r>z//cg<Left><Left><Left>
 
-Plug 'mattn/emmet-vim', { 'for': ['html', 'vue', 'jsx', 'tsx'] }
+Plug 'mattn/emmet-vim', { 'for': ['html', 'vue', 'jsx', 'tsx', 'svelte'] }
 
 Plug 'tpope/vim-endwise', { 'for': ['ruby'] }
 
