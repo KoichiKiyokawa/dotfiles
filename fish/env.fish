@@ -20,3 +20,6 @@ set -x GOPATH $HOME/prg/go
 
 # Flutter
 set -x PATH $HOME/flutter/bin $PATH
+
+# nodebrew
+set -x PATH $HOME/.nodebrew/current/bin $PATH
