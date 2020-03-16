@@ -60,6 +60,9 @@ vnoremap * "zy:let @/ = @z<CR>nN
 vmap # *:%s///cg<Left><Left><Left><C-r>/
 nmap * viw*
 nmap # viw#
+" indent
+noremap <C-[> <<
+noremap <C-]> >>
 " tab moving
 nnoremap <C-t> gt
 nnoremap <C-g> gT
