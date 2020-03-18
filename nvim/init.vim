@@ -1,7 +1,7 @@
 " -----------------------------------------------------------------------------
 " Basic
 " -----------------------------------------------------------------------------
-set fenc=utf-8 " set file encording to UTF=-8
+set fenc=utf-8 " set file encording to UTF-8
 set nobackup noswapfile " do not make buckup file or swapfile
 set hidden " enable to open another file when edditing
 set mouse=a " enable mouse
@@ -61,7 +61,6 @@ vmap # *:%s///cg<Left><Left><Left><C-r>/
 nmap * viw*
 nmap # viw#
 " indent
-noremap <C-[> <<
 noremap <C-]> >>
 " tab moving
 nnoremap <C-t> gt
