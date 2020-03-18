@@ -61,7 +61,8 @@ vmap # *:%s///cg<Left><Left><Left><C-r>/
 nmap * viw*
 nmap # viw#
 " indent
-noremap <C-]> >>
+noremap <M-[> <<
+noremap <M-]> >>
 " tab moving
 nnoremap <C-t> gt
 nnoremap <C-g> gT
