@@ -44,3 +44,6 @@ function gd
   git diff origin/{$argv}..HEAD
 end
 
+function rev
+  docker run --rm -itp "10000:10000" -p "35729:35729" -v (pwd):/app qwerty3141/reveal-ck
+end
