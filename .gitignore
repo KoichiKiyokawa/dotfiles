@@ -1,2 +1,2 @@
 fish/*
-!fish/((config|env|abbr).fish|fishfile)
+!fish/((config|env|alias).fish|fishfile)
