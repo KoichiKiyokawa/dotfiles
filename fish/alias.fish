@@ -19,6 +19,7 @@ abbr -a br bin/rails
 abbr -a rs bundle exec rails s
 abbr -a rc bin/rails c
 abbr -a rami bundle exec rake db:migrate
+abbr -a ramis bundle exec rake db:migrate:status
 
 # git関連
 abbr -a g git
