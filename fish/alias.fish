@@ -52,6 +52,7 @@ function rev
   docker run --rm -itp "10000:10000" -p "35729:35729" -v (pwd):/app qwerty3141/reveal-ck
 end
 
+# incremental search for `git checkout`
 function gco
   git branch -a --sort=-authordate | grep -v -e '->' -e '*' | perl -pe 's/^\h+//g' | perl -pe 's#^remotes/origin/###' | perl -nle 'print if !$c{$_}++' | peco | xargs git checkout
 end
