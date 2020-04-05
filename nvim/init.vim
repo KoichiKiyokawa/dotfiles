@@ -117,6 +117,15 @@ Plug 'tomasiser/vim-code-dark' " color scheme
 Plug 'w0rp/ale' " Syntax checker
 
 Plug 'itchyny/lightline.vim' " statusline plugin
+" show dirname + filename in tab
+let g:lightline = { 'tab_component_function': { 'filename': 'LightlineTabFilename' } }
+
+function! LightlineTabFilename(tabNumber) abort
+  let bufferList = tabpagebuflist(a:tabNumber)
+  let windowNumber = tabpagewinnr(a:tabNumber)
+  let filenameWithDir = expand('#' . bufferList[windowNumber - 1] . ':f')
+  return filenameWithDir ==# '' ? '[No Name]' : filenameWithDir
+endfunction
 
 Plug 'cohama/lexima.vim' " autocomplete brackets
 
