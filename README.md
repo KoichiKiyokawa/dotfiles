@@ -16,12 +16,12 @@ Download [iTerm2](https://iterm2.com/)
 - neovim
 - node
 - peco
-- tig
+- lazygit
 - the_silver_searcher
 
 ```
 # (on Mac)
-brew install fish git neovim node peco tig the_silver_searcher
+brew install fish git lazygit neovim node peco the_silver_searcher
 sudo sh -c 'echo $(which fish) >> /etc/shells'
 sh -c 'chsh -s $(which fish)'
 ```
