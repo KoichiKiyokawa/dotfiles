@@ -124,7 +124,16 @@ function! LightlineTabFilename(tabNumber) abort
   let bufferList = tabpagebuflist(a:tabNumber)
   let windowNumber = tabpagewinnr(a:tabNumber)
   let filenameWithDir = expand('#' . bufferList[windowNumber - 1] . ':f')
-  return filenameWithDir ==# '' ? '[No Name]' : filenameWithDir
+  if filenameWithDir ==# ''
+    return '[No Name]'
+  endif
+
+  let parentDirAndFilename = split(filenameWithDir, '/')[-2:-1]
+  if len(parentDirAndFilename) == 0
+    return filenameWithDir
+  endif
+
+  return parentDirAndFilename[0] . '/' . parentDirAndFilename[1]
 endfunction
 
 Plug 'cohama/lexima.vim' " autocomplete brackets
