@@ -35,7 +35,7 @@ abbr -a gm git commit
 abbr -a gr git rebase
 abbr -a gac "git add -A; git commit -m"
 abbr -a gt "git add -A; git commit -m 'temporary commit'"
-abbr -a gst git stash
+abbr -a gst git stash -u
 abbr -a t tig
 
 # node
