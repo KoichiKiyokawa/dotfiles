@@ -38,7 +38,6 @@ abbr -a gt "git add -A; git commit -m 'temporary commit'"
 abbr -a gst git stash -u
 abbr -a gstl git stash list
 abbr -a gstp git stash pop
-abbr -a t tig
 
 # lazy関連
 abbr -a lg lazygit
