@@ -108,6 +108,10 @@ nmap <silent> <Space>: V<Space>:
 vnoremap <silent> <Space>, :s/\n/,\r/g<CR>:nohlsearch<CR> 
 nnoremap <Space>g :term lazygit<CR>i
 
+" snippets
+nnoremap <Space>cl iconsole.log()<Left>
+vnoremap <Space>cl xiconsole.log(<Esc>pla)<Left>
+
 " -----------------------------------------------------------------------------
 " Plugins
 " -----------------------------------------------------------------------------
