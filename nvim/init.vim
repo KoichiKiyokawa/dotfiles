@@ -194,6 +194,10 @@ vnoremap <C-s> "zy:OverCommandLine<CR>%s/<C-r>z//cg<Left><Left><Left>
 
 Plug 'honza/vim-snippets'
 
+Plug 'kana/vim-operator-user'
+Plug 'tyru/operator-camelize.vim'
+nmap <Space>c vw<Plug>(operator-camelize-toggle)bvu
+
 Plug 'mattn/emmet-vim', { 'for': ['html', 'vue', 'jsx', 'tsx', 'svelte'] }
 
 Plug 'tpope/vim-endwise', { 'for': ['ruby'] }
