@@ -79,6 +79,9 @@ inoremap <C-b> <Left>
 inoremap <C-d> <Right><BS>
 inoremap kk <Esc>
 inoremap jj <Esc>
+
+inoremap <C-o> <Esc>o
+inoremap <C-l> <CR><Esc>O
 " F5 : e! command
 noremap <F5> :e!<CR>:CocRestart<CR><CR>
 nnoremap X Vx
