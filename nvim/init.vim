@@ -108,10 +108,6 @@ nmap <silent> <Space>: V<Space>:
 vnoremap <silent> <Space>, :s/\n/,\r/g<CR>:nohlsearch<CR> 
 nnoremap <Space>g :term lazygit<CR>i
 
-" snippets
-nnoremap <Space>cl iconsole.log()<Left>
-vnoremap <Space>cl xiconsole.log(<Esc>pla)<Left>
-
 " -----------------------------------------------------------------------------
 " Plugins
 " -----------------------------------------------------------------------------
@@ -196,6 +192,8 @@ Plug 'osyo-manga/vim-over'
 nnoremap <C-s> :OverCommandLine<CR>%s/
 vnoremap <C-s> "zy:OverCommandLine<CR>%s/<C-r>z//cg<Left><Left><Left>
 
+Plug 'honza/vim-snippets'
+
 Plug 'mattn/emmet-vim', { 'for': ['html', 'vue', 'jsx', 'tsx', 'svelte'] }
 
 Plug 'tpope/vim-endwise', { 'for': ['ruby'] }
@@ -211,7 +209,6 @@ Plug 'peitalin/vim-jsx-typescript', { 'for': ['jsx', 'tsx'] }
 Plug 'digitaltoad/vim-pug', { 'for': 'vue' }
 
 Plug 'evanleck/vim-svelte', { 'for': 'svelte' }
-
 call plug#end()
 
 " color
