@@ -121,25 +121,11 @@ Plug 'tomasiser/vim-code-dark' " color scheme
 
 Plug 'w0rp/ale' " Syntax checker
 
-Plug 'itchyny/lightline.vim' " statusline plugin
-" show dirname + filename in tab
-let g:lightline = { 'tab_component_function': { 'filename': 'LightlineTabFilename' } }
-
-function! LightlineTabFilename(tabNumber) abort
-  let bufferList = tabpagebuflist(a:tabNumber)
-  let windowNumber = tabpagewinnr(a:tabNumber)
-  let filenameWithDir = expand('#' . bufferList[windowNumber - 1] . ':f')
-  if filenameWithDir ==# ''
-    return '[No Name]'
-  endif
-
-  let parentDirAndFilename = split(filenameWithDir, '/')[-2:-1]
-  if len(parentDirAndFilename) == 0
-    return filenameWithDir
-  endif
-
-  return parentDirAndFilename[0] . '/' . parentDirAndFilename[1]
-endfunction
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_powerline_fonts = 1
+let g:airline_theme = 'deus'
+let g:airline#extensions#tabline#enabled = 1
 
 Plug 'cohama/lexima.vim' " autocomplete brackets
 
