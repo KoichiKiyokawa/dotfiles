@@ -166,6 +166,7 @@ Plug 'neoclide/coc-solargraph', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-vetur', {'do': 'yarn install --frozen-lockfile'}
 nmap <silent> <F2> <Plug>(coc-rename)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)

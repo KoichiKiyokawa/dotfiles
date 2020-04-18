@@ -38,7 +38,7 @@ fisher
 ### Install language server
 ```
 gem install solargraph
-npm i -g typescript
+npm i -g typescript vue-language-server
 ```
 
 ### Install nerd fonts
