@@ -18,7 +18,7 @@ set cursorline cursorcolumn " highlighting line and column
 set virtualedit=onemore " enable to move cursor to one more forward to last word of the line
 set smartindent " auto indent for programming
 set showmatch " show ) when input (
-set wildmode=list:longest " autocomplete comand line
+set wildmode=list:longest " autocomplete in command line
 set laststatus=2 " show statusline
 
 " -----------------------------------------------------------------------------
