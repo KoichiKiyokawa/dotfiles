@@ -147,7 +147,7 @@ let g:NERDTreeIgnore = ['.DS_Store']
 noremap <F6> :NERDTreeFind<CR>
 
 Plug 'jistr/vim-nerdtree-tabs' " share NERDTree with other tabs
-nmap <C-b> <plug>NERDTreeTabsToggle<CR>
+noremap <silent> <C-b> :NERDTreeTabsToggle<CR>
 
 Plug 'Xuyuanp/nerdtree-git-plugin'
 
