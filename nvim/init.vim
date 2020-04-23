@@ -55,7 +55,7 @@ noremap m q
 " q : move to end of the line
 noremap q $
 " serach selected without moving next matched word
-vnoremap * "zy:let @/ = @z<CR>nN 
+vnoremap * "zy:let @/ = @z<CR>nN
 " replace selected
 vmap # *:%s///cg<Left><Left><Left><C-r>/
 nmap * viw*
@@ -86,7 +86,7 @@ inoremap <C-l> <CR><Esc>O
 noremap <F5> :e!<CR>:CocRestart<CR><CR>
 nnoremap X Vx
 " push escape key twice to cancel highlight of matched word
-nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc> 
+nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
 nnoremap Y ggVGy
 nnoremap vq v$<Left>
 nnoremap <Space>r :source ~/.config/nvim/init.vim<CR>
@@ -108,7 +108,7 @@ nmap <Space>" V<Space>"
 vnoremap <silent> <Space>: "zx:execute ":normal i" . join(map(split(@z), '":" . v:val'), ", ")<CR>
 nmap <silent> <Space>: V<Space>:
 " add comma to the end of selected lines
-vnoremap <silent> <Space>, :s/\n/,\r/g<CR>:nohlsearch<CR> 
+vnoremap <silent> <Space>, :s/\n/,\r/g<CR>:nohlsearch<CR>
 nnoremap <Space>g :term lazygit<CR>i
 
 " -----------------------------------------------------------------------------
