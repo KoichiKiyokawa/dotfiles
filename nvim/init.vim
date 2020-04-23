@@ -227,6 +227,8 @@ Plug 'peitalin/vim-jsx-typescript', { 'for': ['jsx', 'tsx'] }
 Plug 'digitaltoad/vim-pug', { 'for': 'vue' }
 
 Plug 'evanleck/vim-svelte', { 'for': 'svelte' }
+
+Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 call plug#end()
 
 " color
