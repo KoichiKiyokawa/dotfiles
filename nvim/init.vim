@@ -120,6 +120,8 @@ Plug 'tomasiser/vim-code-dark' " color scheme
 
 Plug 'w0rp/ale' " Syntax checker
 
+Plug 'bronson/vim-trailing-whitespace' " whitespace checker
+
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline_powerline_fonts = 1
