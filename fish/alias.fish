@@ -25,7 +25,8 @@ abbr -a ramis bundle exec rake db:migrate:status
 abbr -a g git
 abbr -a gb git branch
 abbr -a gc git checkout
-abbr -a gf git fetch
+# delete local branch if remote is deleted
+abbr -a gf git fetch -p
 abbr -a gl git log --oneline
 abbr -a gll "git log --graph --all --format='%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s'"
 abbr -a gs git status
