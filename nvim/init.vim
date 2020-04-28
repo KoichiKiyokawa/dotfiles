@@ -9,6 +9,7 @@ set clipboard+=unnamed " yank to clipboard
 autocmd QuickFixCmdPost *grep* cwindow " open search result in QuickFix
 source $VIMRUNTIME/macros/matchit.vim " enable to jump HTML tag by %
 set isk+=- " interpret words chained by `-` as one word
+set nowrap " dot not wrap long line
 
 " -----------------------------------------------------------------------------
 " Appearance
