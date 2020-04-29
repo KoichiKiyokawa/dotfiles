@@ -15,7 +15,7 @@ set nowrap " dot not wrap long line
 " Appearance
 " -----------------------------------------------------------------------------
 set number " show line number
-set cursorline cursorcolumn " highlighting line and column
+" set cursorline cursorcolumn " highlighting line and column
 set virtualedit=onemore " enable to move cursor to one more forward to last word of the line
 set smartindent " auto indent for programming
 set showmatch " show ) when input (
