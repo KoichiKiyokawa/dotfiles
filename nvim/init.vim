@@ -192,6 +192,8 @@ Plug 'Chiel92/vim-autoformat'
 noremap <F3> :Autoformat<CR>
 
 Plug 'rking/ag.vim' " Multi file serach
+nnoremap ga :Ag<Space>
+vnoremap ga y:Ag<Space><C-r>0
 
 Plug 'rhysd/conflict-marker.vim'
 
