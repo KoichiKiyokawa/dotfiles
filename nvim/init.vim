@@ -177,7 +177,7 @@ nmap <silent> <F2> <Plug>(coc-rename)
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> [g <Plug>(coc-diagnostic-prev)
 nmap <silent> ]g <Plug>(coc-diagnostic-next)
-nmap <silent> <space>fm <Plug>(coc-format)
+nmap <space>fi  <Plug>(coc-fix-current)
 " Use K to show documentation in preview window.
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
