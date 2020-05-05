@@ -158,9 +158,9 @@ Plug 'tpope/vim-fugitive' " git in vim
 
 Plug 'tomtom/tcomment_vim'
 
-Plug 'vim-scripts/vim-auto-save'
-let g:auto_save = 1
-let g:auto_save_in_insert_mode = 0 " disable auto save in insert mode to avoid deleting indent
+" Plug 'vim-scripts/vim-auto-save'
+" let g:auto_save = 1
+" let g:auto_save_in_insert_mode = 0 " disable auto save in insert mode to avoid deleting indent
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'neoclide/coc-snippets', { 'do': 'yarn install --frozen-lockfile' }
