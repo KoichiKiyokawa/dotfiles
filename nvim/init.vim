@@ -217,8 +217,6 @@ Plug 'kana/vim-operator-user'
 Plug 'tyru/operator-camelize.vim'
 nmap <Space>c vw<Plug>(operator-camelize-toggle)bvu
 
-Plug 'yuttie/comfortable-motion.vim' " smooth scroll
-
 Plug 'mattn/emmet-vim', { 'for': ['html', 'vue', 'javascript.jsx', 'typescript.tsx', 'svelte'] }
 
 Plug 'tpope/vim-endwise', { 'for': ['ruby'] }
