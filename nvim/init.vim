@@ -110,7 +110,7 @@ vnoremap <silent> <Space>: "zx:execute ":normal i" . join(map(split(@z), '":" . 
 nmap <silent> <Space>: V<Space>:
 " add comma to the end of selected lines
 vnoremap <silent> <Space>, :s/\n/,\r/g<CR>:nohlsearch<CR>
-nnoremap <Space>g :term lazygit<CR>i
+nnoremap <Space>g :wa<CR>:tabnew<CR>:term lazygit<CR>i
 
 " -----------------------------------------------------------------------------
 " Plugins
