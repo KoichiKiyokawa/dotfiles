@@ -238,6 +238,6 @@ call plug#end()
 
 " color
 colorscheme codedark
-highlight Search ctermbg=24
-highlight IncSearch ctermbg=34
+highlight Search ctermbg=24 " hitting words
+highlight IncSearch ctermbg=34 " replace target
 
