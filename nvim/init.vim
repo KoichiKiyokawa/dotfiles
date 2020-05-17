@@ -239,4 +239,5 @@ call plug#end()
 " color
 colorscheme codedark
 highlight Search ctermbg=24
+highlight IncSearch ctermbg=34
 
