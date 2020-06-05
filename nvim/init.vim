@@ -170,6 +170,7 @@ Plug 'neoclide/coc-json', { 'do': 'yarn install --frozen-lockfile' }
 Plug 'neoclide/coc-css', { 'do': 'yarn install --frozen-lockfile' }
 Plug 'neoclide/coc-html', { 'do': 'yarn install --frozen-lockfile' }
 Plug 'neoclide/coc-vetur', { 'do': 'yarn install --frozen-lockfile' }
+" Plug 'fannheyward/coc-deno', { 'do': 'yarn install --frozen-lockfile' }
 set cmdheight=2 " Better display for messages
 set updatetime=300 " You will have bad experience for diagnostic messages when it's default 4000.
 set signcolumn=yes " always show signcolumns
