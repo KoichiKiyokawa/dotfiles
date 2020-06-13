@@ -55,6 +55,8 @@ vnoremap p "_dP
 noremap m q
 " q : move to end of the line
 noremap q $
+" H : move to top of the line
+noremap H ^
 " serach selected without moving next matched word
 vnoremap * "zy:let @/ = @z<CR>nN
 " replace selected
