@@ -5,7 +5,7 @@
 # Python
 # set -x  PYENV_ROOT $HOME/.pyenv
 # set -x  PATH $PYENV_ROOT/shims $PATH
-# eval (pyenv init - | source)
+status --is-interactive; and source (pyenv init -|psub)
 
 # Ruby
 status --is-interactive; and source (rbenv init -|psub)
