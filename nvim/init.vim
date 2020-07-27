@@ -175,6 +175,7 @@ Plug 'neoclide/coc-css', { 'do': 'yarn install --frozen-lockfile' }
 Plug 'neoclide/coc-html', { 'do': 'yarn install --frozen-lockfile' }
 Plug 'neoclide/coc-vetur', { 'do': 'yarn install --frozen-lockfile', 'for': ['vue'] }
 Plug 'coc-extensions/coc-svelte', { 'do': 'yarn install --frozen-lockfile', 'for': ['svelte'] }
+Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
 
 " Plug 'fannheyward/coc-deno', { 'do': 'yarn install --frozen-lockfile' }
 set cmdheight=2 " Better display for messages
