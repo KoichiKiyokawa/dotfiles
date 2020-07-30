@@ -167,19 +167,6 @@ Plug 'tomtom/tcomment_vim'
 " let g:auto_save_in_insert_mode = 0 " disable auto save in insert mode to avoid deleting indent
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
-Plug 'neoclide/coc-snippets', { 'do': 'yarn install --frozen-lockfile' }
-Plug 'neoclide/coc-tsserver', { 'do': 'yarn install --frozen-lockfile' }
-Plug 'neoclide/coc-solargraph', { 'do': 'yarn install --frozen-lockfile' }
-Plug 'neoclide/coc-json', { 'do': 'yarn install --frozen-lockfile' }
-Plug 'neoclide/coc-css', { 'do': 'yarn install --frozen-lockfile' }
-Plug 'neoclide/coc-html', { 'do': 'yarn install --frozen-lockfile' }
-Plug 'neoclide/coc-vetur', { 'do': 'yarn install --frozen-lockfile', 'for': ['vue'] }
-Plug 'coc-extensions/coc-svelte', { 'do': 'yarn install --frozen-lockfile', 'for': ['svelte'] }
-" Plug 'elixir-lsp/coc-elixir', {'do': 'yarn install && yarn prepack'}
-
-Plug 'elixir-editors/vim-elixir'
-
-" Plug 'fannheyward/coc-deno', { 'do': 'yarn install --frozen-lockfile' }
 set cmdheight=2 " Better display for messages
 set updatetime=300 " You will have bad experience for diagnostic messages when it's default 4000.
 set signcolumn=yes " always show signcolumns
@@ -229,7 +216,7 @@ nmap <Space>c vw<Plug>(operator-camelize-toggle)bvu
 
 Plug 'mattn/emmet-vim', { 'for': ['html', 'vue', 'javascript.jsx', 'typescript.tsx', 'svelte'] }
 
-Plug 'tpope/vim-endwise', { 'for': ['ruby'] }
+Plug 'tpope/vim-endwise', { 'for': ['ruby', 'elixir'] }
 
 Plug 'posva/vim-vue', { 'for': ['vue'] }
 
@@ -244,6 +231,9 @@ Plug 'digitaltoad/vim-pug', { 'for': 'vue' }
 Plug 'evanleck/vim-svelte', { 'for': 'svelte' }
 
 Plug 'ElmCast/elm-vim', { 'for': 'elm' }
+
+Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
+
 call plug#end()
 
 " color
