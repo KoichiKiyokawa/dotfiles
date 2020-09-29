@@ -48,6 +48,9 @@ abbr -a ld lazydocker
 abbr -a nr npm run
 abbr -a nrl npm run lint
 
+# editor
+abbr -a co code .
+
 # ffmpeg
 abbr -a ff 'ffmpeg -filter_complex "[0:v] fps=60,scale=640:-1,split [a][b];[a] palettegen [p];[b][p] paletteuse=dither=none, setpts=PTS/2" -i'
 
