@@ -5,11 +5,11 @@
 # Python
 # set -x  PYENV_ROOT $HOME/.pyenv
 # set -x  PATH $PYENV_ROOT/shims $PATH
-status --is-interactive; and source (pyenv init -|psub)
+# status --is-interactive; and source (pyenv init -|psub)
 
 # Ruby
-status --is-interactive; and source (rbenv init -|psub)
-set -x OBJC_DISABLE_INITIALIZE_FORK_SAFETY YES
+# status --is-interactive; and source (rbenv init -|psub)
+# set -x OBJC_DISABLE_INITIALIZE_FORK_SAFETY YES
 
 # Java
 set -x JAVA_HOME (/usr/libexec/java_home  -v 1.8)
@@ -23,3 +23,10 @@ set -x PATH $HOME/flutter/bin $PATH
 
 # nodebrew
 set -x PATH $HOME/.nodebrew/current/bin $PATH
+
+# android
+set -x ANDROID_HOME /usr/local/share/android-sdk
+set -x ANDROID_SDK_ROOT /usr/local/share/android-sdk
+set -x ANDROID_HOME /usr/local/share/android-sdk
+set -x ANDROID_SDK_ROOT /usr/local/share/android-sdk
+
