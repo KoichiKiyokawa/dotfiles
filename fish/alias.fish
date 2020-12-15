@@ -48,6 +48,7 @@ abbr -a ld lazydocker
 abbr -a nr npm run
 abbr -a nrl npm run lint
 abbr -a y yarn
+abbr -a ya yarn add
 abbr -a yd yarn dev
 abbr -a yl yarn lint
 
