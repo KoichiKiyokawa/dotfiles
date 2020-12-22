@@ -1,5 +1,5 @@
 # ll
-abbr -a ll ls -al
+abbr -a ll ls -alh
 
 # use nvim instead of vim
 abbr -a v nvim
