@@ -21,8 +21,8 @@ set -x GOPATH $HOME/prg/go
 # Flutter
 set -x PATH $HOME/flutter/bin $PATH
 
-# nodebrew
-set -x PATH $HOME/.nodebrew/current/bin $PATH
+# nodenv
+eval (nodenv init - | source)
 
 # android
 set -x ANDROID_HOME /usr/local/share/android-sdk
