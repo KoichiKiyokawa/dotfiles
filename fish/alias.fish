@@ -1,6 +1,8 @@
 # ll
 abbr -a ll ls -alh
 
+abbr -a op open .
+
 # use nvim instead of vim
 abbr -a v nvim
 
