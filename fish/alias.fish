@@ -3,6 +3,9 @@ abbr -a ll ls -alh
 
 abbr -a op open .
 
+# gcp cli
+abbr -a gci gcloud compute instances
+
 # use nvim instead of vim
 abbr -a v nvim
 
