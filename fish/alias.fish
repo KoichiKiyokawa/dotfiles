@@ -1,7 +1,6 @@
-# ll
 abbr -a ll ls -alh
-
 abbr -a op open .
+abbr -a rmf rm -rf
 
 # gcp cli
 abbr -a gci gcloud compute instances
