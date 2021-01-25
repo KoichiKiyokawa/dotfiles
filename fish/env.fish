@@ -12,11 +12,14 @@
 # set -x OBJC_DISABLE_INITIALIZE_FORK_SAFETY YES
 
 # Java
-set -x JAVA_HOME (/usr/libexec/java_home  -v 1.8)
+set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
 set -x PATH $JAVA_HOME/bin $PATH
 
 # Go
-set -x GOPATH $HOME/prg/go
+set -x GOENV_ROOT $HOME/.goenv
+set -x PATH $GOENV_ROOT/bin $PATH
+eval (goenv init - | source)
+set -x PATH $GOPATH/bin $PATH
 
 # Flutter
 set -x PATH $HOME/flutter/bin $PATH
@@ -25,8 +28,8 @@ set -x PATH $HOME/flutter/bin $PATH
 eval (nodenv init - | source)
 
 # android
-set -x ANDROID_HOME /usr/local/share/android-sdk
-set -x ANDROID_SDK_ROOT /usr/local/share/android-sdk
-set -x ANDROID_HOME /usr/local/share/android-sdk
-set -x ANDROID_SDK_ROOT /usr/local/share/android-sdk
+# set -x ANDROID_HOME /usr/local/share/android-sdk
+# set -x ANDROID_SDK_ROOT /usr/local/share/android-sdk
+# set -x ANDROID_HOME /usr/local/share/android-sdk
+# set -x ANDROID_SDK_ROOT /usr/local/share/android-sdk
 
