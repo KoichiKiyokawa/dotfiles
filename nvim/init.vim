@@ -133,7 +133,7 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme = 'deus'
 let g:airline#extensions#tabline#enabled = 1
 
-Plug 'cohama/lexima.vim' " autocomplete brackets
+Plug 'jiangmiao/auto-pairs' " autocomplete brackets
 
 Plug 'tpope/vim-surround'
 " enable to omit leader `S`
@@ -230,9 +230,9 @@ Plug 'digitaltoad/vim-pug', { 'for': 'vue' }
 
 Plug 'evanleck/vim-svelte', { 'for': 'svelte' }
 
-Plug 'ElmCast/elm-vim', { 'for': 'elm' }
+" Plug 'ElmCast/elm-vim', { 'for': 'elm' }
 
-Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
+" Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
 
 call plug#end()
 
