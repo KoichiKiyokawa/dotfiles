@@ -2,6 +2,9 @@
 # 環境変数
 # ------------------------------------------------------------------------------
 
+# M1
+eval (/opt/homebrew/bin/brew shellenv)
+
 # Python
 # set -x  PYENV_ROOT $HOME/.pyenv
 # set -x  PATH $PYENV_ROOT/shims $PATH
@@ -12,13 +15,13 @@
 # set -x OBJC_DISABLE_INITIALIZE_FORK_SAFETY YES
 
 # Java
-set -x JAVA_HOME (/usr/libexec/java_home -v 1.8)
+set -x JAVA_HOME (/usr/libexec/java_home)
 set -x PATH $JAVA_HOME/bin $PATH
 
 # Go
-set -x GOENV_ROOT $HOME/.goenv
-set -x PATH $GOENV_ROOT/bin $PATH
-eval (goenv init - | source)
+# set -x GOENV_ROOT $HOME/.goenv
+# set -x PATH $GOENV_ROOT/bin $PATH
+# eval (goenv init - | source)
 set -x PATH $GOPATH/bin $PATH
 
 # Flutter
