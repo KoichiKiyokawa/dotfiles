@@ -1,2 +1,4 @@
 fish/*
 !fish/((config|env|alias).fish|fishfile)
+
+.DS_Store
