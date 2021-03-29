@@ -35,6 +35,7 @@ abbr -a gl git log --oneline
 abbr -a gll "git log --graph --all --format='%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s'"
 abbr -a gs git status
 abbr -a gp git push -u origin HEAD
+abbr -a gpf git push -u origin HEAD --force-with-lease
 abbr -a ga git add
 abbr -a gm git commit
 abbr -a gr git rebase
