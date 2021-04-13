@@ -33,7 +33,7 @@ cd ~
 git clone https://github.com/KoichiKiyokawa/dotfiles.git
 cd dotfiles
 sh init.sh
-fisher
+fisher install (cat fish/fishfile)
 ```
 
 ### Install language server
