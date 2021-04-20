@@ -27,5 +27,3 @@ end
 bind \cf edit_command_buffer
 set EDITOR nvim
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/koichi/google-cloud-sdk/path.fish.inc' ]; . '/Users/koichi/google-cloud-sdk/path.fish.inc'; end

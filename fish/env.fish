@@ -36,3 +36,10 @@ eval (nodenv init - | source)
 # set -x ANDROID_HOME /usr/local/share/android-sdk
 # set -x ANDROID_SDK_ROOT /usr/local/share/android-sdk
 
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/koichi/google-cloud-sdk/path.fish.inc' ]; . '/Users/koichi/google-cloud-sdk/path.fish.inc'; end
+
+# volta: node version tool
+set -gx VOLTA_HOME "$HOME/.volta"
+set -gx PATH "$VOLTA_HOME/bin" $PATH
+
