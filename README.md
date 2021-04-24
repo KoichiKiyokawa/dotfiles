@@ -13,7 +13,7 @@ Download [iTerm2](https://iterm2.com/)
 - fish
 - git
 - neovim
-- node
+- volta(node version manager)
 - peco
 - lazygit
 - the_silver_searcher
@@ -21,7 +21,8 @@ Download [iTerm2](https://iterm2.com/)
 
 ```
 # (on Mac)
-brew install fish git lazygit neovim node peco the_silver_searcher yarn
+brew install fish git lazygit neovim peco the_silver_searcher
+curl https://get.volta.sh | bash
 sudo sh -c 'echo $(which fish) >> /etc/shells'
 sh -c 'chsh -s $(which fish)'
 ```
@@ -59,5 +60,5 @@ fish_config
 
 ### iTerm2 setting
 1. Launch iTerm2 and open Preferences.
-1. General > Preferences > Check "Load preferences from a custom folder or URL" 
+1. General > Preferences > Check "Load preferences from a custom folder or URL"
 1. Push "Browse" button and set folder to ~/dotfiles/iTerm2
