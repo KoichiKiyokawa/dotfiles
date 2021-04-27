@@ -36,7 +36,3 @@ set -x PATH $HOME/flutter/bin $PATH
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/koichi/google-cloud-sdk/path.fish.inc' ]; . '/Users/koichi/google-cloud-sdk/path.fish.inc'; end
 
-# volta: node version tool
-set -gx VOLTA_HOME "$HOME/.volta"
-set -gx PATH "$VOLTA_HOME/bin" $PATH
-

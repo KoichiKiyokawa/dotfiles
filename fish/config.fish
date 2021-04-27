@@ -27,3 +27,5 @@ end
 bind \cf edit_command_buffer
 set EDITOR nvim
 
+set -gx VOLTA_HOME "$HOME/.volta"
+set -gx PATH "$VOLTA_HOME/bin" $PATH
