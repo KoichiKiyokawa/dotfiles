@@ -88,3 +88,14 @@ function mkcd
   mkdir -p $dirname
   eval "cd" $dirname
 end
+
+# 指定した port のプロセスを kill する
+function killport
+  set port $argv[1]
+  set pid (lsof -ti:$port)
+  if test -n "$pid"
+    kill $pid
+  else
+    echo "port $port has already opened."
+  end
+end
