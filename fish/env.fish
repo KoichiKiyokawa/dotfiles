@@ -8,11 +8,12 @@ eval (/opt/homebrew/bin/brew shellenv)
 # Python
 # set -x  PYENV_ROOT $HOME/.pyenv
 # set -x  PATH $PYENV_ROOT/shims $PATH
-# status --is-interactive; and source (pyenv init -|psub)
+status --is-interactive; and source (pyenv init -|psub)
 
 # Ruby
-# status --is-interactive; and source (rbenv init -|psub)
+status --is-interactive; and source (rbenv init -|psub)
 # set -x OBJC_DISABLE_INITIALIZE_FORK_SAFETY YES
+set -x PATH /opt/homebrew/lib/ruby/gems/2.7.0/bin $PATH
 
 # Java
 set -x JAVA_HOME (/usr/libexec/java_home)
