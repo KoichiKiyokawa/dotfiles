@@ -6,9 +6,10 @@
 eval (/opt/homebrew/bin/brew shellenv)
 
 # Python
-# set -x  PYENV_ROOT $HOME/.pyenv
-# set -x  PATH $PYENV_ROOT/shims $PATH
-status --is-interactive; and source (pyenv init -|psub)
+set -Ux PYENV_ROOT $HOME/.pyenv
+set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
+status is-login; and pyenv init --path | source
+pyenv init - | source
 
 # Ruby
 status --is-interactive; and source (rbenv init -|psub)
