@@ -35,6 +35,5 @@ set -x PATH $HOME/flutter/bin $PATH
 # set -x ANDROID_HOME /usr/local/share/android-sdk
 # set -x ANDROID_SDK_ROOT /usr/local/share/android-sdk
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/koichi/google-cloud-sdk/path.fish.inc' ]; . '/Users/koichi/google-cloud-sdk/path.fish.inc'; end
+source "/opt/homebrew/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.fish.inc"
 
