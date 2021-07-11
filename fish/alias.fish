@@ -54,10 +54,15 @@ abbr -a ld lazydocker
 abbr -a nr npm run
 abbr -a ni npm install
 abbr -a nrl npm run lint
+
 abbr -a y yarn
 abbr -a ya yarn add
 abbr -a yd yarn dev
 abbr -a yl yarn lint
+
+abbr -a pn pnpm
+abbr -a pni pnpm install
+abbr -a pnr pnpm run
 
 # editor
 abbr -a co code .
