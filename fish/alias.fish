@@ -62,7 +62,6 @@ abbr -a yl yarn lint
 
 abbr -a pn pnpm
 abbr -a pni pnpm install
-abbr -a pnr pnpm run
 
 # editor
 abbr -a co code .
