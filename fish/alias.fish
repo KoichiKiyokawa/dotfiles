@@ -48,6 +48,8 @@ abbr -a gme git merge -Xignore-all-space
 
 # gh
 abbr -a repo gh repo view --web
+abbr -a pr gh pr view --web
+abbr -a prc gh pr checkout
 
 # lazy関連
 abbr -a lg lazygit
@@ -64,7 +66,6 @@ abbr -a yd yarn dev
 abbr -a yl yarn lint
 
 abbr -a pn pnpm
-abbr -a pni pnpm install
 
 # editor
 abbr -a co code .
