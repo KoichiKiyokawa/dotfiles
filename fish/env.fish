@@ -27,6 +27,9 @@ set -x PATH $GOPATH/bin $PATH
 # Flutter
 set -x PATH $HOME/flutter/bin $PATH
 
+# Rust
+source $HOME/.cargo/env
+
 # android
 # set -x ANDROID_HOME /usr/local/share/android-sdk
 # set -x ANDROID_SDK_ROOT /usr/local/share/android-sdk
