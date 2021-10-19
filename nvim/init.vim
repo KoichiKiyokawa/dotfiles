@@ -93,7 +93,7 @@ nnoremap X Vx
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
 nnoremap Y ggVGy
 nnoremap vq v$<Left>
-nnoremap <Space>r :source ~/.config/nvim/init.vim<CR>
+" nnoremap <Space>r :source ~/.config/nvim/init.vim<CR>
 nnoremap <Space>q :qa!<CR>
 nnoremap <M-a> ggVG
 " enable to omit `i` eg. c(i)w
@@ -116,6 +116,8 @@ vnoremap <silent> <Space>, :s/\n/,\r/g<CR>:nohlsearch<CR>
 nnoremap <Space>g :tabnew<CR>:term lazygit<CR>i
 nnoremap <Space>y viwy
 nnoremap <Space>p viw"_dP
+
+nmap <Space>e :CocCommand explorer<CR>
 
 " -----------------------------------------------------------------------------
 " Plugins
@@ -149,23 +151,7 @@ Plug 'airblade/vim-gitgutter' " show diff
 
 Plug 'thinca/vim-qfreplace' " replace all files
 
-Plug 'scrooloose/nerdtree' " tree
-let NERDTreeShowHidden=1 " show dotfiles in NERDTree
-let g:NERDTreeIgnore = ['.DS_Store']
-noremap <F6> :NERDTreeFind<CR>
-
-Plug 'jistr/vim-nerdtree-tabs' " share NERDTree with other tabs
-noremap <silent> <F4> :NERDTreeTabsToggle<CR>
-
-Plug 'Xuyuanp/nerdtree-git-plugin'
-
-Plug 'tpope/vim-fugitive' " git in vim
-
 Plug 'tomtom/tcomment_vim'
-
-" Plug 'vim-scripts/vim-auto-save'
-" let g:auto_save = 1
-" let g:auto_save_in_insert_mode = 0 " disable auto save in insert mode to avoid deleting indent
 
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 set cmdheight=2 " Better display for messages
