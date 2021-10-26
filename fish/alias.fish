@@ -28,6 +28,7 @@ abbr -a ramis bundle exec rake db:migrate:status
 # git関連
 abbr -a g git
 abbr -a gb git branch
+abbr -a gbD "git branch | xargs git branch -D"
 abbr -a gc git checkout
 # delete local branch if remote is deleted
 abbr -a gf git fetch -p
