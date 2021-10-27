@@ -51,6 +51,7 @@ abbr -a gme git merge -Xignore-all-space
 abbr -a repo gh repo view --web
 abbr -a pr gh pr view --web
 abbr -a prc gh pr checkout
+abbr -a prcr gh pr create -w
 
 # lazy関連
 abbr -a lg lazygit
