@@ -16,12 +16,10 @@ Download [iTerm2](https://iterm2.com/)
 - volta(node version manager)
 - peco
 - lazygit
-- the_silver_searcher
-- yarn
 
 ```
 # (on Mac)
-brew install fish git lazygit neovim peco the_silver_searcher
+brew install fish git lazygit neovim peco
 curl https://get.volta.sh | bash
 sudo sh -c 'echo $(which fish) >> /etc/shells'
 sh -c 'chsh -s $(which fish)'
