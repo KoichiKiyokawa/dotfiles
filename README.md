@@ -7,24 +7,28 @@ This repository has following configs.
 
 
 ## How to setup
-### Install iTerm2
-Download [iTerm2](https://iterm2.com/)
 ### Install packages
 - fish
 - git
 - neovim
-- volta(node version manager)
 - peco
 - lazygit
+- iTerm2
+- gh (GitHub CLI)
 
 ```
 # (on Mac)
-brew install fish git lazygit neovim peco
-curl https://get.volta.sh | bash
+brew install fish git lazygit neovim peco iterm2 gh
+
 sudo sh -c 'echo $(which fish) >> /etc/shells'
 sh -c 'chsh -s $(which fish)'
 ```
 Then relaunch your terminal.
+
+### Setup node version manager
+```
+curl https://get.volta.sh | bash
+```
 
 ### Arrange config files and initialize
 ```
