@@ -15,10 +15,11 @@ This repository has following configs.
 - lazygit
 - iTerm2
 - gh (GitHub CLI)
+- Karabiner Elements
 
 ```
 # (on Mac)
-brew install fish git lazygit neovim peco iterm2 gh
+brew install fish git lazygit neovim peco iterm2 gh karabiner-elements
 
 sudo sh -c 'echo $(which fish) >> /etc/shells'
 sh -c 'chsh -s $(which fish)'
