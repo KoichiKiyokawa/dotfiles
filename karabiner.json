@@ -142,7 +142,7 @@
             ]
           },
           {
-            "description": "右option + 右矢印で、右x9",
+            "description": "右option + 右矢印で、右を0.5秒押し続ける",
             "manipulators": [
               {
                 "from": {
@@ -153,15 +153,8 @@
                   }
                 },
                 "to": [
-                  { "key_code": "right_arrow" },
-                  { "key_code": "right_arrow" },
-                  { "key_code": "right_arrow" },
-                  { "key_code": "right_arrow" },
-                  { "key_code": "right_arrow" },
-                  { "key_code": "right_arrow" },
-                  { "key_code": "right_arrow" },
-                  { "key_code": "right_arrow" },
-                  { "key_code": "right_arrow" }
+                  { "key_code": "right_arrow", "hold_down_milliseconds": 500 },
+                  { "key_code": "vk_none" }
                 ],
                 "type": "basic"
               }
