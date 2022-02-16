@@ -26,6 +26,7 @@ This repository has following configs.
 
 ```
 # (on Mac)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install fish git lazygit neovim peco iterm2 gh
 brew install --cask karabiner-elements visual-studio-code aldente skitch kap
 
