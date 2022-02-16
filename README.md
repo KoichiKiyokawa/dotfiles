@@ -19,6 +19,7 @@ This repository has following configs.
 - iTerm2
 - gh (GitHub CLI)
 - Karabiner Elements
+- Docker Desktop
 - VSCode
 - Skitch
 - [Aldente](https://github.com/davidwernhart/AlDente)
@@ -28,7 +29,7 @@ This repository has following configs.
 # (on Mac)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install fish git lazygit neovim peco iterm2 gh
-brew install --cask karabiner-elements visual-studio-code aldente skitch kap
+brew install --cask karabiner-elements docker visual-studio-code aldente skitch kap
 
 sudo sh -c 'echo $(which fish) >> /etc/shells'
 sh -c 'chsh -s $(which fish)'
