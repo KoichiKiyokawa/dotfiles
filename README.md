@@ -20,10 +20,14 @@ This repository has following configs.
 - gh (GitHub CLI)
 - Karabiner Elements
 - VSCode
+- Skitch
+- [Aldente](https://github.com/davidwernhart/AlDente)
+- [Kap](https://getkap.co/)
 
 ```
 # (on Mac)
-brew install fish git lazygit neovim peco iterm2 gh karabiner-elements visual-studio-code
+brew install fish git lazygit neovim peco iterm2 gh
+brew install --cask karabiner-elements visual-studio-code aldente skitch kap
 
 sudo sh -c 'echo $(which fish) >> /etc/shells'
 sh -c 'chsh -s $(which fish)'
