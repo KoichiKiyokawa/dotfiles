@@ -22,14 +22,15 @@ This repository has following configs.
 - Docker Desktop
 - VSCode
 - Skitch
+- Clipy
 - [Aldente](https://github.com/davidwernhart/AlDente)
 - [Kap](https://getkap.co/)
 
 ```
 # (on Mac)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install fish git lazygit neovim peco iterm2 gh
-brew install --cask karabiner-elements docker visual-studio-code aldente skitch kap
+brew install fish git lazygit neovim peco gh
+brew install --cask iterm2 karabiner-elements docker visual-studio-code skitch clipy aldente kap
 
 sudo sh -c 'echo $(which fish) >> /etc/shells'
 sh -c 'chsh -s $(which fish)'
