@@ -27,8 +27,7 @@ end
 bind \cf edit_command_buffer
 set EDITOR nvim
 
-set -gx VOLTA_HOME "$HOME/.volta"
-set -gx PATH "$VOLTA_HOME/bin" $PATH
+fnm env --use-on-cd | source
 
 # tabtab source for packages
 # uninstall by removing these lines
