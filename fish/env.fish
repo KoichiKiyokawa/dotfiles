@@ -19,10 +19,7 @@ set -x JAVA_HOME (/usr/libexec/java_home)
 set -x PATH $JAVA_HOME/bin $PATH
 
 # Go
-# set -x GOENV_ROOT $HOME/.goenv
-# set -x PATH $GOENV_ROOT/bin $PATH
-# eval (goenv init - | source)
-set -x PATH $GOPATH/bin $PATH
+set -x PATH (go env GOPATH)/bin $PATH
 
 # Flutter
 set -x PATH $HOME/flutter/bin $PATH
