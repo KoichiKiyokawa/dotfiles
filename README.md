@@ -31,7 +31,7 @@ This repository has following configs.
 # (on Mac)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install fish git lazygit neovim peco gh fnm
-brew install --cask iterm2 karabiner-elements docker visual-studio-code skitch clipy aldente kap
+brew install --cask iterm2 karabiner-elements docker visual-studio-code skitch clipy aldente kap p4v
 
 sudo sh -c 'echo $(which fish) >> /etc/shells'
 sh -c 'chsh -s $(which fish)'
