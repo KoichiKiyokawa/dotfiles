@@ -1,0 +1,18 @@
+[user]
+  name = Koichi Kiyokawa
+  email = koichi20110068@gmail.com
+
+[init]
+  defaultBranch = main
+
+[core]
+  editor = nvim
+
+[merge]
+  tool = p4merge
+[mergetool]
+  keepBackup = false
+[mergetool "p4merge"]
+  path = p4merge
+  keepTemporaries = false
+  trustExitCode = false
