@@ -11,7 +11,7 @@ abbr -a v nvim
 abbr -a x exit
 
 # Docker関連
-abbr -a dc docker-compose
+abbr -a dc docker compose
 abbr -a dpa docker ps -a
 
 # Postgres関連
