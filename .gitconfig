@@ -8,6 +8,9 @@
 [core]
   editor = nvim
 
+[pull]
+  rebase = false
+
 [merge]
   tool = p4merge
 [mergetool]
