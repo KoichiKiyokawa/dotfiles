@@ -1,4 +1,6 @@
 fish/*
 !fish/((config|env|alias).fish|fishfile)
+karabiner/*
+!karabiner/(assets|automatic-backups)
 
 .DS_Store
