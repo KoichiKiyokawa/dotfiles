@@ -103,8 +103,8 @@ nmap <Space>" V<Space>"
 vnoremap <silent> <Space>: "zx:execute ":normal i" . join(map(split(@z), '":" . v:val'), ", ")<CR>
 nmap <silent> <Space>: V<Space>:
 " add comma to the end of selected lines
-vnoremap <silent> <Space>, :s/\n/,\r/g<CR>:nohlsearch<CR>
-nnoremap <Space>g :tabnew<CR>:term lazygit<CR>i
+vmap <Space>, :s/\n/,\r/g<Enter>
+" nnoremap <Space>g :tabnew<CR>:term lazygit<CR>i
 nnoremap <Space>y viwy
 nnoremap <Space>p viw"_dP
 
