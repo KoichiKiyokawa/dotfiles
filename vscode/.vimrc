@@ -8,6 +8,9 @@ noremap q $
 " H : move to top of the line
 noremap H ^
 
+" for us keyboard
+noremap ; :
+
 " avoid yank
 nnoremap c "_c
 nnoremap C "_C
@@ -104,3 +107,15 @@ vnoremap <silent> <Space>, :s/\n/,\r/g<CR>:nohlsearch<CR>
 nnoremap <Space>g :tabnew<CR>:term lazygit<CR>i
 nnoremap <Space>y viwy
 nnoremap <Space>p viw"_dP
+
+" surround the word
+nmap gs ysiw
+
+" for vscode
+nnoremap <C-k> editor.action.moveLinesUpAction
+nnoremap <C-j> editor.action.moveLinesDownAction
+nnoremap gi editor.action.goToImplementation
+
+" vim easymotion
+nnoremap s <leader><leader>2s
+
