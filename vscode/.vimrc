@@ -65,6 +65,7 @@ nmap ct cit
 nmap c( ci(
 nmap c{ ci{
 nmap c[ ci[
+nmap c< ci<
 nmap c' ci'
 nmap c" ci"
 nmap c` ci`
@@ -74,6 +75,7 @@ nmap dt dit
 nmap d( di(
 nmap d{ di{
 nmap d[ di[
+nmap d< di<
 nmap d' di'
 nmap d" di"
 nmap d` di`
@@ -83,6 +85,7 @@ nmap vt vit
 nmap v( vi(
 nmap v{ vi{
 nmap v[ vi[
+nmap v< vi<
 nmap v' vi'
 nmap v" vi"
 nmap v` vi`
@@ -92,6 +95,7 @@ nmap yt yit
 nmap y( yi(
 nmap y{ yi{
 nmap y[ yi[
+nmap y< yi<
 nmap y' yi'
 nmap y" yi"
 nmap y` yi`
