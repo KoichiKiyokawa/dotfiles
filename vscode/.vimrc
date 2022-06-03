@@ -116,8 +116,8 @@ nnoremap <Space>p viw"_dP
 nmap gs ysiw
 
 " for vscode
-nnoremap <C-k> editor.action.moveLinesUpAction
-nnoremap <C-j> editor.action.moveLinesDownAction
+noremap <C-k> editor.action.moveLinesUpAction
+noremap <C-j> editor.action.moveLinesDownAction
 nnoremap gi editor.action.goToImplementation
 
 " vim easymotion
