@@ -166,13 +166,13 @@
             ]
           },
           {
-            "description": "Ctrl + V でVSCodeを起動",
+            "description": "右Shift + V でVSCodeを起動",
             "manipulators": [
               {
                 "from": {
                   "key_code": "v",
                   "modifiers": {
-                    "mandatory": ["control"]
+                    "mandatory": ["right_shift"]
                   }
                 },
                 "to": [
@@ -185,13 +185,13 @@
             ]
           },
           {
-            "description": "Ctrl + M でChromeを起動",
+            "description": "右Shift + M でChromeを起動",
             "manipulators": [
               {
                 "from": {
                   "key_code": "m",
                   "modifiers": {
-                    "mandatory": ["control"]
+                    "mandatory": ["right_shift"]
                   }
                 },
                 "to": [
