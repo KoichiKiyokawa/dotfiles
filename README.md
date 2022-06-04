@@ -7,40 +7,7 @@ This repository has following configs.
 
 ![terminal](https://user-images.githubusercontent.com/40315079/169636800-608490e9-3780-4b43-bfbc-8f31259f2720.png)
 
-
-
 ## How to setup
-
-### Install packages
-
-- fish
-- git
-- neovim
-- peco
-- lazygit
-- iTerm2
-- gh (GitHub CLI)
-- [fnm](https://github.com/Schniz/fnm)
-- Karabiner Elements
-- Docker Desktop
-- VSCode
-- Skitch
-- Clipy
-- [Aldente](https://github.com/davidwernhart/AlDente)
-- [Kap](https://getkap.co/)
-- Right Zoom
-
-```
-# (on Mac)
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install fish git lazygit neovim peco gh fnm
-brew install --cask iterm2 karabiner-elements docker visual-studio-code skitch clipy aldente kap p4v rightzoom
-
-sudo sh -c 'echo $(which fish) >> /etc/shells'
-sh -c 'chsh -s $(which fish)'
-```
-
-Then relaunch your terminal.
 
 ### Arrange config files and initialize
 
@@ -48,9 +15,16 @@ Then relaunch your terminal.
 cd ~
 git clone https://github.com/KoichiKiyokawa/dotfiles.git
 cd dotfiles
+# (on Mac)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+sudo sh -c 'echo $(which fish) >> /etc/shells'
+sh -c 'chsh -s $(which fish)'
+brew bundle
 sh init.sh
 fisher install (cat fish/fishfile)
 ```
+
+Then relaunch your terminal.
 
 ### Install nerd fonts
 
