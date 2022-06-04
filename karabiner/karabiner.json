@@ -259,6 +259,44 @@
                 "type": "basic"
               }
             ]
+          },
+          {
+            "description": "右Shift + pでMagic Trackpadに接続",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "p",
+                  "modifiers": {
+                    "mandatory": ["right_shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/opt/homebrew/bin/blueutil --pair 'bc-d0-74-b7-ee-8d'"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "右Shift + uでMagic Trackpadを接続解除",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "u",
+                  "modifiers": {
+                    "mandatory": ["right_shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/opt/homebrew/bin/blueutil --unpair 'bc-d0-74-b7-ee-8d'"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
           }
         ]
       },

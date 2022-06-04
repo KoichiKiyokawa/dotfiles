@@ -3,6 +3,7 @@ tap "aws/tap"
 # tap "homebrew/cask"
 # tap "homebrew/core"
 brew "awscli"
+brew "blueutil"
 brew "curl"
 brew "fish"
 # https://github.com/Schniz/fnm
