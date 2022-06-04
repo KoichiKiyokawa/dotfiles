@@ -293,7 +293,8 @@
                   {
                     "shell_command": "/opt/homebrew/bin/blueutil --unpair 'bc-d0-74-b7-ee-8d'"
                   }
-                ]
+                ],
+                "type": "basic"
               }
             ]
           },
