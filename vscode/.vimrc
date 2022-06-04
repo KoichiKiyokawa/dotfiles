@@ -119,6 +119,7 @@ nmap gs ysiw
 noremap <C-k> editor.action.moveLinesUpAction
 noremap <C-j> editor.action.moveLinesDownAction
 nnoremap gi editor.action.goToImplementation
+nnoremap gn editor.action.rename
 
 " vim easymotion
 nnoremap s <leader><leader>2s
