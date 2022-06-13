@@ -166,6 +166,44 @@
             ]
           },
           {
+            "description": "右Shift + a でAndroid Studioを起動",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "a",
+                  "modifiers": {
+                    "mandatory": ["right_shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/bin/bash -c \"open -a 'Android Studio'\""
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "右Shift + x でXCodeを起動",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "x",
+                  "modifiers": {
+                    "mandatory": ["right_shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/bin/bash -c \"open -a 'Xcode-beta'\""
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "右Shift + V でVSCodeを起動",
             "manipulators": [
               {
