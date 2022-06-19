@@ -142,6 +142,30 @@
             ]
           },
           {
+            "description": "右control + 右矢印で、右を0.5秒押し続ける",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "right_arrow",
+                  "modifiers": {
+                    "mandatory": ["right_control"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [
+                  {
+                    "hold_down_milliseconds": 550,
+                    "key_code": "right_arrow"
+                  },
+                  {
+                    "key_code": "vk_none"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "右option + 右矢印で、右を0.5秒押し続ける",
             "manipulators": [
               {
