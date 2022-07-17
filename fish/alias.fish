@@ -70,6 +70,9 @@ abbr -a yl yarn lint
 
 abbr -a pn pnpm
 
+# golang
+abbr -a gg go generate ./...
+
 # editor
 abbr -a co code .
 
