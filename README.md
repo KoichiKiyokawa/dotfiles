@@ -17,9 +17,9 @@ git clone https://github.com/KoichiKiyokawa/dotfiles.git
 cd dotfiles
 # (on Mac)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew bundle
 sudo sh -c 'echo $(which fish) >> /etc/shells'
 sh -c 'chsh -s $(which fish)'
-brew bundle
 sh init.sh
 fisher install (cat fish/fishfile)
 ```
