@@ -88,6 +88,11 @@ function gco
   git branch -a --sort=-authordate | grep -v -e '->' -e '*' | perl -pe 's/^\h+//g' | perl -pe 's#^remotes/origin/###' | perl -nle 'print if !$c{$_}++' | peco | xargs git checkout
 end
 
+# incremental search for `gh pr checkout`
+function pro
+  gh pr list | peco | awk '{print $1}' | xargs gh pr checkout
+end
+
 # mkdirしたディレクトリにそのまま移動する https://qiita.com/piruty/items/20780a17c8a9fd04ba41
 function mkcd
   if test (count $argv) -eq 0
