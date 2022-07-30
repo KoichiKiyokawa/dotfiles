@@ -20,6 +20,7 @@ cask "aldente"
 cask "clipy"
 cask "coteditor"
 cask "docker"
+cask "fig"
 cask "google-cloud-sdk"
 cask "iterm2"
 # https://getkap.co/
