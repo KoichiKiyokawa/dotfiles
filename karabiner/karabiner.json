@@ -323,6 +323,25 @@
             ]
           },
           {
+            "description": "右Shift + k でKapを起動",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": ["right_shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "open -a 'kap.app'"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "右Shift + pでMagic Trackpadに接続",
             "manipulators": [
               {
