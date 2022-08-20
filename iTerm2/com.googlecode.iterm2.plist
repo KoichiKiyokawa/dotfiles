@@ -137,15 +137,15 @@
 	<key>HideMenuBarInFullscreen</key>
 	<true/>
 	<key>Hotkey</key>
-	<false/>
+	<true/>
 	<key>HotkeyChar</key>
-	<integer>0</integer>
+	<integer>105</integer>
 	<key>HotkeyCode</key>
-	<integer>0</integer>
+	<integer>34</integer>
 	<key>HotkeyMigratedFromSingleToMulti</key>
 	<true/>
 	<key>HotkeyModifiers</key>
-	<integer>0</integer>
+	<integer>262144</integer>
 	<key>IRMemory</key>
 	<integer>4</integer>
 	<key>NeverWarnAboutShortLivedSessions_97AC4F60-6D01-4A0F-88DE-07F3A807B000</key>
@@ -1038,23 +1038,23 @@
 			<key>Guid</key>
 			<string>22CD54B7-015D-46DC-BC12-2D27EBEF09D0</string>
 			<key>Has Hotkey</key>
-			<true/>
+			<false/>
 			<key>Horizontal Spacing</key>
 			<real>1</real>
 			<key>HotKey Activated By Modifier</key>
-			<true/>
+			<false/>
 			<key>HotKey Alternate Shortcuts</key>
 			<array/>
 			<key>HotKey Characters</key>
-			<string>	</string>
+			<string></string>
 			<key>HotKey Characters Ignoring Modifiers</key>
-			<string>i</string>
+			<string></string>
 			<key>HotKey Key Code</key>
-			<integer>34</integer>
+			<integer>0</integer>
 			<key>HotKey Modifier Activation</key>
 			<integer>0</integer>
 			<key>HotKey Modifier Flags</key>
-			<integer>262144</integer>
+			<integer>0</integer>
 			<key>HotKey Window Animates</key>
 			<true/>
 			<key>HotKey Window AutoHides</key>
