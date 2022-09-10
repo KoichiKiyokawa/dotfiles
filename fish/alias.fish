@@ -31,6 +31,7 @@ abbr -a g git
 abbr -a gb git branch
 abbr -a gbD "git branch | xargs git branch -D"
 abbr -a gc git checkout
+abbr -a gcb git checkout -b
 # delete local branch if remote is deleted
 abbr -a gf git fetch -p
 abbr -a gl git log --oneline
@@ -53,6 +54,7 @@ abbr -a repo gh repo view --web
 abbr -a pr gh pr view --web
 abbr -a prc gh pr checkout
 abbr -a prcr gh pr create -w
+abbr -a pra gh pr review -a
 
 # lazy関連
 abbr -a lg lazygit
