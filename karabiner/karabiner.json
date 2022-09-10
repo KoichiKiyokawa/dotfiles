@@ -247,11 +247,11 @@
             ]
           },
           {
-            "description": "右Shift + M でChromeを起動",
+            "description": "右Shift + C でChromeを起動",
             "manipulators": [
               {
                 "from": {
-                  "key_code": "m",
+                  "key_code": "c",
                   "modifiers": {
                     "mandatory": ["right_shift"]
                   }
