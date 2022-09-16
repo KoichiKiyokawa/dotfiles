@@ -11,11 +11,8 @@
 [pull]
   rebase = false
 
-[merge]
-  tool = p4merge
-[mergetool]
-  keepBackup = false
-[mergetool "p4merge"]
-  path = p4merge
-  keepTemporaries = false
-  trustExitCode = false
+[diff]
+  tool = vscode
+[difftool "vscode"]
+  cmd = code --wait --diff $LOCAL $REMOTE
+
