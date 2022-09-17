@@ -44,6 +44,11 @@ fish_config
 1. General > Preferences > Check "Load preferences from a custom folder or URL"
 1. Push "Browse" button and set folder to ~/dotfiles/iTerm2
 
+### Raycast setting
+
+1. Launch Raycast and press <kbd>alt</kbd> + <kbd>Space</kbd>, then run with inputting `Import Preferences & Data`.
+1. Select the `~/dotfiles/Raycast.rayconfig`.
+
 ### Install formatter
 
 ```
