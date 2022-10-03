@@ -166,7 +166,7 @@
             ]
           },
           {
-            "description": "右option + 右矢印で、右を0.5秒押し続ける",
+            "description": "右option + 右矢印で、右を0.7秒押し続ける",
             "manipulators": [
               {
                 "from": {
@@ -178,7 +178,7 @@
                 },
                 "to": [
                   {
-                    "hold_down_milliseconds": 550,
+                    "hold_down_milliseconds": 750,
                     "key_code": "right_arrow"
                   },
                   {
