@@ -3,6 +3,9 @@ abbr -a op open .
 abbr -a rf rm -rf
 abbr -a w cd ~/workspace
 
+# cd
+alias ...="cd ../.."
+
 # gcp cli
 abbr -a gci gcloud compute instances
 
