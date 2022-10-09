@@ -5,6 +5,7 @@ rm -rf ~/.config/fish
 ln -fs ~/dotfiles/fish ~/.config
 ln -fs ~/dotfiles/nvim ~/.config
 ln -fs ~/dotfiles/karabiner ~/.config
+ln -fs ~/dotfiles/lazygit/config.yml ~/.config/lazygit/
 ln -fs ~/dotfiles/vscode/.vimrc ~/.vimrc
 ln -fs ~/dotfiles/.gitconfig ~/.gitconfig
 curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
