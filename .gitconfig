@@ -19,8 +19,9 @@
   light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
   side-by-side = true
   syntax-theme = "Monokai Extended Bright"
-  file-style = "orange bold #161b22"
-  file-decoration-style = "white yellow"
+  file-style = "orange bold"
+  file-decoration-style = "white ul"
+  hunk-header-line-number-style = white
   hunk-header-decoration-style = "white box ul"
   line-numbers-left-style = white
   line-numbers-right-style = white
