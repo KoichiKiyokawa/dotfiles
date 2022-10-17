@@ -81,6 +81,8 @@ abbr -a gg go generate ./...
 # editor
 abbr -a co code .
 
+# aws
+abbr -a aws-mfa source ~/dotfiles/scripts/aws-mfa.fish
 
 function gd
   git diff origin/{$argv}..HEAD
