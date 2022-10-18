@@ -7,7 +7,7 @@ const { repo, prNo } = parseGitHubURL(targetPullRequestURL)
 
 process.chdir(repoToPath(repo))
 if (action === "open") {
-  execSync(`gh pr checkout ${prNo} && code .`, { cwd })
+  execSync(`gh pr checkout ${prNo} && code .`)
 } else if (action === "approve") {
-  execSync(`gh pr review -a ${prNo}`, { cwd })
+  execSync(`gh pr review -a ${prNo}`)
 }
