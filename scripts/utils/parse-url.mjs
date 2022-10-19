@@ -4,7 +4,7 @@
  */
 export function parseGitHubURL(targetPullRequestURL) {
   const [, repo, prNo] = targetPullRequestURL.match(
-    /github.com\/.+?\/(.+?)\/pull\/(\d+)$/
+    /com\/.+?\/(.+?)\/pull\/(\d+)/
   )
   return { repo, prNo }
 }
