@@ -35,7 +35,7 @@
   "background.fullscreen": {
     "image": "https://i.pinimg.com/originals/59/0e/d3/590ed3a4e7be835cb48a2288c017fa54.jpg",
     "opacity": 0.88,
-    "size": "contain"
+    "size": "cover"
   },
   "cSpell.userWords": ["Fastify"],
   "diffEditor.ignoreTrimWhitespace": false,
