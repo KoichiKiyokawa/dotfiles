@@ -74,6 +74,7 @@ abbr -a yd yarn dev
 abbr -a yl yarn lint
 
 abbr -a pn pnpm
+abbr -a pni pnpm i
 
 # golang
 abbr -a gg go generate ./...
