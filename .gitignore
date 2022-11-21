@@ -4,4 +4,4 @@ karabiner/*
 !karabiner/(assets|automatic-backups)
 
 .DS_Store
-env.mjs
+env.sh
