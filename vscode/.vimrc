@@ -114,6 +114,19 @@ nnoremap <Space>p viw"_dP
 " surround the word
 nmap gs ysiw
 
+" surround the selected text
+vmap ( S(vi(
+vmap ) S)vi(
+vmap { S{vi{
+vmap } S}vi{
+vmap [ S[vi[
+vmap ] S]vi[
+vmap < S<vi<
+vmap > S>vi<
+vmap ' S'vi'
+vmap " S"vi"
+vmap ` S"vi`
+
 " for vscode
 noremap <C-k> editor.action.moveLinesUpAction
 noremap <C-j> editor.action.moveLinesDownAction
