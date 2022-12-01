@@ -125,7 +125,7 @@ vmap < S<vi<
 vmap > S>vi<
 vmap ' S'vi'
 vmap " S"vi"
-vmap ` S"vi`
+vmap ` S`vi`
 
 " for vscode
 noremap <C-k> editor.action.moveLinesUpAction
