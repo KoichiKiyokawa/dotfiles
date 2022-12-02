@@ -9,8 +9,7 @@ prNo=${parsed[1]}
 
 cdToRepoPath $repo
 
-changedFileCount=`git status --short | wc -l`
-if [ $changedFileCount -gt 0 ]; then
+if ! git diff --exit-code --quiet; then
   echo "\n[ERROR] There are uncommitted changes in the repo. Please stash or commit them first.\n"
   exit 1
 fi
