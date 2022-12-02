@@ -85,6 +85,10 @@ abbr -a co code .
 # aws
 abbr -a aws-mfa source ~/dotfiles/scripts/aws-mfa.fish
 
+# scripts
+abbr -a gho sh ~/dotfiles/scripts/gh-extra.sh open
+abbr -a gha sh ~/dotfiles/scripts/gh-extra.sh approve
+
 function gd
   git diff origin/{$argv}..HEAD
 end
