@@ -121,11 +121,13 @@ vmap { S{vi{
 vmap } S}vi{
 vmap [ S[vi[
 vmap ] S]vi[
-vmap < S<vi<
-vmap > S>vi<
 vmap ' S'vi'
 vmap " S"vi"
 vmap ` S`vi`
+
+" indent
+noremap <M-[> <<
+noremap <M-]> >>
 
 " for vscode
 noremap <C-k> editor.action.moveLinesUpAction
