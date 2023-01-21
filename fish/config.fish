@@ -37,3 +37,7 @@ fnm env --use-on-cd | source
 if test -e ~/.config/fish/local.fish
   source ~/.config/fish/local.fish
 end
+# pnpm
+set -gx PNPM_HOME "/Users/koichi/Library/pnpm"
+set -gx PATH "$PNPM_HOME" $PATH
+# pnpm end

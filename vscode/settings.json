@@ -34,7 +34,7 @@
   },
   "background.fullscreen": {
     "image": "https://i.pinimg.com/originals/59/0e/d3/590ed3a4e7be835cb48a2288c017fa54.jpg",
-    "opacity": 0.88,
+    "opacity": 0.9999,
     "size": "cover"
   },
   "cSpell.userWords": ["Fastify"],
@@ -59,10 +59,10 @@
   "git.enableStatusBarSync": false,
   "git.mergeEditor": true,
   "github.copilot.enable": {
-    "*": true,
-    "markdown": false,
+    "*": false,
+    "yaml": true,
     "plaintext": false,
-    "yaml": true
+    "markdown": false
   },
   "githubPullRequests.fileListLayout": "tree",
   "githubPullRequests.pullBranch": "never",
@@ -119,5 +119,11 @@
     "*.ipynb": "jupyter.notebook.ipynb"
   },
   "workbench.iconTheme": "vscode-icons",
-  "workbench.startupEditor": "newUntitledFile"
+  "workbench.startupEditor": "newUntitledFile",
+  "search.exclude": {
+    "**/.snapshots/**": true
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
