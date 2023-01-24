@@ -1,4 +1,16 @@
+gui:
+  language: en
+  showIcons: true
 git:
   paging:
     colorArg: always
     useConfig: true
+customCommands:
+  - key: '!'
+    context: 'commits'
+    description: 'push with no-verify'
+    command: 'git push -u origin HEAD --force-with-lease --no-verify'
+    prompts:
+      - type: 'confirm'
+        title: 'Confirm:'
+        body: Are you sure to force push with no-verify?
