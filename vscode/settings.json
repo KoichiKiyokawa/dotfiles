@@ -59,7 +59,7 @@
   "git.enableStatusBarSync": false,
   "git.mergeEditor": true,
   "github.copilot.enable": {
-    "*": false,
+    "*": true,
     "yaml": true,
     "plaintext": false,
     "markdown": false
