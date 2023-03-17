@@ -4,7 +4,7 @@ gui:
 git:
   paging:
     colorArg: always
-    useConfig: true
+    pager: delta --no-gitconfig --paging=never
 customCommands:
   - key: '!'
     context: 'commits'
