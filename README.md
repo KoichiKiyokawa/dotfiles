@@ -3,7 +3,7 @@
 This repository has following configs.
 
 - [fish shell](https://github.com/fish-shell/fish-shell) (managed plugin by [fisher](https://github.com/jorgebucaran/fisher))
-- [neovim](https://github.com/neovim/neovim) (managed plugin by [vim-plug](https://github.com/junegunn/vim-plug))
+- [neovim](https://github.com/neovim/neovim) (managed plugin by [packer.nvim](https://github.com/wbthomason/packer.nvim))
 
 ![terminal](https://user-images.githubusercontent.com/40315079/169636800-608490e9-3780-4b43-bfbc-8f31259f2720.png)
 
