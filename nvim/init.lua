@@ -51,10 +51,6 @@ vim.api.nvim_set_keymap('i', 'jj', '<Esc>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<Space>q', ':qa!<CR>', {noremap = true})
 vim.api.nvim_set_keymap('n', '<M-a>', 'ggVG', {noremap = true})
 
--------------------------------------------------------------------------------
--- Plugins
--------------------------------------------------------------------------------
-
 -- enable to omit `i` eg. c(i)w
 for _, each_command in pairs({'c', 'd', 'v', 'y'}) do
   for _, each_target in pairs({'(', ')', '{', '}', '[', ']', '"', '`', "'", 'w', 't'}) do
@@ -62,6 +58,9 @@ for _, each_command in pairs({'c', 'd', 'v', 'y'}) do
   end
 end
 
+-------------------------------------------------------------------------------
+-- Plugins
+-------------------------------------------------------------------------------
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -88,6 +87,9 @@ require('packer').startup(function(use)
   end
 end)
 
+-------------------------------------------------------------------------------
+-- Colors
+-------------------------------------------------------------------------------
 vim.api.nvim_command('colorscheme codedark')
 vim.api.nvim_command('highlight Search ctermbg=24') -- hitting words
 vim.api.nvim_command('highlight IncSearch ctermbg=34') -- replace target
