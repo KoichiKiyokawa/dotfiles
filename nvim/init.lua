@@ -78,6 +78,7 @@ require('packer').startup(function(use)
   use {'wbthomason/packer.nvim', opt = true}
 
   use 'jiangmiao/auto-pairs'
+  use 'tpope/vim-surround'
   use {'tomasiser/vim-code-dark', opt = true}
 
   -- Automatically set up your configuration after cloning packer.nvim
