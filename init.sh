@@ -9,8 +9,8 @@ ln -fs ~/dotfiles/lazygit/config.yml ~/.config/lazygit/
 ln -fs ~/dotfiles/vscode/.vimrc ~/.vimrc
 ln -fs ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
 ln -fs ~/dotfiles/.gitconfig ~/.gitconfig
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
-nvim -c "PlugInstall | :qa"
+nvim -c "PackerInstall | :qa"
 sh coc-extensions.sh
 
