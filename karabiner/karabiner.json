@@ -209,6 +209,25 @@
             ]
           },
           {
+            "description": "右Shift + t でTable Plusを起動",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "t",
+                  "modifiers": {
+                    "mandatory": ["right_shift"]
+                  }
+                },
+                "to": [
+                  {
+                    "shell_command": "/bin/bash -c \"open -a 'TablePlus'\""
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "右Shift + x でXCodeを起動",
             "manipulators": [
               {
