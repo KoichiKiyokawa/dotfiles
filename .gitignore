@@ -5,3 +5,5 @@ karabiner/*
 
 .DS_Store
 env.sh
+
+nvim/plugin
