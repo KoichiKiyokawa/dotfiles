@@ -14,7 +14,7 @@ set -x XDG_CONFIG_HOME $HOME/.config
 # pyenv init - | source
 
 # Ruby
-rvm default
+# rvm default
 
 # Java
 set -x JAVA_HOME (/usr/libexec/java_home)
