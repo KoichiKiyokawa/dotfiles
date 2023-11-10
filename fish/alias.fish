@@ -6,9 +6,6 @@ abbr -a w cd ~/workspace
 # cd
 alias ...="cd ../.."
 
-# gcp cli
-abbr -a gci gcloud compute instances
-
 # use nvim instead of vim
 abbr -a v nvim
 
@@ -17,9 +14,6 @@ abbr -a x exit
 # Docker関連
 abbr -a dc docker compose
 abbr -a dpa docker ps -a
-
-# Postgres関連
-abbr -a pgc pg_ctl -D /usr/local/var/postgres
 
 # Rails関連
 abbr -a be bundle exec
