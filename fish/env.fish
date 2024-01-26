@@ -17,17 +17,17 @@ set -x XDG_CONFIG_HOME $HOME/.config
 # rvm default
 
 # Java
-set -x JAVA_HOME (/usr/libexec/java_home)
-set -x PATH $JAVA_HOME/bin $PATH
+# set -x JAVA_HOME (/usr/libexec/java_home)
+# set -x PATH $JAVA_HOME/bin $PATH
 
 # Go
 set -x PATH (go env GOPATH)/bin $PATH
 
 # Flutter
-set -x PATH $HOME/flutter/bin $PATH
+# set -x PATH $HOME/flutter/bin $PATH
 
 # Rust
-set -x PATH $HOME/.cargo/bin $PATH
+# set -x PATH $HOME/.cargo/bin $PATH
 
 # android
 # set -x ANDROID_HOME /usr/local/share/android-sdk

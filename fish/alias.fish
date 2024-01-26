@@ -49,6 +49,8 @@ abbr -a gstl git stash list
 abbr -a gstp git stash pop
 abbr -a gme git merge -Xignore-all-space
 
+abbr -a m make
+
 # gh
 abbr -a repo gh repo view --web
 abbr -a pr gh pr view --web

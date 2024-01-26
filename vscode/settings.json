@@ -17,6 +17,12 @@
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.formatOnType": true
+  },
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -90,9 +96,11 @@
   },
   "go.toolsManagement.autoUpdate": true,
   "go.useLanguageServer": true,
-  "prettier.semi": false,
   "python.languageServer": "Default",
   "redhat.telemetry.enabled": true,
+  "search.exclude": {
+    "**/.snapshots/**": true
+  },
   "svelte.enable-ts-plugin": true,
   "svelte.plugin.svelte.note-new-transformation": false,
   "tailwindCSS.includeLanguages": {
@@ -120,10 +128,7 @@
   },
   "workbench.iconTheme": "vscode-icons",
   "workbench.startupEditor": "newUntitledFile",
-  "search.exclude": {
-    "**/.snapshots/**": true
-  },
-  "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.fontSize": 11
 }

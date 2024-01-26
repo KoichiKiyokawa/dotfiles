@@ -33,6 +33,10 @@ fnm env --use-on-cd --corepack-enabled | source
 # uninstall by removing these lines
 [ -f ~/.config/tabtab/fish/__tabtab.fish ]; and . ~/.config/tabtab/fish/__tabtab.fish; or true
 
+# Bun
+set -Ux BUN_INSTALL "/Users/kiyokawa-koichi/.bun"
+set -px --path PATH "/Users/kiyokawa-koichi/.bun/bin"
+
 # local
 if test -e ~/.config/fish/local.fish
   source ~/.config/fish/local.fish
