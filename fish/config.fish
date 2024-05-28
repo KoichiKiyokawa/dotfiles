@@ -27,7 +27,7 @@ end
 bind \cf edit_command_buffer
 set EDITOR nvim
 
-fnm env --use-on-cd --corepack-enabled | source
+fnm env --use-on-cd --version-file-strategy=recursive --resolve-engines --corepack-enabled | source
 
 # tabtab source for packages
 # uninstall by removing these lines
