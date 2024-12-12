@@ -7,7 +7,7 @@ $directory\
 $git_branch\
 $git_status\
 $env_var\
-[](fg:#394260 bg:#212736)\
+[](fg:#394260)\
 """
 
 [directory]
