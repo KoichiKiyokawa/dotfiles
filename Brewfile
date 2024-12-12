@@ -13,6 +13,8 @@ brew "jq"
 brew "lazygit"
 brew "neovim"
 brew "peco"
+brew "sheldon"
+brew "starship"
 # https://github.com/davidwernhart/AlDente
 cask "aldente"
 cask "beekeeper-studio"
