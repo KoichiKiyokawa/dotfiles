@@ -5,7 +5,7 @@ This repository has following configs.
 - zsh (managed plugin by [sheldon](https://github.com/rossmacarthur/sheldon))
 - [neovim](https://github.com/neovim/neovim) (managed plugin by [packer.nvim](https://github.com/wbthomason/packer.nvim))
 
-![terminal](https://user-images.githubusercontent.com/40315079/169636800-608490e9-3780-4b43-bfbc-8f31259f2720.png)
+![terminal](https://github.com/user-attachments/assets/c2c655a1-d454-4831-b886-29e0d3f21630)
 
 ## How to setup
 
@@ -25,9 +25,11 @@ exec zsh
 
 ### iTerm2 setting
 
-1. Launch iTerm2 and open Preferences.
-1. General > Preferences > Check "Load preferences from a custom folder or URL"
-1. Push "Browse" button and set folder to ~/dotfiles/iTerm2
+1. Launch iTerm2 and open Preferences(<kbd>⌘</kbd> + <kbd>,</kbd>).
+1. General > Settings > Check "Load preferences from a custom folder or URL" and type "~/dotfiles/iTerm2".
+1. Select "Save Changes" Option to `Manually`.
+
+<img width="897" alt="image" src="https://github.com/user-attachments/assets/ccdf660d-c9fc-479e-9930-69e9ffa46d4d" />
 
 ### Raycast setting
 
