@@ -1,6 +1,6 @@
-abbr --quiet ll="ls -alh"
-abbr --quiet op="open ."
-abbr --quiet rf="rm -rf"
+abbr add ll="ls -alh"
+abbr add op="open ."
+abbr add rf="rm -rf"
 alias w="cd ~/workspace"
 
 # cd
@@ -8,60 +8,62 @@ alias ..="cd .."
 alias ...="cd ../.."
 
 # use nvim instead of vim
-abbr --quiet v="nvim"
+abbr add v="nvim"
 
-abbr --quiet x="exit"
+abbr add x="exit"
 
 # Docker関連
-abbr --quiet dc="docker compose"
-abbr --quiet dpa="docker ps -a"
+abbr add dc="docker compose"
+abbr add dpa="docker ps -a"
 
 # git関連
-abbr --quiet g="git"
-abbr --quiet gb="git branch"
-abbr --quiet gbD="git branch | xargs git branch -D"
-abbr --quiet gc="git checkout"
-abbr --quiet gcb="git checkout -b"
+abbr add g="git"
+abbr add gb="git branch"
+abbr add gbD="git branch | xargs git branch -D"
+abbr add gc="git checkout"
+abbr add gcb="git checkout -b"
 # delete local branch if remote is deleted
-abbr --quiet gf="git fetch -p"
-abbr --quiet gl="git log --oneline"
-abbr --quiet gll="git log --graph --all --format='%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s'"
-abbr --quiet gs="git status"
-abbr --quiet gp="git push -u origin HEAD"
-abbr --quiet gpn="git push -u origin HEAD --no-verify"
-abbr --quiet gpu="git pull"
-abbr --quiet gpf="git push -u origin HEAD --force-with-lease"
-abbr --quiet gpfn="git push -u origin HEAD --force-with-lease --no-verify"
-abbr --quiet ga="git add"
-abbr --quiet gm="git commit"
-abbr --quiet gr="git rebase"
-abbr --quiet gac="git add -A; git commit -m"
-abbr --quiet gt="git add -A; git commit -m 'temporary commit'"
-abbr --quiet gst="git stash -u"
-abbr --quiet gstl="git stash list"
-abbr --quiet gstp="git stash pop"
-abbr --quiet gme="git merge -Xignore-all-space"
+abbr add gf="git fetch -p"
+abbr add gl="git log --oneline"
+abbr add gll="git log --graph --all --format='%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s'"
+abbr add gs="git status"
+abbr add gp="git push -u origin HEAD"
+abbr add gpn="git push -u origin HEAD --no-verify"
+abbr add gpu="git pull"
+abbr add gpf="git push -u origin HEAD --force-with-lease"
+abbr add gpfn="git push -u origin HEAD --force-with-lease --no-verify"
+abbr add ga="git add"
+abbr add gm="git commit"
+abbr add gr="git rebase"
+abbr add gac="git add -A; git commit -m"
+abbr add gt="git add -A; git commit -m 'temporary commit'"
+abbr add gst="git stash -u"
+abbr add gstl="git stash list"
+abbr add gstp="git stash pop"
+abbr add gme="git merge -Xignore-all-space"
 
-abbr --quiet m="make"
+abbr add m="make"
 
 # gh
-abbr --quiet repo="gh repo view --web"
-abbr --quiet pr="gh pr view --web"
-abbr --quiet prc="gh pr checkout"
-abbr --quiet prcr="gh pr create -w"
-abbr --quiet pra="gh pr review -a"
+abbr add repo="gh repo view --web"
+abbr add pr="gh pr view --web"
+abbr add prc="gh pr checkout"
+abbr add prcr="gh pr create -w"
+abbr add pra="gh pr review -a"
 
 # lazy関連
-abbr --quiet lg="lazygit"
-abbr --quiet ld="lazydocker"
+abbr add lg="lazygit"
+abbr add ld="lazydocker"
 
-abbr --quiet pn="pnpm"
+# Node.js
+abbr add pn="pnpm"
+abbr add nr="ni run"
 
 # golang
-abbr --quiet gg="go generate ./..."
+abbr add gg="go generate ./..."
 
 # editor
-abbr --quiet co="code ."
+abbr add co="code ."
 
 # incremental search for `git checkout`
 gco() {
