@@ -20,13 +20,8 @@ cd dotfiles
 brew bundle
 sh -c 'chsh -s $(which zsh)'
 sh init.sh
+exec zsh
 ```
-
-Then relaunch your terminal.
-
-### Install nerd fonts
-
-Download [RobotoMono Nerd Font](https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/RobotoMono/Medium/complete/Roboto%20Mono%20Medium%20Nerd%20Font%20Complete.ttf)
 
 ### iTerm2 setting
 

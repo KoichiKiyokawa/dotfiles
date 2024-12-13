@@ -4,6 +4,7 @@ abbr --quiet rf="rm -rf"
 alias w="cd ~/workspace"
 
 # cd
+alias ..="cd .."
 alias ...="cd ../.."
 
 # use nvim instead of vim

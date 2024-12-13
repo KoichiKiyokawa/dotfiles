@@ -2,9 +2,8 @@ tap "aws/tap"
 brew "awscli"
 brew "blueutil"
 brew "curl"
-brew "fish"
-# https://github.com/Schniz/fnm
-brew "fnm"
+# brew "fish"
+brew "fnm" # https://github.com/Schniz/fnm
 brew "gh"
 brew "git"
 brew "git-delta"
@@ -15,16 +14,15 @@ brew "neovim"
 brew "peco"
 brew "sheldon"
 brew "starship"
-# https://github.com/davidwernhart/AlDente
-cask "aldente"
+
+cask "aldente" # https://github.com/davidwernhart/AlDente
 cask "beekeeper-studio"
 cask "coteditor"
 cask "docker"
-cask "fig"
+cask "font-fira-code-nerd-font"
 cask "google-cloud-sdk"
 cask "iterm2"
-# https://getkap.co/
-cask "kap"
+cask "kap" # https://getkap.co/
 cask "karabiner-elements"
 cask "keycastr"
 cask "raycast"
