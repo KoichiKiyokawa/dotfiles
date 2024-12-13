@@ -7,3 +7,5 @@ karabiner/*
 env.sh
 
 nvim/plugin
+
+zsh/local.zsh
