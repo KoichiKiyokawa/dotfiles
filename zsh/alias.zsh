@@ -1,6 +1,6 @@
-abbr add ll="ls -alh"
-abbr add op="open ."
-abbr add rf="rm -rf"
+abbr --session ll="ls -alh"
+abbr --session op="open ."
+abbr --session rf="rm -rf"
 alias w="cd ~/workspace"
 
 # cd
@@ -8,61 +8,61 @@ alias ..="cd .."
 alias ...="cd ../.."
 
 # use nvim instead of vim
-abbr add v="nvim"
+abbr --session v="nvim"
 
-abbr add x="exit"
+abbr --session x="exit"
 
 # Docker関連
-abbr add dc="docker compose"
-abbr add dpa="docker ps -a"
+abbr --session dc="docker compose"
+abbr --session dpa="docker ps -a"
 
 # git関連
-abbr add g="git"
-abbr add gb="git branch"
-abbr add gbD="git branch | xargs git branch -D"
-abbr add gc="git checkout"
-abbr add gcb="git checkout -b"
+abbr --session g="git"
+abbr --session gb="git branch"
+abbr --session gbD="git branch | xargs git branch -D"
+abbr --session gc="git checkout"
+abbr --session gcb="git checkout -b"
 # delete local branch if remote is deleted
-abbr add gf="git fetch -p"
-abbr add gl="git log --oneline"
-abbr add gll="git log --graph --all --format='%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s'"
-abbr add gs="git status"
-abbr add gp="git push -u origin HEAD"
-abbr add gpn="git push -u origin HEAD --no-verify"
-abbr add gpu="git pull"
-abbr add gpf="git push -u origin HEAD --force-with-lease"
-abbr add gpfn="git push -u origin HEAD --force-with-lease --no-verify"
-abbr add ga="git add"
-abbr add gm="git commit"
-abbr add gr="git rebase"
-abbr add gac="git add -A; git commit -m"
-abbr add gt="git add -A; git commit -m 'temporary commit'"
-abbr add gst="git stash -u"
-abbr add gstl="git stash list"
-abbr add gstp="git stash pop"
-abbr add gme="git merge -Xignore-all-space"
+abbr --session gf="git fetch -p"
+abbr --session gl="git log --oneline"
+abbr --session gll="git log --graph --all --format='%x09%C(cyan bold)%an%Creset%x09%C(yellow)%h%Creset %C(magenta reverse)%d%Creset %s'"
+abbr --session gs="git status"
+abbr --session gp="git push -u origin HEAD"
+abbr --session gpn="git push -u origin HEAD --no-verify"
+abbr --session gpu="git pull"
+abbr --session gpf="git push -u origin HEAD --force-with-lease"
+abbr --session gpfn="git push -u origin HEAD --force-with-lease --no-verify"
+abbr --session ga="git add"
+abbr --session gm="git commit"
+abbr --session gr="git rebase"
+abbr --session gac="git add -A; git commit -m"
+abbr --session gt="git add -A; git commit -m 'temporary commit'"
+abbr --session gst="git stash -u"
+abbr --session gstl="git stash list"
+abbr --session gstp="git stash pop"
+abbr --session gme="git merge -Xignore-all-space"
 
-abbr add m="make"
+abbr --session m="make"
 
 # gh
-abbr add repo="gh repo view --web"
-abbr add pr="gh pr view --web"
-abbr add prc="gh pr checkout"
-abbr add prcr="gh pr create -w"
-abbr add pra="gh pr review -a"
+abbr --session repo="gh repo view --web"
+abbr --session pr="gh pr view --web"
+abbr --session prc="gh pr checkout"
+abbr --session prcr="gh pr create -w"
+abbr --session pra="gh pr review -a"
 
 # lazy関連
-abbr add lg="lazygit"
-abbr add ld="lazydocker"
+abbr --session lg="lazygit"
+abbr --session ld="lazydocker"
 
 # Node.js
-abbr add pn="pnpm"
+abbr --session pn="pnpm"
 
 # golang
-abbr add gg="go generate ./..."
+abbr --session gg="go generate ./..."
 
 # editor
-abbr add co="code ."
+abbr --session co="code ."
 
 # incremental search for `git checkout`
 gco() {
