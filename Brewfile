@@ -2,7 +2,6 @@ tap "aws/tap"
 brew "awscli"
 brew "blueutil"
 brew "curl"
-# brew "fish"
 brew "fnm" # https://github.com/Schniz/fnm
 brew "gh"
 brew "git"
