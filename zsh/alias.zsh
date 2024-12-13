@@ -57,7 +57,6 @@ abbr add ld="lazydocker"
 
 # Node.js
 abbr add pn="pnpm"
-abbr add nr="ni run"
 
 # golang
 abbr add gg="go generate ./..."
