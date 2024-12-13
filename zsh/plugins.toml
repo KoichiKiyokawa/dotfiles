@@ -11,32 +11,32 @@
 # See the documentation for more https://github.com/rossmacarthur/sheldon#readme
 
 shell = "zsh"
+apply = ["defer"]
 
 [templates]
 defer = "{{ hooks?.pre | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks?.post | nl }}"
 
 [plugins.zsh-defer]
 github = "romkatv/zsh-defer"
-
-[plugins.zsh-abbr]
-github = "olets/zsh-abbr"
-apply = ["defer"]
-
-[plugins.zsh-autosuggestions]
-github = "zsh-users/zsh-autosuggestions"
-apply = ["defer"]
-
-[plugins.zsh-syntax-highlighting]
-github = "zsh-users/zsh-syntax-highlighting"
-apply = ["defer"]
-
-[plugins.zsh-completions]
-github = "zsh-users/zsh-completions"
-apply = ["defer"]
-
-[plugins.zsh-z]
-github = "agkozak/zsh-z"
-apply = ["defer"]
+apply = ["source"]
 
 [plugins.compinit]
 inline = 'autoload -Uz compinit && zsh-defer compinit'
+
+[plugins.zsh-abbr]
+github = "olets/zsh-abbr"
+
+[plugins.zsh-autosuggestions]
+github = "zsh-users/zsh-autosuggestions"
+
+[plugins.zsh-syntax-highlighting]
+github = "zsh-users/zsh-syntax-highlighting"
+
+[plugins.zsh-completions]
+github = "zsh-users/zsh-completions"
+
+[plugins.zsh-z]
+github = "agkozak/zsh-z"
+
+[plugins.ni]
+github = "azu/ni.zsh"
