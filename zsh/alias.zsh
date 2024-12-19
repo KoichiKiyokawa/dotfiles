@@ -13,7 +13,7 @@ abbr --session v="nvim"
 abbr --session x="exit"
 
 # Docker関連
-abbr --session dc="docker compose"
+abbr --session --force dc="docker compose"
 abbr --session dpa="docker ps -a"
 
 # git関連
@@ -46,7 +46,7 @@ abbr --session m="make"
 
 # gh
 abbr --session repo="gh repo view --web"
-abbr --session pr="gh pr view --web"
+abbr --session --force pr="gh pr view --web"
 abbr --session prc="gh pr checkout"
 abbr --session prcr="gh pr create -w"
 abbr --session pra="gh pr review -a"
