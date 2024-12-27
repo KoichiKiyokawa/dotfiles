@@ -12,3 +12,5 @@ export EDITOR="code --wait"
 autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '^F' edit-command-line
+
+export XDG_CONFIG_HOME="$HOME/.config"
