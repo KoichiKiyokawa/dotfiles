@@ -138,6 +138,23 @@
             ]
           },
           {
+            "description": "Ctrl + iでTerminalを起動",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "i",
+                  "modifiers": { "mandatory": ["left_control"] }
+                },
+                "to": [
+                  {
+                    "shell_command": "/bin/bash -c \"open -a 'Ghostty'\""
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "右Shift + a でAndroid Studioを起動",
             "manipulators": [
               {
