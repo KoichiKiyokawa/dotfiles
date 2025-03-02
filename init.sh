@@ -14,7 +14,4 @@ ln -fs ~/dotfiles/zsh/starship.toml ~/.config/starship.toml
 
 ln -fs ~/dotfiles/lazygit/config.yml ~/.config/lazygit/
 
-ln -fs ~/dotfiles/vscode/.vimrc ~/.vimrc
-ln -fs ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-
 ln -fs ~/dotfiles/.gitconfig ~/.gitconfig
