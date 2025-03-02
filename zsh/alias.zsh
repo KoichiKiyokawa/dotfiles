@@ -12,6 +12,8 @@ abbr --session v="nvim"
 
 abbr --session x="exit"
 
+alias cleanup="curl -s https://raw.githubusercontent.com/mac-cleanup/mac-cleanup-sh/53b2c24/mac-cleanup | bash"
+
 # Docker関連
 abbr --session --force dc="docker compose"
 abbr --session dpa="docker ps -a"
