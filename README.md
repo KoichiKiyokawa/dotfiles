@@ -17,7 +17,7 @@ git clone https://github.com/KoichiKiyokawa/dotfiles.git
 cd dotfiles
 # (on Mac)
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew bundle
+sudo /opt/homebrew/bin/brew bundle
 sh -c 'chsh -s $(which zsh)'
 sh init.sh
 exec zsh
