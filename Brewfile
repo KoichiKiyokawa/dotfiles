@@ -18,6 +18,7 @@ cask "beekeeper-studio"
 cask "coteditor"
 cask "docker"
 cask "google-cloud-sdk"
+cask "google-japanese-ime"
 cask "ghostty"
 cask "kap" # https://getkap.co/
 cask "karabiner-elements"
