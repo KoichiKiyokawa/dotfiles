@@ -1,6 +1,9 @@
 # for M1 Mac
 export PATH="/opt/homebrew/bin:$PATH"
 
+# for cline https://zenn.dev/jtechjapan_pub/articles/de02f0f2652366
+[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
+
 eval "$(starship init zsh)"
 eval "$(sheldon source)"
 eval "$(/opt/homebrew/bin/mise activate zsh)"
@@ -35,4 +38,3 @@ zle -N peco-select-history
 bindkey '^r' peco-select-history
 
 export XDG_CONFIG_HOME="$HOME/.config"
-
