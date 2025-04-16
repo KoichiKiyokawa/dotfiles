@@ -1,5 +1,4 @@
 abbr --session ll="ls -alh"
-abbr --session op="open ."
 abbr --session rf="rm -rf"
 alias w="cd ~/workspace"
 
