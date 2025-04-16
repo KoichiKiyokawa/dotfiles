@@ -120,5 +120,6 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.fontSize": 11,
-  "cline.preferredLanguage": "Japanese - 日本語"
+  "cline.preferredLanguage": "Japanese - 日本語",
+  "github.copilot.nextEditSuggestions.enabled": true
 }
