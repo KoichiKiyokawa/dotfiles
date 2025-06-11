@@ -1,450 +1,487 @@
 {
-    "profiles": [
-        {
-            "complex_modifications": {
-                "rules": [
-                    {
-                        "description": "Change right_command+hjkl to arrow keys",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "h",
-                                    "modifiers": {
-                                        "mandatory": ["right_command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "key_code": "left_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": ["right_command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "key_code": "down_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": ["right_command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "key_code": "up_arrow" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": ["right_command"],
-                                        "optional": ["any"]
-                                    }
-                                },
-                                "to": [{ "key_code": "right_arrow" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "コマンドキーを単体で押したときに、英数・かなキーを送信する。（左コマンドキーは英数、右コマンドキーはかな） (rev 3)",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "left_command",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "parameters": { "basic.to_if_held_down_threshold_milliseconds": 100 },
-                                "to": [
-                                    {
-                                        "key_code": "left_command",
-                                        "lazy": true
-                                    }
-                                ],
-                                "to_if_alone": [{ "key_code": "japanese_eisuu" }],
-                                "to_if_held_down": [{ "key_code": "left_command" }],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "right_command",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "parameters": { "basic.to_if_held_down_threshold_milliseconds": 100 },
-                                "to": [
-                                    {
-                                        "key_code": "right_command",
-                                        "lazy": true
-                                    }
-                                ],
-                                "to_if_alone": [{ "key_code": "japanese_kana" }],
-                                "to_if_held_down": [{ "key_code": "right_command" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Ctrl + iでTerminalを起動",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "i",
-                                    "modifiers": { "mandatory": ["left_control"] }
-                                },
-                                "to": [{ "shell_command": "/bin/bash -c \"open -a 'Ghostty'\"" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "右Shift + a でAndroid Studioを起動",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "a",
-                                    "modifiers": { "mandatory": ["right_shift"] }
-                                },
-                                "to": [{ "shell_command": "/bin/bash -c \"open -a 'Android Studio'\"" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "右Shift + t でTable Plusを起動",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "t",
-                                    "modifiers": { "mandatory": ["right_shift"] }
-                                },
-                                "to": [{ "shell_command": "/bin/bash -c \"open -a 'TablePlus'\"" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "右Shift + x でXCodeを起動",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "x",
-                                    "modifiers": { "mandatory": ["right_shift"] }
-                                },
-                                "to": [{ "shell_command": "/bin/bash -c \"open -a 'Xcode-beta'\"" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "右Shift + V でVSCodeを起動",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "v",
-                                    "modifiers": { "mandatory": ["right_shift"] }
-                                },
-                                "to": [{ "shell_command": "/bin/bash -c \"open -a 'Visual Studio Code'\"" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "右Shift + C でChromeを起動",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "c",
-                                    "modifiers": { "mandatory": ["right_shift"] }
-                                },
-                                "to": [{ "shell_command": "open -a 'Google Chrome'" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "右Shift + d でDiscordを起動",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "d",
-                                    "modifiers": { "mandatory": ["right_shift"] }
-                                },
-                                "to": [{ "shell_command": "open -a 'Discord'" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "右Shift + s でSlackを起動",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "s",
-                                    "modifiers": { "mandatory": ["right_shift"] }
-                                },
-                                "to": [{ "shell_command": "open -a 'Slack'" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "右Shift + z でZoomを起動",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "z",
-                                    "modifiers": { "mandatory": ["right_shift"] }
-                                },
-                                "to": [{ "shell_command": "open -a 'zoom.us.app'" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "右Shift + k でKapを起動",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": { "mandatory": ["right_shift"] }
-                                },
-                                "to": [{ "shell_command": "open -a 'kap.app'" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "右Shift + pでMagic Trackpadに接続",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "p",
-                                    "modifiers": { "mandatory": ["right_shift"] }
-                                },
-                                "to": [{ "shell_command": "/opt/homebrew/bin/blueutil --pair 'bc-d0-74-b7-ee-8d'" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "右Shift + uでMagic Trackpadを接続解除",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "u",
-                                    "modifiers": { "mandatory": ["right_shift"] }
-                                },
-                                "to": [{ "shell_command": "/opt/homebrew/bin/blueutil --unpair 'bc-d0-74-b7-ee-8d'" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "escキーを押したときに、英数キーも送信する（vim用）",
-                        "manipulators": [
-                            {
-                                "from": { "key_code": "escape" },
-                                "to": [
-                                    { "key_code": "escape" },
-                                    { "key_code": "japanese_eisuu" }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "devices": [
-                {
-                    "disable_built_in_keyboard_if_exists": true,
-                    "fn_function_keys": [
-                        {
-                            "from": { "key_code": "f1" },
-                            "to": [{ "key_code": "f1" }]
-                        },
-                        {
-                            "from": { "key_code": "f2" },
-                            "to": [{ "key_code": "f2" }]
-                        },
-                        {
-                            "from": { "key_code": "f3" },
-                            "to": [{ "key_code": "f3" }]
-                        },
-                        {
-                            "from": { "key_code": "f4" },
-                            "to": [{ "key_code": "f4" }]
-                        },
-                        {
-                            "from": { "key_code": "f5" },
-                            "to": [{ "key_code": "f5" }]
-                        },
-                        {
-                            "from": { "key_code": "f6" },
-                            "to": [{ "key_code": "f6" }]
-                        },
-                        {
-                            "from": { "key_code": "f7" },
-                            "to": [{ "key_code": "f7" }]
-                        },
-                        {
-                            "from": { "key_code": "f8" },
-                            "to": [{ "key_code": "f8" }]
-                        },
-                        {
-                            "from": { "key_code": "f9" },
-                            "to": [{ "key_code": "f9" }]
-                        },
-                        {
-                            "from": { "key_code": "f10" },
-                            "to": [{ "key_code": "f10" }]
-                        },
-                        {
-                            "from": { "key_code": "f11" },
-                            "to": [{ "key_code": "f11" }]
-                        },
-                        {
-                            "from": { "key_code": "f12" },
-                            "to": [{ "key_code": "f12" }]
-                        }
-                    ],
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 33,
-                        "vendor_id": 1278
-                    }
-                }
-            ],
-            "name": "Default profile",
-            "selected": true,
-            "simple_modifications": [
-                {
-                    "from": { "key_code": "caps_lock" },
-                    "to": [{ "key_code": "left_control" }]
+  "profiles": [
+    {
+      "complex_modifications": {
+        "rules": [
+          {
+            "description": "Change right_command+hjkl to arrow keys",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "h",
+                  "modifiers": {
+                    "mandatory": ["right_command"],
+                    "optional": ["any"]
+                  }
                 },
-                {
-                    "from": { "key_code": "left_control" },
-                    "to": [{ "key_code": "left_command" }]
-                }
-            ],
-            "virtual_hid_keyboard": {
-                "country_code": 0,
-                "keyboard_type_v2": "ansi"
+                "to": [{ "key_code": "left_arrow" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "j",
+                  "modifiers": {
+                    "mandatory": ["right_command"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [{ "key_code": "down_arrow" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "k",
+                  "modifiers": {
+                    "mandatory": ["right_command"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [{ "key_code": "up_arrow" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "l",
+                  "modifiers": {
+                    "mandatory": ["right_command"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [{ "key_code": "right_arrow" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "コマンドキーを単体で押したときに、英数・かなキーを送信する。（左コマンドキーは英数、右コマンドキーはかな） (rev 3)",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "left_command",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "parameters": {
+                  "basic.to_if_held_down_threshold_milliseconds": 100
+                },
+                "to": [
+                  {
+                    "key_code": "left_command",
+                    "lazy": true
+                  }
+                ],
+                "to_if_alone": [{ "key_code": "japanese_eisuu" }],
+                "to_if_held_down": [{ "key_code": "left_command" }],
+                "type": "basic"
+              },
+              {
+                "from": {
+                  "key_code": "right_command",
+                  "modifiers": { "optional": ["any"] }
+                },
+                "parameters": {
+                  "basic.to_if_held_down_threshold_milliseconds": 100
+                },
+                "to": [
+                  {
+                    "key_code": "right_command",
+                    "lazy": true
+                  }
+                ],
+                "to_if_alone": [{ "key_code": "japanese_kana" }],
+                "to_if_held_down": [{ "key_code": "right_command" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "Ctrl + iでTerminalを起動",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "i",
+                  "modifiers": { "mandatory": ["left_control"] }
+                },
+                "to": [{ "shell_command": "/bin/bash -c \"open -a 'iTerm'\"" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "右Shift + a でAndroid Studioを起動",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "a",
+                  "modifiers": { "mandatory": ["right_shift"] }
+                },
+                "to": [
+                  {
+                    "shell_command": "/bin/bash -c \"open -a 'Android Studio'\""
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "右Shift + t でTable Plusを起動",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "t",
+                  "modifiers": { "mandatory": ["right_shift"] }
+                },
+                "to": [
+                  { "shell_command": "/bin/bash -c \"open -a 'TablePlus'\"" }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "右Shift + x でXCodeを起動",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "x",
+                  "modifiers": { "mandatory": ["right_shift"] }
+                },
+                "to": [
+                  { "shell_command": "/bin/bash -c \"open -a 'Xcode-beta'\"" }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "右Shift + V でVSCodeを起動",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "v",
+                  "modifiers": { "mandatory": ["right_shift"] }
+                },
+                "to": [
+                  {
+                    "shell_command": "/bin/bash -c \"open -a 'Visual Studio Code'\""
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "右Shift + C でChromeを起動",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "c",
+                  "modifiers": { "mandatory": ["right_shift"] }
+                },
+                "to": [{ "shell_command": "open -a 'Google Chrome'" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "右Shift + d でDiscordを起動",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "d",
+                  "modifiers": { "mandatory": ["right_shift"] }
+                },
+                "to": [{ "shell_command": "open -a 'Discord'" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "右Shift + e でCursorを起動",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "e",
+                  "modifiers": { "mandatory": ["right_shift"] }
+                },
+                "to": [{ "shell_command": "open -a 'Cursor'" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "右Shift + s でSlackを起動",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "s",
+                  "modifiers": { "mandatory": ["right_shift"] }
+                },
+                "to": [{ "shell_command": "open -a 'Slack'" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "右Shift + z でZoomを起動",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "z",
+                  "modifiers": { "mandatory": ["right_shift"] }
+                },
+                "to": [{ "shell_command": "open -a 'zoom.us.app'" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "右Shift + k でKapを起動",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "k",
+                  "modifiers": { "mandatory": ["right_shift"] }
+                },
+                "to": [{ "shell_command": "open -a 'kap.app'" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "右Shift + pでMagic Trackpadに接続",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "p",
+                  "modifiers": { "mandatory": ["right_shift"] }
+                },
+                "to": [
+                  {
+                    "shell_command": "/opt/homebrew/bin/blueutil --pair 'bc-d0-74-b7-ee-8d'"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "右Shift + uでMagic Trackpadを接続解除",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "u",
+                  "modifiers": { "mandatory": ["right_shift"] }
+                },
+                "to": [
+                  {
+                    "shell_command": "/opt/homebrew/bin/blueutil --unpair 'bc-d0-74-b7-ee-8d'"
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
+            "description": "escキーを押したときに、英数キーも送信する（vim用）",
+            "manipulators": [
+              {
+                "from": { "key_code": "escape" },
+                "to": [
+                  { "key_code": "escape" },
+                  { "key_code": "japanese_eisuu" }
+                ],
+                "type": "basic"
+              }
+            ]
+          }
+        ]
+      },
+      "devices": [
+        {
+          "disable_built_in_keyboard_if_exists": true,
+          "fn_function_keys": [
+            {
+              "from": { "key_code": "f1" },
+              "to": [{ "key_code": "f1" }]
+            },
+            {
+              "from": { "key_code": "f2" },
+              "to": [{ "key_code": "f2" }]
+            },
+            {
+              "from": { "key_code": "f3" },
+              "to": [{ "key_code": "f3" }]
+            },
+            {
+              "from": { "key_code": "f4" },
+              "to": [{ "key_code": "f4" }]
+            },
+            {
+              "from": { "key_code": "f5" },
+              "to": [{ "key_code": "f5" }]
+            },
+            {
+              "from": { "key_code": "f6" },
+              "to": [{ "key_code": "f6" }]
+            },
+            {
+              "from": { "key_code": "f7" },
+              "to": [{ "key_code": "f7" }]
+            },
+            {
+              "from": { "key_code": "f8" },
+              "to": [{ "key_code": "f8" }]
+            },
+            {
+              "from": { "key_code": "f9" },
+              "to": [{ "key_code": "f9" }]
+            },
+            {
+              "from": { "key_code": "f10" },
+              "to": [{ "key_code": "f10" }]
+            },
+            {
+              "from": { "key_code": "f11" },
+              "to": [{ "key_code": "f11" }]
+            },
+            {
+              "from": { "key_code": "f12" },
+              "to": [{ "key_code": "f12" }]
             }
+          ],
+          "identifiers": {
+            "is_keyboard": true,
+            "product_id": 33,
+            "vendor_id": 1278
+          }
+        }
+      ],
+      "name": "Default profile",
+      "selected": true,
+      "simple_modifications": [
+        {
+          "from": { "key_code": "caps_lock" },
+          "to": [{ "key_code": "left_control" }]
         },
         {
-            "name": "大西配列",
-            "simple_modifications": [
-                {
-                    "from": { "key_code": "a" },
-                    "to": [{ "key_code": "e" }]
-                },
-                {
-                    "from": { "key_code": "b" },
-                    "to": [{ "key_code": "semicolon" }]
-                },
-                {
-                    "from": { "key_code": "comma" },
-                    "to": [{ "key_code": "m" }]
-                },
-                {
-                    "from": { "key_code": "d" },
-                    "to": [{ "key_code": "a" }]
-                },
-                {
-                    "from": { "key_code": "e" },
-                    "to": [{ "key_code": "u" }]
-                },
-                {
-                    "from": { "key_code": "f" },
-                    "to": [{ "key_code": "o" }]
-                },
-                {
-                    "from": { "key_code": "g" },
-                    "to": [{ "key_code": "hyphen" }]
-                },
-                {
-                    "from": { "key_code": "h" },
-                    "to": [{ "key_code": "k" }]
-                },
-                {
-                    "from": { "key_code": "hyphen" },
-                    "to": [{ "key_code": "slash" }]
-                },
-                {
-                    "from": { "key_code": "i" },
-                    "to": [{ "key_code": "r" }]
-                },
-                {
-                    "from": { "key_code": "j" },
-                    "to": [{ "key_code": "t" }]
-                },
-                {
-                    "from": { "key_code": "k" },
-                    "to": [{ "key_code": "n" }]
-                },
-                {
-                    "from": { "key_code": "l" },
-                    "to": [{ "key_code": "s" }]
-                },
-                {
-                    "from": { "key_code": "m" },
-                    "to": [{ "key_code": "d" }]
-                },
-                {
-                    "from": { "key_code": "n" },
-                    "to": [{ "key_code": "g" }]
-                },
-                {
-                    "from": { "key_code": "o" },
-                    "to": [{ "key_code": "y" }]
-                },
-                {
-                    "from": { "key_code": "period" },
-                    "to": [{ "key_code": "j" }]
-                },
-                {
-                    "from": { "key_code": "r" },
-                    "to": [{ "key_code": "comma" }]
-                },
-                {
-                    "from": { "key_code": "s" },
-                    "to": [{ "key_code": "i" }]
-                },
-                {
-                    "from": { "key_code": "semicolon" },
-                    "to": [{ "key_code": "h" }]
-                },
-                {
-                    "from": { "key_code": "slash" },
-                    "to": [{ "key_code": "b" }]
-                },
-                {
-                    "from": { "key_code": "t" },
-                    "to": [{ "key_code": "period" }]
-                },
-                {
-                    "from": { "key_code": "u" },
-                    "to": [{ "key_code": "w" }]
-                },
-                {
-                    "from": { "key_code": "w" },
-                    "to": [{ "key_code": "l" }]
-                },
-                {
-                    "from": { "key_code": "y" },
-                    "to": [{ "key_code": "f" }]
-                }
-            ],
-            "virtual_hid_keyboard": {
-                "country_code": 0,
-                "keyboard_type_v2": "ansi"
-            }
+          "from": { "key_code": "left_control" },
+          "to": [{ "key_code": "left_command" }]
         }
-    ]
+      ],
+      "virtual_hid_keyboard": {
+        "country_code": 0,
+        "keyboard_type_v2": "ansi"
+      }
+    },
+    {
+      "name": "大西配列",
+      "simple_modifications": [
+        {
+          "from": { "key_code": "a" },
+          "to": [{ "key_code": "e" }]
+        },
+        {
+          "from": { "key_code": "b" },
+          "to": [{ "key_code": "semicolon" }]
+        },
+        {
+          "from": { "key_code": "comma" },
+          "to": [{ "key_code": "m" }]
+        },
+        {
+          "from": { "key_code": "d" },
+          "to": [{ "key_code": "a" }]
+        },
+        {
+          "from": { "key_code": "e" },
+          "to": [{ "key_code": "u" }]
+        },
+        {
+          "from": { "key_code": "f" },
+          "to": [{ "key_code": "o" }]
+        },
+        {
+          "from": { "key_code": "g" },
+          "to": [{ "key_code": "hyphen" }]
+        },
+        {
+          "from": { "key_code": "h" },
+          "to": [{ "key_code": "k" }]
+        },
+        {
+          "from": { "key_code": "hyphen" },
+          "to": [{ "key_code": "slash" }]
+        },
+        {
+          "from": { "key_code": "i" },
+          "to": [{ "key_code": "r" }]
+        },
+        {
+          "from": { "key_code": "j" },
+          "to": [{ "key_code": "t" }]
+        },
+        {
+          "from": { "key_code": "k" },
+          "to": [{ "key_code": "n" }]
+        },
+        {
+          "from": { "key_code": "l" },
+          "to": [{ "key_code": "s" }]
+        },
+        {
+          "from": { "key_code": "m" },
+          "to": [{ "key_code": "d" }]
+        },
+        {
+          "from": { "key_code": "n" },
+          "to": [{ "key_code": "g" }]
+        },
+        {
+          "from": { "key_code": "o" },
+          "to": [{ "key_code": "y" }]
+        },
+        {
+          "from": { "key_code": "period" },
+          "to": [{ "key_code": "j" }]
+        },
+        {
+          "from": { "key_code": "r" },
+          "to": [{ "key_code": "comma" }]
+        },
+        {
+          "from": { "key_code": "s" },
+          "to": [{ "key_code": "i" }]
+        },
+        {
+          "from": { "key_code": "semicolon" },
+          "to": [{ "key_code": "h" }]
+        },
+        {
+          "from": { "key_code": "slash" },
+          "to": [{ "key_code": "b" }]
+        },
+        {
+          "from": { "key_code": "t" },
+          "to": [{ "key_code": "period" }]
+        },
+        {
+          "from": { "key_code": "u" },
+          "to": [{ "key_code": "w" }]
+        },
+        {
+          "from": { "key_code": "w" },
+          "to": [{ "key_code": "l" }]
+        },
+        {
+          "from": { "key_code": "y" },
+          "to": [{ "key_code": "f" }]
+        }
+      ],
+      "virtual_hid_keyboard": {
+        "country_code": 0,
+        "keyboard_type_v2": "ansi"
+      }
+    }
+  ]
 }
