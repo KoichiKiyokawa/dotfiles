@@ -98,3 +98,52 @@ killport() {
     echo "Port $port is not being used."
   fi
 }
+
+# GitHub PRをGit Worktreeとしてチェックアウトする
+function prw() {
+  if [ -z "$1" ]; then
+    echo "Usage: prw <PR number or GitHub PR URL>"
+    return 1
+  fi
+
+  local input=$1
+  local pr_number
+
+  # PR番号かURLかを判定
+  if [[ "$input" =~ ^https://github\.com/.+/.+/pull/([0-9]+) ]]; then
+    pr_number=${match[1]}
+  elif [[ "$input" =~ ^[0-9]+$ ]]; then
+    pr_number=$input
+  else
+    echo "Invalid PR identifier: $input"
+    return 1
+  fi
+
+  local branch_name="pr-${pr_number}"
+  local worktree_dir=".worktree/${branch_name}"
+
+  mkdir -p .worktree
+
+  # worktree がすでに存在していたら再利用
+  if [ -d "$worktree_dir" ]; then
+    echo "Worktree already exists at $worktree_dir"
+    cd "$worktree_dir"
+    return 0
+  fi
+
+  # ブランチが既に存在するかチェック（fetch するかどうかを決定）
+  if git show-ref --quiet refs/heads/"$branch_name"; then
+    echo "Branch '$branch_name' already exists locally. Reusing it."
+  else
+    echo "Fetching PR #$pr_number from origin as '$branch_name'..."
+    git fetch origin "pull/${pr_number}/head:${branch_name}" || {
+      echo "Failed to fetch PR"
+      return 1
+    }
+  fi
+
+  echo "Creating worktree at $worktree_dir..."
+  git worktree add "$worktree_dir" "$branch_name" || return 1
+
+  cd "$worktree_dir"
+}
