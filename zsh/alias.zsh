@@ -38,6 +38,7 @@ abbr --session gm="git commit"
 abbr --session gr="git rebase"
 abbr --session gac="git add -A; git commit -m"
 abbr --session gt="git add -A; git commit -m 'temporary commit'"
+abbr --session gw="git worktree"
 abbr --session gst="git stash -u"
 abbr --session gstl="git stash list"
 abbr --session gstp="git stash pop"
@@ -99,6 +100,27 @@ killport() {
   fi
 }
 
+# 与えられた命名でworktreeを追加し、cursorで開く
+ew() {
+  task_name="$1"
+  if [ -z "$task_name" ]; then
+    echo "Usage: ew <task-name>"
+    return 1
+  fi
+
+  mkdir -p .worktree
+  worktree_dir=".worktree/${task_name//\//-}"
+
+  if [ -d "$worktree_dir" ]; then
+    echo "Worktree already exists at $worktree_dir"
+    cursor "$worktree_dir"
+    return 0
+  fi
+
+  git worktree add --detach "$worktree_dir"
+  cursor "$worktree_dir"
+}
+
 # GitHub PRをGit Worktreeとしてチェックアウトする
 function prw() {
   if [ -z "$1" ]; then
@@ -106,44 +128,25 @@ function prw() {
     return 1
   fi
 
-  local input=$1
-  local pr_number
-
-  # PR番号かURLかを判定
-  if [[ "$input" =~ ^https://github\.com/.+/.+/pull/([0-9]+) ]]; then
-    pr_number=${match[1]}
-  elif [[ "$input" =~ ^[0-9]+$ ]]; then
-    pr_number=$input
-  else
-    echo "Invalid PR identifier: $input"
-    return 1
-  fi
-
-  local branch_name="pr-${pr_number}"
-  local worktree_dir=".worktree/${branch_name}"
+  local branch_name=$(gh pr view $1 --json headRefName -q .headRefName)
+  local worktree_dir=".worktree/${branch_name//\//-}"
 
   mkdir -p .worktree
 
   # worktree がすでに存在していたら再利用
   if [ -d "$worktree_dir" ]; then
     echo "Worktree already exists at $worktree_dir"
-    cd "$worktree_dir"
+    cursor "$worktree_dir"
     return 0
   fi
 
-  # ブランチが既に存在するかチェック（fetch するかどうかを決定）
+  echo "Creating worktree at $worktree_dir..."
+  # ローカルブランチが存在する場合はそれを使用、存在しない場合はリモートから作成
   if git show-ref --quiet refs/heads/"$branch_name"; then
-    echo "Branch '$branch_name' already exists locally. Reusing it."
+    git worktree add "$worktree_dir" "$branch_name" || return 1
   else
-    echo "Fetching PR #$pr_number from origin as '$branch_name'..."
-    git fetch origin "pull/${pr_number}/head:${branch_name}" || {
-      echo "Failed to fetch PR"
-      return 1
-    }
+    git worktree add "$worktree_dir" "origin/$branch_name" || return 1
   fi
 
-  echo "Creating worktree at $worktree_dir..."
-  git worktree add "$worktree_dir" "$branch_name" || return 1
-
-  cd "$worktree_dir"
+  cursor "$worktree_dir"
 }
