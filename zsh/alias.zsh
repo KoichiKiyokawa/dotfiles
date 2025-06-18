@@ -109,11 +109,13 @@ ew() {
   fi
 
   mkdir -p .worktree
-  worktree_dir=".worktree/${task_name//\//-}"
+  local worktree_dir=".worktree/${task_name//\//-}"
 
-  if [ -d "$worktree_dir" ]; then
-    echo "Worktree already exists at $worktree_dir"
-    cursor "$worktree_dir"
+  # 同名のタスクのworktreeがすでに存在していたら再利用
+  local existing_worktree=$(git worktree list | grep "$worktree_dir" | awk '{print $1}')
+  if [ -n "$existing_worktree" ]; then
+    echo "Worktree for task '$task_name' already exists at $existing_worktree"
+    cursor "$existing_worktree"
     return 0
   fi
 
@@ -122,7 +124,7 @@ ew() {
 }
 
 # GitHub PRをGit Worktreeとしてチェックアウトする
-function prw() {
+prw() {
   if [ -z "$1" ]; then
     echo "Usage: prw <PR number or GitHub PR URL>"
     return 1
@@ -133,10 +135,11 @@ function prw() {
 
   mkdir -p .worktree
 
-  # worktree がすでに存在していたら再利用
-  if [ -d "$worktree_dir" ]; then
-    echo "Worktree already exists at $worktree_dir"
-    cursor "$worktree_dir"
+  # 同名のブランチのworktreeがすでに存在していたら再利用
+  local existing_worktree=$(git worktree list | grep "\[$branch_name\]" | awk '{print $1}')
+  if [ -n "$existing_worktree" ]; then
+    echo "Worktree for branch '$branch_name' already exists at $existing_worktree"
+    cursor "$existing_worktree"
     return 0
   fi
 
@@ -146,6 +149,7 @@ function prw() {
     git worktree add "$worktree_dir" "$branch_name" || return 1
   else
     git worktree add "$worktree_dir" "origin/$branch_name" || return 1
+    git checkout "$branch_name"
   fi
 
   cursor "$worktree_dir"
