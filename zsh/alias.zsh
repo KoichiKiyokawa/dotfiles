@@ -100,6 +100,8 @@ killport() {
   fi
 }
 
+worktree_base_dir=".git/wt"
+
 # 与えられた命名でworktreeを追加し、cursorで開く
 ew() {
   task_name="$1"
@@ -108,8 +110,8 @@ ew() {
     return 1
   fi
 
-  mkdir -p .worktree
-  local worktree_dir=".worktree/${task_name//\//-}"
+  mkdir -p "$worktree_base_dir"
+  local worktree_dir="$worktree_base_dir/${task_name//\//-}"
 
   # 同名のタスクのworktreeがすでに存在していたら再利用
   local existing_worktree=$(git worktree list | grep "$worktree_dir" | awk '{print $1}')
@@ -131,9 +133,9 @@ prw() {
   fi
 
   local branch_name=$(gh pr view $1 --json headRefName -q .headRefName)
-  local worktree_dir=".worktree/${branch_name//\//-}"
+  local worktree_dir="$worktree_base_dir/${branch_name//\//-}"
 
-  mkdir -p .worktree
+  mkdir -p "$worktree_base_dir"
 
   # 同名のブランチのworktreeがすでに存在していたら再利用
   local existing_worktree=$(git worktree list | grep "\[$branch_name\]" | awk '{print $1}')
@@ -144,13 +146,8 @@ prw() {
   fi
 
   echo "Creating worktree at $worktree_dir..."
-  # ローカルブランチが存在する場合はそれを使用、存在しない場合はリモートから作成
-  if git show-ref --quiet refs/heads/"$branch_name"; then
-    git worktree add "$worktree_dir" "$branch_name" || return 1
-  else
-    git worktree add "$worktree_dir" "origin/$branch_name" || return 1
-    git checkout "$branch_name"
-  fi
+  git fetch origin "$branch_name"
+  git worktree add "$worktree_dir" "$branch_name" || return 1
 
   cursor "$worktree_dir"
 }
