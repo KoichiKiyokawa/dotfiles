@@ -20,6 +20,7 @@ cask "docker"
 cask "google-cloud-sdk"
 cask "google-japanese-ime"
 cask "ghostty"
+cask "iterm2"
 cask "kap" # https://getkap.co/
 cask "karabiner-elements"
 cask "keycastr"
