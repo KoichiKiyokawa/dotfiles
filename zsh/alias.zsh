@@ -100,8 +100,6 @@ killport() {
   fi
 }
 
-worktree_base_dir=".git/wt"
-
 # 与えられた命名でworktreeを追加し、cursorで開く
 ew() {
   task_name="$1"
@@ -110,11 +108,11 @@ ew() {
     return 1
   fi
 
-  mkdir -p "$worktree_base_dir"
-  local worktree_dir="$worktree_base_dir/${task_name//\//-}"
+  local worktree_dir="../${PWD##*/}-$task_name"
+  mkdir -p "$worktree_dir"
 
   # 同名のタスクのworktreeがすでに存在していたら再利用
-  local existing_worktree=$(git worktree list | grep "$worktree_dir" | awk '{print $1}')
+  local existing_worktree=$(git worktree list | grep $(realpath "$worktree_dir") | awk '{print $1}')
   if [ -n "$existing_worktree" ]; then
     echo "Worktree for task '$task_name' already exists at $existing_worktree"
     cursor "$existing_worktree"
@@ -133,9 +131,8 @@ prw() {
   fi
 
   local branch_name=$(gh pr view $1 --json headRefName -q .headRefName)
-  local worktree_dir="$worktree_base_dir/${branch_name//\//-}"
-
-  mkdir -p "$worktree_base_dir"
+  local worktree_dir="../${PWD##*/}-${branch_name//\//-}"
+  mkdir -p "$worktree_dir"
 
   # 同名のブランチのworktreeがすでに存在していたら再利用
   local existing_worktree=$(git worktree list | grep "\[$branch_name\]" | awk '{print $1}')
