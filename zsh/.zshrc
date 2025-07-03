@@ -14,7 +14,7 @@ zsh-defer source ~/dotfiles/zsh/local.zsh
 zsh-defer zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[-_./]=**' 'l:|=* r:|=*' # fuzzy matching
 
 # Ctrl + F to edit the current command line in $EDITOR
-export EDITOR="code --wait"
+export EDITOR="nvim"
 autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '^F' edit-command-line
