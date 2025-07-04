@@ -100,6 +100,9 @@ killport() {
   fi
 }
 
+#----------------------------
+# git worktreeの操作
+
 # 与えられた命名でworktreeを追加し、cursorで開く
 ew() {
   task_name="$1"
@@ -148,3 +151,32 @@ prw() {
 
   cursor "$worktree_dir"
 }
+
+# git worktree remove + directory delete
+gwr() {
+  if [[ -z $1 ]]; then
+    echo "Usage: gwr <worktree-path>"
+    return 1
+  fi
+
+  local wt=$1
+
+  if [[ ! -d $wt ]]; then
+    echo "Error: '$wt' does not exist or is not a directory."
+    return 1
+  fi
+
+  # ワークツリー解除
+  echo "Removing worktree metadata for: $wt"
+  if git worktree remove --force "$wt"; then
+    # ディレクトリ削除
+    echo "Deleting directory: $wt"
+    rm -rf -- "$wt"
+    echo "Done."
+  else
+    echo "Failed to remove worktree. Directory not deleted."
+    return 1
+  fi
+}
+
+#----------------------------
