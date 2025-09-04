@@ -8,7 +8,7 @@ vim.o.swapfile = false
 vim.o.hidden = true -- enable to open another file when edditing
 vim.o.mouse = 'a' -- enable mouse
 vim.o.clipboard = 'unnamedplus' -- yank to clipboard
-vim.api.nvim_command('source $VIMRUNTIME/macros/matchit.vim') -- enable to jump HTML tag by %
+vim.cmd('runtime! macros/matchit.vim') -- enable to jump HTML tag by %
 vim.api.nvim_command('set isk+=-') -- interpret words chained by `-` as one word
 vim.o.wrap = false -- do not wrap long line
 
