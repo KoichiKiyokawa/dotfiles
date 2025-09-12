@@ -7,7 +7,7 @@
 
 [core]
   editor = nvim
-  pager = delta
+  # pager = delta
   ignorecase = false
 
 [interactive]
@@ -41,3 +41,5 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[safe]
+	directory = /Users/kiyokawa-koichi/workspace/pointclub/pointclub-web-frontend/.worktree/err-boundary
