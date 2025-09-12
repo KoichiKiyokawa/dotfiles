@@ -66,6 +66,7 @@ abbr --session gg="go generate ./..."
 # editor
 abbr --session co="code ."
 abbr --session e="cursor ."
+abbr --session ca="cursor-agent"
 
 # incremental search for `git checkout`
 gco() {
