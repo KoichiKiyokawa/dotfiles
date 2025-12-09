@@ -1,6 +1,8 @@
 # for M1 Mac
 export PATH="/opt/homebrew/bin:$PATH"
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # for cline https://zenn.dev/jtechjapan_pub/articles/de02f0f2652366
 [[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
 

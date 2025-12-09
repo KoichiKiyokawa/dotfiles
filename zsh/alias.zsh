@@ -93,13 +93,16 @@ mkcd() {
 # 指定した port のプロセスを kill する
 killport() {
   port="$1"
-  pid=$(lsof -ti:$port)
-  if [ -n "$pid" ]; then
-    kill "$pid"
+  pids=("${(@f)$(lsof -ti:$port)}")  # 改行区切りを配列化
+
+  if (( ${#pids[@]} > 0 )); then
+    kill $pids    # 配列を展開して複数 PID を kill
+    echo "Killed PIDs: ${pids[@]}"
   else
     echo "Port $port is not being used."
   fi
 }
+
 
 #----------------------------
 # git worktreeの操作
@@ -119,12 +122,12 @@ ew() {
   local existing_worktree=$(git worktree list | grep $(realpath "$worktree_dir") | awk '{print $1}')
   if [ -n "$existing_worktree" ]; then
     echo "Worktree for task '$task_name' already exists at $existing_worktree"
-    cursor "$existing_worktree"
+    cd "$existing_worktree"
     return 0
   fi
 
   git worktree add --detach "$worktree_dir"
-  cursor "$worktree_dir"
+  cd "$worktree_dir"
 }
 
 # GitHub PRをGit Worktreeとしてチェックアウトする
@@ -142,7 +145,7 @@ prw() {
   local existing_worktree=$(git worktree list | grep "\[$branch_name\]" | awk '{print $1}')
   if [ -n "$existing_worktree" ]; then
     echo "Worktree for branch '$branch_name' already exists at $existing_worktree"
-    cursor "$existing_worktree"
+    cd "$existing_worktree"
     return 0
   fi
 
@@ -150,7 +153,7 @@ prw() {
   git fetch origin "$branch_name"
   git worktree add "$worktree_dir" "$branch_name" || return 1
 
-  cursor "$worktree_dir"
+  cd "$worktree_dir"
 }
 
 # git worktree remove + directory delete
