@@ -1,0 +1,17 @@
+{
+  "packages": [
+    "awscli2@latest",
+    "blueutil@latest",
+    "curl@latest",
+    "delta@latest",
+    "gh@latest",
+    "git@latest",
+    "jq@latest",
+    "lazygit@latest",
+    "mise@latest",
+    "neovim@latest",
+    "peco@latest",
+    "sheldon@latest",
+    "starship@latest"
+  ]
+}

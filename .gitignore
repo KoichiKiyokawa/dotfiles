@@ -3,6 +3,7 @@ karabiner/*
 
 .DS_Store
 env.sh
+.devbox/
 
 nvim/plugin
 

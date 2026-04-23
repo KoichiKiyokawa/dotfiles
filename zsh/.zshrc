@@ -1,6 +1,3 @@
-# for M1 Mac
-export PATH="/opt/homebrew/bin:$PATH"
-
 export PATH="$HOME/.local/bin:$PATH"
 
 # for cline https://zenn.dev/jtechjapan_pub/articles/de02f0f2652366
@@ -9,9 +6,10 @@ export PATH="$HOME/.local/bin:$PATH"
 # for cursor (https://scrapbox.io/ygkn/gh_cliをCursor_Agentに実行させると動かない)
 export GH_PAGER=""
 
+eval "$(devbox shellenv -c "$HOME/dotfiles")"
 eval "$(starship init zsh)"
 eval "$(sheldon source)"
-eval "$(/opt/homebrew/bin/mise activate zsh)"
+eval "$(mise activate zsh)"
 
 zsh-defer source ~/dotfiles/zsh/alias.zsh
 zsh-defer source ~/dotfiles/zsh/local.zsh
