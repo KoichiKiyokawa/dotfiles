@@ -27,7 +27,7 @@ exec zsh
 
 ### What Devbox manages
 
-- CLI packages such as `git`, `gh`, `mise`, `neovim`, `starship`
+- CLI packages such as `git`, `gh`, `neovim`, `starship`
 - Shell environment for this dotfiles setup via `devbox shellenv`
 - Dotfile symlinks for zsh, neovim, lazygit, VS Code settings
 - GUI apps such as VS Code, Docker Desktop, Raycast, and iTerm2 are still installed separately

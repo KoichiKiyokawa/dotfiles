@@ -8,10 +8,11 @@
     "git@latest",
     "jq@latest",
     "lazygit@latest",
-    "mise@latest",
     "neovim@latest",
     "peco@latest",
     "sheldon@latest",
-    "starship@latest"
+    "starship@latest",
+    "nodejs@24.12.0",
+    "pnpm@10.33.0"
   ]
 }

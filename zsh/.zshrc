@@ -9,7 +9,6 @@ export GH_PAGER=""
 eval "$(devbox shellenv -c "$HOME/dotfiles")"
 eval "$(starship init zsh)"
 eval "$(sheldon source)"
-eval "$(mise activate zsh)"
 
 zsh-defer source ~/dotfiles/zsh/alias.zsh
 zsh-defer source ~/dotfiles/zsh/local.zsh
