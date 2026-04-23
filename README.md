@@ -37,7 +37,7 @@ exec zsh
 ```sh
 cd ~/dotfiles
 devbox update
-sh init.sh
+exec zsh
 ```
 
 ### Add a package
@@ -51,7 +51,7 @@ devbox search "$PACKAGE"
 
 devbox add "$PACKAGE"
 
-sh init.sh
+exec zsh
 ```
 
 ### Raycast setting
