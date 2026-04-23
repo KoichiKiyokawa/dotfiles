@@ -42,14 +42,14 @@ sh init.sh
 
 ### Add a package
 
-Search for the package in Devbox, add it to `devbox.json`, then apply the change.
+Search for the package in Devbox, add it with `devbox add`, then apply the change.
 
 ```sh
 cd ~/dotfiles
 PACKAGE=just
 devbox search "$PACKAGE"
 
-# edit devbox.json and add the package you found
+devbox add "$PACKAGE"
 
 sh init.sh
 ```
