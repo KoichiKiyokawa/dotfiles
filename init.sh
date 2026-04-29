@@ -1,20 +1,18 @@
 #!/bin/sh
 
-mkdir -p ~/.config
+set -eu
 
-ln -fs ~/dotfiles/nvim ~/.config
+cd "$(dirname "$0")"
 
-ln -fs ~/dotfiles/karabiner ~/.config
+export NIX_CONFIG="experimental-features = nix-command flakes${NIX_CONFIG:+
+}${NIX_CONFIG-}"
 
-ln -fs ~/dotfiles/zsh/.zshrc ~/.zshrc
-touch ~/dotfiles/zsh/local.zsh
-mkdir -p ~/.config/sheldon
-ln -fs ~/dotfiles/zsh/plugins.toml ~/.config/sheldon/plugins.toml
-ln -fs ~/dotfiles/zsh/starship.toml ~/.config/starship.toml
+if ! command -v nix >/dev/null 2>&1; then
+  if [ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
+    . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+  elif [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+    . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+  fi
+fi
 
-ln -fs ~/dotfiles/lazygit/config.yml ~/.config/lazygit/
-
-ln -fs ~/dotfiles/vscode/.vimrc ~/.vimrc
-ln -fs ~/dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
-
-ln -fs ~/dotfiles/.gitconfig ~/.gitconfig
+exec nix run .#switch -- "$@"

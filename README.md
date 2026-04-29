@@ -11,19 +11,44 @@ This repository has following configs.
 
 ### Arrange config files and initialize
 
-```
+```sh
 cd ~
 git clone https://github.com/KoichiKiyokawa/dotfiles.git
 cd dotfiles
-# (on Mac)
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-sudo /opt/homebrew/bin/brew bundle
+
+# Install Nix first
+sh <(curl -L https://nixos.org/nix/install) --daemon
+
+# Restart the shell, or load Nix in the current shell
+. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+
+# Apply macOS system packages, CLI packages, and dotfiles
 sh -c 'chsh -s $(which zsh)'
 sh init.sh
 exec zsh
 ```
 
+### What Nix manages
+
+- CLI packages such as `git`, `gh`, `mise`, `neovim`, `pnpm`, `starship`
+- macOS apps available in nixpkgs, such as `Ghostty`, `iTerm2`, `Raycast`, `Visual Studio Code`
+- Symlinks for `~/.zshrc`, `~/.gitconfig`, `~/.config/nvim`, `~/.config/lazygit`, VS Code settings
+- The checked-in dotfiles are linked through the Nix store for reproducible generations
+- `zsh/local.zsh` is created by the switch app and remains a local override file
+
+### Apps not managed yet
+
+- `Docker Desktop`, `Google Japanese Input`, and `Skitch` are not declared because matching nixpkgs packages were not available
+
+### Update packages later
+
+```sh
+cd ~/dotfiles
+nix --extra-experimental-features 'nix-command flakes' flake update
+sh init.sh
+```
+
 ### Raycast setting
 
 1. Launch Raycast and press <kbd>alt</kbd> + <kbd>Space</kbd>, then run with inputting `Import Preferences & Data`.
-1. Select the `~/dotfiles/Raycast.rayconfig`.
+1. Select the `~/dotfiles/raycast/Raycast.rayconfig`.

@@ -1,39 +1,39 @@
 {
   "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[javascriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[json]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[markdown]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[python]": {
-    "editor.formatOnType": true
+    "editor.formatOnType": true,
   },
   "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
   },
   "cSpell.userWords": ["Fastify"],
   "diffEditor.ignoreTrimWhitespace": false,
@@ -43,7 +43,7 @@
   "editor.inlineSuggest.enabled": true,
   "editor.minimap.renderCharacters": false,
   "editor.quickSuggestions": {
-    "strings": true
+    "strings": true,
   },
   "editor.renderWhitespace": "boundary",
   "editor.stickyScroll.enabled": true,
@@ -60,31 +60,31 @@
     "*": true,
     "yaml": true,
     "plaintext": false,
-    "markdown": false
+    "markdown": false,
   },
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
-      "text": "必ず日本語で記述してください"
+      "text": "必ず日本語で記述してください",
     },
     {
-      "text": "コミットメッセージは、最初にConventional Commitsに則って記述してください"
-    }
+      "text": "コミットメッセージは、最初にConventional Commitsに則って記述してください",
+    },
   ],
   "githubPullRequests.fileListLayout": "tree",
   "githubPullRequests.pullBranch": "never",
   "githubPullRequests.queries": [
     {
       "label": "Waiting For My Review",
-      "query": "repo:${owner}/${repository} is:open review-requested:${user}"
+      "query": "repo:${owner}/${repository} is:open review-requested:${user}",
     },
     {
       "label": "Assigned To Me",
-      "query": "repo:${owner}/${repository} is:open assignee:${user}"
+      "query": "repo:${owner}/${repository} is:open assignee:${user}",
     },
     {
       "label": "Created By Me",
-      "query": "repo:${owner}/${repository} is:open author:${user}"
-    }
+      "query": "repo:${owner}/${repository} is:open author:${user}",
+    },
   ],
   "gitlens.views.repositories.files.layout": "tree",
   "go.inlayHints.compositeLiteralFields": true,
@@ -92,27 +92,27 @@
   "go.lintFlags": ["--fast"],
   "go.lintTool": "golangci-lint",
   "go.toolsEnvVars": {
-    "GO111MODULE": "on"
+    "GO111MODULE": "on",
   },
   "go.toolsManagement.autoUpdate": true,
   "go.useLanguageServer": true,
   "python.languageServer": "Default",
   "redhat.telemetry.enabled": true,
   "search.exclude": {
-    "**/.snapshots/**": true
+    "**/.snapshots/**": true,
   },
   "tailwindCSS.includeLanguages": {
-    "svelte": "html"
+    "svelte": "html",
   },
   "terminal.external.osxExec": "iTerm2.app",
   "terminal.integrated.env.osx": {
-    "FIG_NEW_SESSION": "1"
+    "FIG_NEW_SESSION": "1",
   },
   "terminal.integrated.fontFamily": "RobotoMono Nerd Font",
   "terminal.integrated.fontSize": 13,
   "workbench.colorCustomizations": {
     "terminal.ansiBrightWhite": "#fff",
-    "terminal.ansiWhite": "#aaa"
+    "terminal.ansiWhite": "#aaa",
   },
   "workbench.editor.enablePreview": false,
   "workbench.iconTheme": "vscode-icons",
@@ -121,5 +121,6 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "editor.fontSize": 11,
   "cline.preferredLanguage": "Japanese - 日本語",
-  "github.copilot.nextEditSuggestions.enabled": true
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "workbench.colorTheme": "Dark Modern",
 }

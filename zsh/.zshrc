@@ -1,5 +1,9 @@
-# for M1 Mac
-export PATH="/opt/homebrew/bin:$PATH"
+# Load Nix profile when it is available.
+if [ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
+  . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+elif [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
+  . "$HOME/.nix-profile/etc/profile.d/nix.sh"
+fi
 
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -11,10 +15,10 @@ export GH_PAGER=""
 
 eval "$(starship init zsh)"
 eval "$(sheldon source)"
-eval "$(/opt/homebrew/bin/mise activate zsh)"
+eval "$(mise activate zsh)"
 
-zsh-defer source ~/dotfiles/zsh/alias.zsh
-zsh-defer source ~/dotfiles/zsh/local.zsh
+zsh-defer source "${DOTFILES_ROOT:-$HOME/dotfiles}/zsh/alias.zsh"
+zsh-defer source "${DOTFILES_ROOT:-$HOME/dotfiles}/zsh/local.zsh"
 
 zsh-defer zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[-_./]=**' 'l:|=* r:|=*' # fuzzy matching
 
