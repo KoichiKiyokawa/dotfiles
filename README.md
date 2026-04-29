@@ -19,7 +19,10 @@ cd dotfiles
 # Install Nix first
 sh <(curl -L https://nixos.org/nix/install) --daemon
 
-# Apply packages and dotfiles
+# Restart the shell, or load Nix in the current shell
+. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
+
+# Apply macOS system packages, CLI packages, and dotfiles
 sh -c 'chsh -s $(which zsh)'
 sh init.sh
 exec zsh
@@ -27,9 +30,15 @@ exec zsh
 
 ### What Nix manages
 
-- CLI packages such as `git`, `gh`, `mise`, `neovim`, `starship`
+- CLI packages such as `git`, `gh`, `mise`, `neovim`, `pnpm`, `starship`
+- macOS apps available in nixpkgs, such as `Ghostty`, `iTerm2`, `Raycast`, `Visual Studio Code`
 - Symlinks for `~/.zshrc`, `~/.gitconfig`, `~/.config/nvim`, `~/.config/lazygit`, VS Code settings
-- `zsh/local.zsh` is kept as a local override file outside of Nix-managed config content
+- The checked-in dotfiles are linked through the Nix store for reproducible generations
+- `zsh/local.zsh` is created by the switch app and remains a local override file
+
+### Apps not managed yet
+
+- `Docker Desktop`, `Google Japanese Input`, and `Skitch` are not declared because matching nixpkgs packages were not available
 
 ### Update packages later
 

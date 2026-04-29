@@ -2,6 +2,7 @@
 
 let
   dotfilesDir = localConfig.dotfilesDir;
+  dotfilesCheckout = "${localConfig.homeDirectory}/dotfiles";
   managedFiles = {
     ".config/nvim" = "nvim";
     ".zshrc" = "zsh/.zshrc";
@@ -21,9 +22,12 @@ in
 
   programs.home-manager.enable = true;
 
+  home.sessionVariables = {
+    DOTFILES_ROOT = dotfilesCheckout;
+  };
+
   home.packages = with pkgs; [
     awscli2
-    blueutil
     curl
     delta
     gh
@@ -33,11 +37,13 @@ in
     mise
     neovim
     peco
+    pnpm
     sheldon
     starship
+  ] ++ lib.optionals pkgs.stdenv.isDarwin [
   ];
 
   home.file = lib.mapAttrs (_target: source: {
-    source = config.lib.file.mkOutOfStoreSymlink "${dotfilesDir}/${source}";
+    source = "${dotfilesDir}/${source}";
   }) managedFiles;
 }
