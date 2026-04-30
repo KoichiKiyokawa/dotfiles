@@ -31,7 +31,7 @@ exec zsh
 ### What Nix manages
 
 - CLI packages such as `git`, `gh`, `mise`, `neovim`, `pnpm`, `starship`
-- macOS apps available in nixpkgs, such as `Ghostty`, `iTerm2`, `Raycast`, `Visual Studio Code`
+- macOS apps available in nixpkgs, such as `Ghostty`, `Raycast`, `Visual Studio Code`
 - Symlinks for `~/.zshrc`, `~/.gitconfig`, `~/.config/nvim`, `~/.config/lazygit`, VS Code settings
 - The checked-in dotfiles are linked through the Nix store for reproducible generations
 - `zsh/local.zsh` is created by the switch app and remains a local override file

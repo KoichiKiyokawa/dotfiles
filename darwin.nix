@@ -20,7 +20,6 @@
     docker
     ghostty-bin
     google-cloud-sdk
-    iterm2
     karabiner-elements
     keycastr
     raycast

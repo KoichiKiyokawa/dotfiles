@@ -4,6 +4,22 @@
       "complex_modifications": {
         "rules": [
           {
+            "description": "Ctrl+i でGhosttyを起動",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "i",
+                  "modifiers": {
+                    "mandatory": ["left_control"],
+                    "optional": ["any"]
+                  }
+                },
+                "to": [{ "shell_command": "open -a 'Ghostty'" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "Change right_command+hjkl to arrow keys",
             "manipulators": [
               {
@@ -89,19 +105,6 @@
                 ],
                 "to_if_alone": [{ "key_code": "japanese_kana" }],
                 "to_if_held_down": [{ "key_code": "right_command" }],
-                "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Ctrl + iでTerminalを起動",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "i",
-                  "modifiers": { "mandatory": ["left_control"] }
-                },
-                "to": [{ "shell_command": "/bin/bash -c \"open -a 'iTerm'\"" }],
                 "type": "basic"
               }
             ]
