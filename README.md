@@ -48,6 +48,16 @@ nix --extra-experimental-features 'nix-command flakes' flake update
 sh init.sh
 ```
 
+
+### Enable Touch ID for `sudo` (macOS)
+
+Run the following commands to create `/etc/pam.d/sudo_local` from the template and enable Touch ID authentication for `sudo`:
+
+```sh
+sudo cp /etc/pam.d/sudo_local.template /etc/pam.d/sudo_local
+sudo sed -i '' 's/^#auth/auth/' /etc/pam.d/sudo_local
+```
+
 ### Raycast setting
 
 1. Launch Raycast and press <kbd>alt</kbd> + <kbd>Space</kbd>, then run with inputting `Import Preferences & Data`.
