@@ -104,7 +104,7 @@
   "tailwindCSS.includeLanguages": {
     "svelte": "html",
   },
-  "terminal.external.osxExec": "iTerm2.app",
+  "terminal.external.osxExec": "Ghostty.app",
   "terminal.integrated.env.osx": {
     "FIG_NEW_SESSION": "1",
   },
