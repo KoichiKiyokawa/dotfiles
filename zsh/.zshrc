@@ -15,7 +15,7 @@ export GH_PAGER=""
 
 eval "$(starship init zsh)"
 eval "$(sheldon source)"
-eval "$(mise activate zsh)"
+export PATH="$HOME/.local/share/mise/shims:$PATH"
 
 zsh-defer source "${DOTFILES_ROOT:-$HOME/dotfiles}/zsh/alias.zsh"
 zsh-defer source "${DOTFILES_ROOT:-$HOME/dotfiles}/zsh/local.zsh"

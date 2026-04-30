@@ -7,6 +7,7 @@ let
     ".config/nvim" = "nvim";
     ".zshrc" = "zsh/.zshrc";
     ".config/sheldon/plugins.toml" = "zsh/plugins.toml";
+    ".config/zsh-abbr/user-abbreviations" = "zsh/abbreviations";
     ".config/starship.toml" = "zsh/starship.toml";
     ".config/lazygit/config.yml" = "lazygit/config.yml";
     ".gitconfig" = ".gitconfig";
@@ -45,6 +46,7 @@ in
   ];
 
   home.file = lib.mapAttrs (_target: source: {
-    source = "${dotfilesDir}/${source}";
+    source = config.lib.file.mkOutOfStoreSymlink "${dotfilesCheckout}/${source}";
+    force = true;
   }) managedFiles;
 }
