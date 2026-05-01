@@ -7,3 +7,5 @@ env.sh
 nvim/plugin
 
 zsh/local.zsh
+
+raycast/*.rayconfig

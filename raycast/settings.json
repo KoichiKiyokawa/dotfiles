@@ -1,0 +1,95 @@
+{
+  "_note": "Raycast import schema. The generated .rayconfig is ignored by git.",
+  "raycast_version": "1.104.15",
+  "builtin_package_scriptCommands": {
+    "provider_schemaVersion": 1,
+    "scriptCommandsDirectories": [
+      "~/dotfiles/raycast/scripts"
+    ]
+  },
+  "builtin_package_rootSearch": {
+    "provider_schemaVersion": 1,
+    "rootSearch": [
+      {
+        "key": "builtin_command_clipboardHistory",
+        "type": "command",
+        "hotkey": "Control-Command-9"
+      },
+      {
+        "key": "builtin_command_windowManagementMaximize",
+        "type": "command",
+        "hotkey": "Control-Option-36"
+      },
+      {
+        "key": "builtin_command_windowManagementNextDisplay",
+        "type": "command",
+        "hotkey": "Control-Option-124"
+      },
+      {
+        "key": "builtin_command_windowManagementPreviousDisplay",
+        "type": "command",
+        "hotkey": "Control-Option-123"
+      },
+      {
+        "key": "extension_browser-bookmarks.index__254a620a-7fba-450b-bc17-c2e1ce6809d8",
+        "type": "nodeCommand",
+        "hotkey": "Option-11"
+      },
+      {
+        "key": "builtin_command_searchEmoji",
+        "type": "command",
+        "hotkey": "Control-Command-14"
+      },
+      {
+        "key": "builtin_command_searchSnippets",
+        "type": "command",
+        "hotkey": "Control-Command-1"
+      }
+    ]
+  },
+  "builtin_package_snippets": {
+    "provider_schemaVersion": 1,
+    "snippets": [
+      {
+        "name": "imo",
+        "text": "![badge](https://img.shields.io/badge/review-imo-orange.svg)",
+        "category": "text"
+      },
+      {
+        "name": "ask",
+        "text": "![badge](https://img.shields.io/badge/review-ask-blue.svg)",
+        "category": "text"
+      },
+      {
+        "name": "nits",
+        "text": "![badge](https://img.shields.io/badge/review-nits-green.svg)\n",
+        "category": "text"
+      },
+      {
+        "name": "sug",
+        "text": "```suggestion\n{cursor}\n```",
+        "category": "text"
+      },
+      {
+        "name": "bef",
+        "text": "before | after\n-- | --\n{cursor} | ",
+        "category": "text"
+      },
+      {
+        "name": "story",
+        "text": "[📚Storybookの該当箇所]({clipboard})",
+        "category": "text"
+      },
+      {
+        "name": "fix done",
+        "text": "{clipboard} こちらで修正しました",
+        "category": "text"
+      },
+      {
+        "name": "inline log",
+        "text": "function log<T>(a: T): T {\n  console.log(a)\n  return a\n}",
+        "category": "text"
+      }
+    ]
+  }
+}

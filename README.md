@@ -49,14 +49,24 @@ nix --extra-experimental-features 'nix-command flakes' flake update
 sh apply.sh
 ```
 
-### Raycast setting
+### Raycast
 
-1. Launch Raycast and press <kbd>alt</kbd> + <kbd>Space</kbd>, then run `Import Preferences & Data`.
-1. Select the `~/dotfiles/raycast/Raycast.rayconfig`.
+Raycast is managed with text files only. Generated `.rayconfig` files are ignored by git.
 
-### Raycast snippets (JSON)
+- `raycast/settings.json`: script command directories, command hotkeys, and snippets
+- `raycast/scripts`: script commands
 
-Raycast snippets can be managed as JSON text.
+Build an import file:
 
-1. In Raycast, run `Import Snippets`.
-1. Select the snippets JSON file you prepared.
+```sh
+cd ~/dotfiles
+raycast/build-rayconfig.sh
+```
+
+Then import it:
+
+1. In Raycast, run `Import Settings & Data`.
+1. Select `~/dotfiles/raycast/Raycast.rayconfig`.
+1. Import the selected data.
+
+The generated `.rayconfig` is `raycast/settings.json` compressed with gzip. This import format is reverse-engineered. If Raycast stops accepting it, keep `raycast/settings.json` as the source of truth and apply the entries manually through Raycast Settings.
