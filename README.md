@@ -20,9 +20,6 @@ cd dotfiles
 # Install Nix first
 sh <(curl -L https://nixos.org/nix/install) --daemon
 
-# Restart the shell, or load Nix in the current shell
-. /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
-
 # Apply macOS system packages, CLI packages, and dotfiles
 sh -c 'chsh -s $(which zsh)'
 sh apply.sh
