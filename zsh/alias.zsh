@@ -45,7 +45,7 @@ killport() {
 #----------------------------
 # git worktreeの操作
 
-# 与えられた命名でworktreeを追加し、cursorで開く
+# 与えられた命名でworktreeを追加する
 ew() {
   task_name="$1"
   if [ -z "$task_name" ]; then
