@@ -1,15 +1,16 @@
 # dotfiles
 
-This repository has following configs.
+This repository contains my macOS dotfiles and Nix-based system setup.
 
-- zsh (managed plugin by [sheldon](https://github.com/rossmacarthur/sheldon))
-- [neovim](https://github.com/neovim/neovim) (managed plugin by [packer.nvim](https://github.com/wbthomason/packer.nvim))
+- zsh configuration, with plugins managed by [sheldon](https://github.com/rossmacarthur/sheldon)
+- [Neovim](https://github.com/neovim/neovim) configuration, with plugins managed by [packer.nvim](https://github.com/wbthomason/packer.nvim)
+- macOS system settings, packages, apps, and dotfile links managed with Nix, nix-darwin, and home-manager
 
 ![terminal](https://github.com/user-attachments/assets/c2c655a1-d454-4831-b886-29e0d3f21630)
 
-## How to setup
+## Setup
 
-### Arrange config files and initialize
+### Clone and apply the configuration
 
 ```sh
 cd ~
@@ -53,5 +54,5 @@ sh apply.sh
 
 ### Raycast setting
 
-1. Launch Raycast and press <kbd>alt</kbd> + <kbd>Space</kbd>, then run with inputting `Import Preferences & Data`.
+1. Launch Raycast and press <kbd>alt</kbd> + <kbd>Space</kbd>, then run `Import Preferences & Data`.
 1. Select the `~/dotfiles/raycast/Raycast.rayconfig`.
