@@ -53,3 +53,10 @@ sh apply.sh
 
 1. Launch Raycast and press <kbd>alt</kbd> + <kbd>Space</kbd>, then run `Import Preferences & Data`.
 1. Select the `~/dotfiles/raycast/Raycast.rayconfig`.
+
+### Raycast snippets (JSON)
+
+Raycast snippets can be managed as JSON text.
+
+1. In Raycast, run `Import Snippets`.
+1. Select the snippets JSON file you prepared.
