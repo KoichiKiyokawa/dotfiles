@@ -16,6 +16,8 @@ in
 
   users.users.${userName}.home = "/Users/${userName}";
 
+  security.pam.services.sudo_local.touchIdAuth = true;
+
   programs.zsh.enable = true;
 
   homebrew = {

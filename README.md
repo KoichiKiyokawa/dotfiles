@@ -37,6 +37,7 @@ exec zsh
 - Symlinks for `~/.zshrc`, `~/.gitconfig`, `~/.config/nvim`, `~/.config/lazygit`, VS Code settings
 - The checked-in dotfiles are linked through the Nix store for reproducible generations
 - `zsh/local.zsh` is created by the switch app and remains a local override file
+- Touch ID authentication for `sudo` on macOS
 
 ### Homebrew apps
 
@@ -48,16 +49,6 @@ exec zsh
 cd ~/dotfiles
 nix --extra-experimental-features 'nix-command flakes' flake update
 sh apply.sh
-```
-
-
-### Enable Touch ID for `sudo` (macOS)
-
-Run the following commands to create `/etc/pam.d/sudo_local` from the template and enable Touch ID authentication for `sudo`:
-
-```sh
-sudo cp /etc/pam.d/sudo_local.template /etc/pam.d/sudo_local
-sudo sed -i '' 's/^#auth/auth/' /etc/pam.d/sudo_local
 ```
 
 ### Raycast setting
