@@ -15,4 +15,10 @@ if ! command -v nix >/dev/null 2>&1; then
   fi
 fi
 
-exec nix run .#switch -- "$@"
+nix run .#switch -- "$@"
+
+nix-collect-garbage -d
+
+if command -v brew >/dev/null 2>&1; then
+  brew cleanup
+fi

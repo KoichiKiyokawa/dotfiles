@@ -24,7 +24,7 @@ sh <(curl -L https://nixos.org/nix/install) --daemon
 
 # Apply macOS system packages, CLI packages, and dotfiles
 sh -c 'chsh -s $(which zsh)'
-sh init.sh
+sh apply.sh
 exec zsh
 ```
 
@@ -47,7 +47,7 @@ exec zsh
 ```sh
 cd ~/dotfiles
 nix --extra-experimental-features 'nix-command flakes' flake update
-sh init.sh
+sh apply.sh
 ```
 
 
