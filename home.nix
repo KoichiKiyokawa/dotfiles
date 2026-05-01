@@ -13,6 +13,7 @@ let
     ".config/lazygit/config.yml" = "lazygit/config.yml";
     ".config/mise/config.toml" = "mise/config.toml";
     ".gitconfig" = ".gitconfig";
+    "AGENTS.md" = "AGENTS.md";
   } // lib.optionalAttrs pkgs.stdenv.isDarwin {
     ".config/karabiner" = "karabiner";
     "Library/Application Support/com.mitchellh.ghostty/config.ghostty" = "ghostty/config.ghostty";
