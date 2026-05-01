@@ -1,5 +1,8 @@
 { pkgs, userName, ... }:
 
+let
+  versions = import ./versions.nix;
+in
 {
   nix.settings.experimental-features = [
     "nix-command"
@@ -9,7 +12,7 @@
   nixpkgs.config.allowUnfree = true;
 
   system.primaryUser = userName;
-  system.stateVersion = 6;
+  system.stateVersion = versions.darwinStateVersion;
 
   users.users.${userName}.home = "/Users/${userName}";
 

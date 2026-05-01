@@ -1,6 +1,7 @@
 { config, pkgs, lib, localConfig, ... }:
 
 let
+  versions = import ./versions.nix;
   dotfilesDir = localConfig.dotfilesDir;
   dotfilesCheckout = "${localConfig.homeDirectory}/dotfiles";
   managedFiles = {
@@ -20,7 +21,7 @@ in
 {
   home.username = builtins.baseNameOf localConfig.homeDirectory;
   home.homeDirectory = localConfig.homeDirectory;
-  home.stateVersion = "25.05";
+  home.stateVersion = versions.homeStateVersion;
 
   programs.home-manager.enable = true;
 
