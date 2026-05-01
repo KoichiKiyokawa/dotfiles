@@ -21,7 +21,7 @@ in
   homebrew = {
     enable = true;
     casks = [
-      "docker"
+      "docker-desktop"
       "google-japanese-ime"
     ];
     masApps = {
