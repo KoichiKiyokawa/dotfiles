@@ -33,16 +33,16 @@ exec zsh
 
 - CLI packages such as `git`, `gh`, `mise`, `neovim`, `pnpm`, `starship`
 - macOS apps available in nixpkgs, such as `Ghostty`, `Raycast`, `Visual Studio Code`
-- Homebrew Cask apps such as `Docker Desktop`, `Google Japanese Input`
+- Homebrew Cask apps such as `Codex`, `Docker Desktop`, `Google Japanese Input`
 - Mac App Store apps such as `Skitch`
-- Symlinks for `~/.zshrc`, `~/.gitconfig`, `~/.config/nvim`, `~/.config/lazygit`, VS Code settings
+- Symlinks for `~/.zshrc`, `~/.gitconfig`, `~/.config/nvim`, `~/.config/lazygit`, `~/.config/mise/config.toml`, VS Code settings
 - The checked-in dotfiles are linked through the Nix store for reproducible generations
 - `zsh/local.zsh` is created by the switch app and remains a local override file
 - Touch ID authentication for `sudo` on macOS
 
 ### Homebrew apps
 
-`Docker Desktop` and `Google Japanese Input` are declared through nix-darwin's Homebrew Cask integration. `Skitch` is declared through nix-darwin's Mac App Store integration. Homebrew itself is installed by the flake through `nix-homebrew`.
+`Codex`, `Docker Desktop`, and `Google Japanese Input` are declared through nix-darwin's Homebrew Cask integration. `Skitch` is declared through nix-darwin's Mac App Store integration. Homebrew itself is installed by the flake through `nix-homebrew`.
 
 ### Update packages later
 

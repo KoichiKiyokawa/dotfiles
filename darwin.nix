@@ -23,6 +23,9 @@ in
   homebrew = {
     enable = true;
     casks = [
+      # The nixpkgs package can lag behind Codex's fast release cadence, so use
+      # the Homebrew Cask binary managed through nix-darwin.
+      "codex"
       "docker-desktop"
       "google-japanese-ime"
     ];

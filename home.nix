@@ -11,6 +11,7 @@ let
     ".config/zsh-abbr/user-abbreviations" = "zsh/abbreviations";
     ".config/starship.toml" = "zsh/starship.toml";
     ".config/lazygit/config.yml" = "lazygit/config.yml";
+    ".config/mise/config.toml" = "mise/config.toml";
     ".gitconfig" = ".gitconfig";
   } // lib.optionalAttrs pkgs.stdenv.isDarwin {
     ".config/karabiner" = "karabiner";
