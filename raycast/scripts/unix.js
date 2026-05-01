@@ -1,4 +1,4 @@
-#!/usr/bin/env deno run
+#!/usr/bin/env node
 
 // Required parameters:
 // @raycast.schemaVersion 1
@@ -13,9 +13,14 @@
 // Documentation:
 // @raycast.description convert unix time to date
 
-const arg = Deno.args[0]
-if (arg === "now") {
+const arg = process.argv[2]
+if (!arg || arg === "now") {
   console.log(Math.trunc(Date.now() / 1000))
 } else {
-  console.log(new Date(Number(arg) * 1000).toISOString())
+  const unix = Number(arg)
+  if (!Number.isFinite(unix)) {
+    console.error("Invalid unix time. Use 'now' or unix seconds (e.g. 1665846691).")
+    process.exit(1)
+  }
+  console.log(new Date(unix * 1000).toISOString())
 }
