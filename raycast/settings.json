@@ -89,6 +89,11 @@
         "name": "inline log",
         "text": "function log<T>(a: T): T {\n  console.log(a)\n  return a\n}",
         "category": "text"
+      },
+      {
+        "name": "/pr",
+        "text": "ブランチを切ってコミットした後、no-verify pushしてからテンプレートを使ってdraft PRを作成して。最後にgh pr view --webして。今いるブランチがpr base",
+        "category": "text"
       }
     ]
   }
