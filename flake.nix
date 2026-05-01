@@ -11,9 +11,10 @@
       url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-darwin, ... }:
+  outputs = { self, nixpkgs, home-manager, nix-darwin, nix-homebrew, ... }:
     let
       systems = [
         "aarch64-darwin"
@@ -53,6 +54,15 @@
           specialArgs = { inherit userName; };
           modules = [
             ./darwin.nix
+            nix-homebrew.darwinModules.nix-homebrew
+            {
+              nix-homebrew = {
+                enable = true;
+                enableRosetta = true;
+                autoMigrate = true;
+                user = userName;
+              };
+            }
             home-manager.darwinModules.home-manager
             {
               home-manager.useGlobalPkgs = true;

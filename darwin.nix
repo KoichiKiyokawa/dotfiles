@@ -15,6 +15,17 @@
 
   programs.zsh.enable = true;
 
+  homebrew = {
+    enable = true;
+    casks = [
+      "docker"
+      "google-japanese-ime"
+    ];
+    masApps = {
+      Skitch = 425955336;
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     aldente
     docker
