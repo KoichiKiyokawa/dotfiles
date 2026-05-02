@@ -41,6 +41,17 @@ exec zsh
 
 `Codex`, `Docker Desktop`, and `Google Japanese Input` are declared through nix-darwin's Homebrew Cask integration. `Skitch` is declared through nix-darwin's Mac App Store integration. Homebrew itself is installed by the flake through `nix-homebrew`.
 
+### Battery charge limit
+
+To extend battery lifespan, set the macOS Charge Limit to 80% manually:
+
+1. Open System Settings.
+1. Go to Battery.
+1. Click the info button next to Charging.
+1. Set Charge Limit to 80%.
+
+This is not managed by nix-darwin. macOS Tahoe 26.4 added the standard Charge Limit setting, but nix-darwin does not currently expose a stable option for it, and the setting does not appear in `pmset` or the usual `defaults` domains.
+
 ### Update packages later
 
 ```sh
