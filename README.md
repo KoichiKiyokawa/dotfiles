@@ -22,7 +22,7 @@ sh <(curl -L https://nixos.org/nix/install) --daemon
 
 # Apply macOS system packages, CLI packages, and dotfiles
 sh -c 'chsh -s $(which zsh)'
-sh apply.sh
+./apply.sh
 exec zsh
 ```
 
@@ -57,7 +57,7 @@ This is not managed by nix-darwin. macOS Tahoe 26.4 added the standard Charge Li
 ```sh
 cd ~/dotfiles
 nix --extra-experimental-features 'nix-command flakes' flake update
-sh apply.sh
+./apply.sh
 ```
 
 ### Raycast
