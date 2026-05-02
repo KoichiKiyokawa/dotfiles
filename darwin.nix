@@ -35,7 +35,6 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    aldente
     docker
     ghostty-bin
     google-cloud-sdk
