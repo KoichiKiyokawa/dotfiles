@@ -30,6 +30,9 @@ in
       "google-japanese-ime"
     ];
     masApps = {
+      # Pomodoro timer.
+      Flow = 1423210932;
+      # Screenshot annotation tool.
       Skitch = 425955336;
     };
   };
