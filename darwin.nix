@@ -30,6 +30,7 @@ in
       "codex"
       "docker-desktop"
       "google-japanese-ime"
+      "obsidian"
     ];
     masApps = {
       # Pomodoro timer.
