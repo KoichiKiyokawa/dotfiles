@@ -45,6 +45,7 @@ in
     pnpm
     sheldon
     starship
+    uv
   ] ++ lib.optionals pkgs.stdenv.isDarwin [
   ];
 
