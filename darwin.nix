@@ -44,10 +44,12 @@ in
 
   environment.systemPackages = with pkgs; [
     docker
+    ffmpeg
     ghostty-bin
     google-cloud-sdk
     karabiner-elements
     keycastr
+    ollama
     raycast
     vscode
   ];
