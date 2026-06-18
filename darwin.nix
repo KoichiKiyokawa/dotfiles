@@ -22,6 +22,8 @@ in
 
   services.tailscale.enable = true;
 
+  environment.etc."codex/managed_config.toml".source = ./codex/managed_config.toml;
+
   homebrew = {
     enable = true;
     casks = [

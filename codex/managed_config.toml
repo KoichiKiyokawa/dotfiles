@@ -1,0 +1,10 @@
+[features]
+hooks = true
+plugin_hooks = true
+
+[plugins."context-mode@context-mode"]
+enabled = true
+
+[marketplaces.context-mode]
+source_type = "git"
+source = "https://github.com/mksglu/context-mode.git"
