@@ -30,6 +30,7 @@ exec zsh
 
 - CLI packages such as `git`, `gh`, `mise`, `neovim`, `pnpm`, `starship`
 - macOS apps available in nixpkgs, such as `Ghostty`, `Raycast`, `Visual Studio Code`
+- macOS services such as `Tailscale`
 - Homebrew Cask apps such as `Codex`, `Docker Desktop`, `Google Japanese Input`
 - Mac App Store apps such as `Flow`, `Skitch`
 - Symlinks for `~/.zshrc`, `~/.gitconfig`, `~/.config/nvim`, `~/.config/lazygit`, `~/.config/mise/config.toml`, VS Code settings
