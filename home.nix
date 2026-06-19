@@ -4,7 +4,6 @@ let
   versions = import ./versions.nix;
   dotfilesDir = localConfig.dotfilesDir;
   dotfilesCheckout = "${localConfig.homeDirectory}/dotfiles";
-  rtkAgents = [ "opencode" "codex" ];
   managedFiles = {
     ".config/nvim" = "nvim";
     ".zshrc" = "zsh/.zshrc";
@@ -57,9 +56,8 @@ in
     force = true;
   }) managedFiles;
 
-  home.activation.setupRtk = lib.hm.dag.entryAfter [ "writeBoundary" ] (
-    lib.concatMapStringsSep "\n" (agent: ''
-      ${pkgs.rtk}/bin/rtk init -g --auto-patch --${agent} || true
-    '') rtkAgents
-  );
+  home.activation.setupRtk = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    ${pkgs.rtk}/bin/rtk init -g --auto-patch --opencode || true
+    ${pkgs.rtk}/bin/rtk init -g --codex || true
+  '';
 }
