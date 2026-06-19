@@ -46,7 +46,7 @@ in
   environment.systemPackages = with pkgs; [
     docker
     ffmpeg
-    ghostty-bin
+    cmux
     google-cloud-sdk
     karabiner-elements
     keycastr

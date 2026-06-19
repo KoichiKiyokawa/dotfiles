@@ -17,7 +17,11 @@ fi
 
 nix run .#switch -- "$@"
 
-nix-collect-garbage -d
+for p in /nix/var/nix/profiles/system /nix/var/nix/profiles/per-user/*/home-manager; do
+  nix-env --delete-generations old -p "$p" 2>/dev/null || true
+done
+
+nix-collect-garbage
 
 if command -v brew >/dev/null 2>&1; then
   brew cleanup
