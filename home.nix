@@ -18,7 +18,6 @@ let
   } // lib.optionalAttrs pkgs.stdenv.isDarwin {
     ".config/karabiner" = "karabiner";
     "Library/Application Support/com.cmuxterm.app/config.ghostty" = "cmux/config.ghostty";
-    "Library/Application Support/Code/User/settings.json" = "vscode/settings.json";
   };
 in
 {

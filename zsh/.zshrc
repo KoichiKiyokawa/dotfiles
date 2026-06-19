@@ -7,9 +7,6 @@ fi
 
 export PATH="$HOME/.local/bin:$PATH"
 
-# for cline https://zenn.dev/jtechjapan_pub/articles/de02f0f2652366
-[[ "$TERM_PROGRAM" == "vscode" ]] && . "$(code --locate-shell-integration-path zsh)"
-
 # for cursor (https://scrapbox.io/ygkn/gh_cliをCursor_Agentに実行させると動かない)
 export GH_PAGER=""
 

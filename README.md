@@ -29,11 +29,11 @@ exec zsh
 ### What Nix manages
 
 - CLI packages such as `git`, `gh`, `mise`, `neovim`, `pnpm`, `starship`, `uv`
-- macOS apps available in nixpkgs, such as `Ghostty`, `Raycast`, `Visual Studio Code`
+- macOS apps available in nixpkgs, such as `Ghostty`, `Raycast`
 - macOS services such as `Tailscale`
 - Homebrew Cask apps such as `Codex`, `Docker Desktop`, `Google Japanese Input`, `Obsidian`
 - Mac App Store apps such as `Flow`, `Skitch`
-- Symlinks for `~/.zshrc`, `~/.gitconfig`, `~/.config/nvim`, `~/.config/lazygit`, `~/.config/mise/config.toml`, VS Code settings
+- Symlinks for `~/.zshrc`, `~/.gitconfig`, `~/.config/nvim`, `~/.config/lazygit`, `~/.config/mise/config.toml`
 - The checked-in dotfiles are linked through the Nix store for reproducible generations
 - `zsh/local.zsh` is created by the switch app and remains a local override file
 - Touch ID authentication for `sudo` on macOS
