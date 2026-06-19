@@ -52,6 +52,6 @@ in
     keycastr
     ollama
     raycast
-    vscode
+    zed-editor
   ];
 }

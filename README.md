@@ -29,7 +29,7 @@ exec zsh
 ### What Nix manages
 
 - CLI packages such as `git`, `gh`, `mise`, `neovim`, `pnpm`, `starship`, `uv`
-- macOS apps available in nixpkgs, such as `Ghostty`, `Raycast`
+- macOS apps available in nixpkgs, such as `Raycast`, `Zed`
 - macOS services such as `Tailscale`
 - Homebrew Cask apps such as `Codex`, `Docker Desktop`, `Google Japanese Input`, `Obsidian`
 - Mac App Store apps such as `Flow`, `Skitch`
