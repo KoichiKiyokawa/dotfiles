@@ -1,4 +1,5 @@
 alias w="cd ~/workspace"
+alias oc=opencode
 
 # cd
 alias ..="cd .."
