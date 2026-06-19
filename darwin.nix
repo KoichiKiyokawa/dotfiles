@@ -31,6 +31,7 @@ in
       # the Homebrew Cask binary managed through nix-darwin.
       "codex"
       "docker-desktop"
+      "opencode-desktop"
       "google-japanese-ime"
       "obsidian"
     ];
