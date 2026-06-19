@@ -61,6 +61,10 @@ nix --extra-experimental-features 'nix-command flakes' flake update
 ./apply.sh
 ```
 
+### Superpowers
+
+[Superpowers](https://github.com/obra/superpowers) is installed manually. See the repository for per-agent installation instructions.
+
 ### Raycast
 
 Raycast is managed with text files only. Generated `.rayconfig` files are ignored by git.
