@@ -31,8 +31,8 @@ exec zsh
 - CLI packages such as `git`, `gh`, `mise`, `neovim`, `pnpm`, `starship`, `uv`
 - macOS apps available in nixpkgs, such as `Raycast`, `Zed`
 - macOS services such as `Tailscale`
-- Homebrew Cask apps such as `Codex`, `Docker Desktop`, `Google Japanese Input`, `Obsidian`
-- Mac App Store apps such as `Flow`, `Skitch`
+- Homebrew Cask apps such as `Codex`, `Docker Desktop`, `Google Japanese Input`, `Obsidian`, `Shottr`
+- Mac App Store apps such as `Flow`
 - Symlinks for `~/.zshrc`, `~/.gitconfig`, `~/.config/nvim`, `~/.config/lazygit`, `~/.config/mise/config.toml`
 - The checked-in dotfiles are linked through the Nix store for reproducible generations
 - `zsh/local.zsh` is created by the switch app and remains a local override file
@@ -40,7 +40,7 @@ exec zsh
 
 ### Homebrew apps
 
-`Codex`, `Docker Desktop`, `Google Japanese Input`, and `Obsidian` are declared through nix-darwin's Homebrew Cask integration. `Flow` and `Skitch` are declared through nix-darwin's Mac App Store integration. Homebrew itself is installed by the flake through `nix-homebrew`.
+`Codex`, `Docker Desktop`, `Google Japanese Input`, `Obsidian`, and `Shottr` are declared through nix-darwin's Homebrew Cask integration. `Flow` is declared through nix-darwin's Mac App Store integration. Homebrew itself is installed by the flake through `nix-homebrew`.
 
 ### Battery charge limit
 

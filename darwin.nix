@@ -34,12 +34,11 @@ in
       "opencode-desktop"
       "google-japanese-ime"
       "obsidian"
+      "shottr"
     ];
     masApps = {
       # Pomodoro timer.
       Flow = 1423210932;
-      # Screenshot annotation tool.
-      Skitch = 425955336;
     };
   };
 
