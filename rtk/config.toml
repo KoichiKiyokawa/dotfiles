@@ -1,0 +1,8 @@
+[hooks]
+# Commands that should never be rewritten by RTK.
+exclude_commands = ["curl", "playwright"]
+
+[tee]
+# Save raw output on failure so the LLM can inspect it without re-running.
+enabled = true
+mode = "failures"

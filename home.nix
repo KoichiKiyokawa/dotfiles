@@ -4,6 +4,7 @@ let
   versions = import ./versions.nix;
   dotfilesDir = localConfig.dotfilesDir;
   dotfilesCheckout = "${localConfig.homeDirectory}/dotfiles";
+  rtkAgents = [ "opencode" "codex" ];
   managedFiles = {
     ".config/nvim" = "nvim";
     ".zshrc" = "zsh/.zshrc";
@@ -12,6 +13,7 @@ let
     ".config/starship.toml" = "zsh/starship.toml";
     ".config/lazygit/config.yml" = "lazygit/config.yml";
     ".config/mise/config.toml" = "mise/config.toml";
+    ".config/rtk/config.toml" = "rtk/config.toml";
     ".gitconfig" = ".gitconfig";
     "AGENTS.md" = "AGENTS.md";
   } // lib.optionalAttrs pkgs.stdenv.isDarwin {
@@ -43,6 +45,7 @@ in
     neovim
     peco
     pnpm
+    rtk
     sheldon
     starship
     uv
@@ -53,4 +56,10 @@ in
     source = config.lib.file.mkOutOfStoreSymlink "${dotfilesCheckout}/${source}";
     force = true;
   }) managedFiles;
+
+  home.activation.setupRtk = lib.hm.dag.entryAfter [ "writeBoundary" ] (
+    lib.concatMapStringsSep "\n" (agent: ''
+      ${pkgs.rtk}/bin/rtk init -g --auto-patch --${agent} || true
+    '') rtkAgents
+  );
 }
