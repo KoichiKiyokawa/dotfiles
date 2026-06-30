@@ -26,6 +26,12 @@ in
 
   homebrew = {
     enable = true;
+    onActivation.extraEnv = {
+      HOMEBREW_NO_REQUIRE_TAP_TRUST = "1";
+    };
+    taps = [
+      "vorssaint/tap"
+    ];
     casks = [
       # The nixpkgs package can lag behind Codex's fast release cadence, so use
       # the Homebrew Cask binary managed through nix-darwin.
@@ -35,6 +41,7 @@ in
       "google-japanese-ime"
       "obsidian"
       "shottr"
+      "vorssaint"
     ];
     masApps = {
       # Pomodoro timer.
