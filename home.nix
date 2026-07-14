@@ -42,7 +42,6 @@ in
     mise
     neovim
     peco
-    pnpm
     rtk
     sheldon
     starship

@@ -44,3 +44,10 @@ zle -N peco-select-history
 bindkey '^r' peco-select-history
 
 export XDG_CONFIG_HOME="$HOME/.config"
+
+# pnpm is installed by Homebrew because nixpkgs pnpm fails during `pnpm setup`.
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac

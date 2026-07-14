@@ -28,7 +28,7 @@ exec zsh
 
 ### What Nix manages
 
-- CLI packages such as `git`, `gh`, `mise`, `neovim`, `pnpm`, `starship`, `uv`
+- CLI packages such as `git`, `gh`, `mise`, `neovim`, `starship`, `uv`
 - macOS apps available in nixpkgs, such as `Raycast`, `Zed`
 - macOS services such as `Tailscale`
 - Homebrew Cask apps such as `Codex`, `Docker Desktop`, `Google Japanese Input`, `Obsidian`, `Shottr`
@@ -40,7 +40,7 @@ exec zsh
 
 ### Homebrew apps
 
-`Codex`, `Docker Desktop`, `Google Japanese Input`, `Obsidian`, and `Shottr` are declared through nix-darwin's Homebrew Cask integration. `Flow` is declared through nix-darwin's Mac App Store integration. Homebrew itself is installed by the flake through `nix-homebrew`.
+`pnpm`, `Codex`, `Docker Desktop`, `Google Japanese Input`, `Obsidian`, and `Shottr` are declared through nix-darwin's Homebrew integration. `Flow` is declared through nix-darwin's Mac App Store integration. Homebrew itself is installed by the flake through `nix-homebrew`.
 
 ### Battery charge limit
 

@@ -32,6 +32,10 @@ in
     taps = [
       "vorssaint/tap"
     ];
+    brews = [
+      # Nixpkgs pnpm cannot run `pnpm setup` from the user profile path.
+      "pnpm"
+    ];
     casks = [
       # The nixpkgs package can lag behind Codex's fast release cadence, so use
       # the Homebrew Cask binary managed through nix-darwin.
