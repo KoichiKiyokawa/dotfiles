@@ -122,4 +122,29 @@ gwr() {
   fi
 }
 
+# GitHub PR URLから gh pr diff を実行してクリップボードへコピー
+# usage:
+#   gh-pr-diff-copy https://github.com/dmm-com/pointclub-api/pull/4660/changes#r3535097173
+#   gh-pr-diff-copy https://github.com/dmm-com/pointclub-api/pull/4660
+gh-pr-diff-copy() {
+  local url="$1"
+
+  if [[ -z "$url" ]]; then
+    echo "usage: gh-pr-diff-copy <github-pr-url>" >&2
+    return 1
+  fi
+
+  local owner repo pr
+  if [[ "$url" =~ 'github\.com/([^/]+)/([^/]+)/pull/([0-9]+)' ]]; then
+    owner="${match[1]}"
+    repo="${match[2]}"
+    pr="${match[3]}"
+  else
+    echo "invalid GitHub PR URL: $url" >&2
+    return 1
+  fi
+
+  gh pr diff "$pr" --repo "$owner/$repo" | pbcopy
+}
+
 #----------------------------
