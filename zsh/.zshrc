@@ -7,6 +7,9 @@ fi
 
 export PATH="$HOME/.local/bin:$PATH"
 
+# Allow comments in commands pasted into an interactive shell.
+setopt interactivecomments
+
 # for cursor (https://scrapbox.io/ygkn/gh_cliをCursor_Agentに実行させると動かない)
 export GH_PAGER=""
 
