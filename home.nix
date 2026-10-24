@@ -5,7 +5,6 @@ let
   dotfilesDir = localConfig.dotfilesDir;
   dotfilesCheckout = "${localConfig.homeDirectory}/dotfiles";
   managedFiles = {
-    ".config/nvim" = "nvim";
     ".zshrc" = "zsh/.zshrc";
     ".config/sheldon/plugins.toml" = "zsh/plugins.toml";
     ".config/zsh-abbr/user-abbreviations" = "zsh/abbreviations";
@@ -15,7 +14,7 @@ let
     ".config/rtk/config.toml" = "rtk/config.toml";
     ".gitconfig" = ".gitconfig";
     "AGENTS.md" = "AGENTS.md";
-  } // lib.optionalAttrs pkgs.stdenv.isDarwin {
+  } // lib.optionalAttrs pkgs.stdenv.hostPlatform.isDarwin {
     ".config/karabiner" = "karabiner";
     "Library/Application Support/com.cmuxterm.app/config.ghostty" = "cmux/config.ghostty";
   };
@@ -38,15 +37,15 @@ in
     gh
     git
     jq
-    lazygit
-    mise
     neovim
     peco
     rtk
     sheldon
     starship
+  ] ++ lib.optionals (!pkgs.stdenv.hostPlatform.isDarwin) [
+    lazygit
+    mise
     uv
-  ] ++ lib.optionals pkgs.stdenv.isDarwin [
   ];
 
   home.file = lib.mapAttrs (_target: source: {
@@ -55,7 +54,6 @@ in
   }) managedFiles;
 
   home.activation.setupRtk = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    ${pkgs.rtk}/bin/rtk init -g --auto-patch --opencode || true
     ${pkgs.rtk}/bin/rtk init -g --codex || true
   '';
 }

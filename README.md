@@ -28,19 +28,23 @@ exec zsh
 
 ### What Nix manages
 
-- CLI packages such as `git`, `gh`, `mise`, `neovim`, `starship`, `uv`
+- CLI packages such as `git`, `gh`, `neovim`, and `starship`
 - macOS apps available in nixpkgs, such as `Raycast`, `Zed`
 - macOS services such as `Tailscale`
 - Homebrew Cask apps such as `Codex`, `Docker Desktop`, `Google Japanese Input`, `Obsidian`, `Shottr`
 - Mac App Store apps such as `Flow`
-- Symlinks for `~/.zshrc`, `~/.gitconfig`, `~/.config/nvim`, `~/.config/lazygit`, `~/.config/mise/config.toml`
+- Symlinks for `~/.zshrc`, `~/.gitconfig`, `~/.config/lazygit`, and `~/.config/mise/config.toml`
 - The checked-in dotfiles are linked through the Nix store for reproducible generations
 - `zsh/local.zsh` is created by the switch app and remains a local override file
 - Touch ID authentication for `sudo` on macOS
 
 ### Homebrew apps
 
-`pnpm`, `Codex`, `Docker Desktop`, `Google Japanese Input`, `Obsidian`, and `Shottr` are declared through nix-darwin's Homebrew integration. `Flow` is declared through nix-darwin's Mac App Store integration. Homebrew itself is installed by the flake through `nix-homebrew`.
+`pnpm`, `uv`, `mise`, `lazygit`, `Codex`, `Docker Desktop`, `T3 Code`, `Google Japanese Input`, `Obsidian`, and `Shottr` are declared through nix-darwin's Homebrew integration. The Homebrew versions of `uv`, `mise`, and `lazygit` replace pinned nixpkgs versions that predate the eMudhra certificate fixes. `Flow` is declared through nix-darwin's Mac App Store integration. Homebrew itself is installed by the flake through `nix-homebrew`.
+
+macOS activation also runs `security/remove-compromised-ca.py` to remove the incident roots from the system PEM bundle and Xcode's bundled pip certificates. Changed files are backed up beside the originals with the suffix `.before-emudhra-20261023`. Run the script without `--apply` to check the bundles without changing them.
+
+`lazygit` is built from source because its current Homebrew bottle was built with Go 1.27.2, before the certificate fix in Go 1.27.3.
 
 ### Battery charge limit
 

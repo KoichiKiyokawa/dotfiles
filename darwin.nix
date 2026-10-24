@@ -18,6 +18,15 @@ in
 
   security.pam.services.sudo_local.touchIdAuth = true;
 
+  security.pki.caCertificateBlacklist = [
+    "Comodo AAA Services root"
+    "emSign ECC Root CA - G3"
+  ];
+
+  system.activationScripts.postActivation.text = ''
+    ${pkgs.python3}/bin/python3 ${./security/remove-compromised-ca.py} --apply
+  '';
+
   programs.zsh.enable = true;
 
   services.tailscale.enable = true;
@@ -35,17 +44,24 @@ in
     brews = [
       # Nixpkgs pnpm cannot run `pnpm setup` from the user profile path.
       "pnpm"
+      # Homebrew ships the eMudhra fixes before the pinned nixpkgs packages.
+      "uv"
+      "mise"
+      {
+        name = "lazygit";
+        args = [ "build-from-source" ];
+      }
     ];
     casks = [
       # The nixpkgs package can lag behind Codex's fast release cadence, so use
       # the Homebrew Cask binary managed through nix-darwin.
       "codex"
       "docker-desktop"
-      "opencode-desktop"
       "google-japanese-ime"
       "obsidian"
       "shottr"
       "vorssaint"
+      "t3-code"
     ];
     masApps = {
       # Pomodoro timer.
@@ -60,7 +76,6 @@ in
     google-cloud-sdk
     karabiner-elements
     keycastr
-    ollama
     raycast
     zed-editor
   ];

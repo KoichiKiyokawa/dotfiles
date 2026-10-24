@@ -2,9 +2,9 @@ gui:
   language: en
   showIcons: true
 git:
-  pagers:
+  diffRenderers:
     - colorArg: always
-      pager: delta --no-gitconfig --paging=never
+      command: delta --no-gitconfig --paging=never
 customCommands:
   - key: '!'
     context: 'commits'
