@@ -79,10 +79,12 @@ group = "wheel"
 mode = "0644"
 
 [tasks.bootstrap]
-description = "Initialize RTK and install App Store apps"
+description = "Initialize agent integrations and install App Store apps"
 run = '''
 rtk init -g --codex
 if [ "$(uname -s)" = Darwin ]; then
+  codex plugin marketplace upgrade context-mode
+  codex plugin add context-mode@context-mode
   mise bootstrap packages apply --manager mas
 fi
 '''
