@@ -45,7 +45,7 @@ Existing symlinks are repointed. `zsh/local.zsh` is created if missing and retai
 its contents on later runs. Put machine-specific shell settings there.
 
 On macOS, Flow needs an Apple Account signed into the App Store. Bootstrap installs
-`mas` with Homebrew and retries Flow in the final task, so the first setup also works
+`mas` through mise's `[tools]` and retries Flow in the final task, so the first setup also works
 when `mas` was not available at the packages stage. Casks adopt identical existing
 apps rather than replacing them. A differing app can require manual reconciliation.
 Linux installs the shared CLI tools, Git, curl, and dotfiles; macOS apps and system

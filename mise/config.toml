@@ -14,6 +14,7 @@ delta = "latest"
 gh = "latest"
 jq = "latest"
 lazygit = "latest"
+mas = { version = "latest", os = ["macos"] }
 neovim = "latest"
 peco = "latest"
 pnpm = "latest"
@@ -28,7 +29,6 @@ adopt = true
 [bootstrap.packages]
 "brew:git" = "latest"
 "brew:curl" = "latest"
-"brew:mas" = { os = "macos" }
 "brew:docker" = { os = "macos" }
 "brew:ffmpeg" = { os = "macos" }
 "brew-cask:google-cloud-sdk" = { os = "macos" }
