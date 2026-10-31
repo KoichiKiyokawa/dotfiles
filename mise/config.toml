@@ -31,7 +31,6 @@ adopt = true
 "brew:mas" = { os = "macos" }
 "brew:docker" = { os = "macos" }
 "brew:ffmpeg" = { os = "macos" }
-"brew-cask:cmux" = { os = "macos" }
 "brew-cask:google-cloud-sdk" = { os = "macos" }
 "brew-cask:karabiner-elements" = { os = "macos" }
 "brew-cask:keycastr" = { os = "macos" }
@@ -56,7 +55,6 @@ adopt = true
 "~/.config/rtk/config.toml" = { source = "~/dotfiles/rtk/config.toml" }
 "~/.gitconfig" = { source = "~/dotfiles/.gitconfig" }
 "~/.config/karabiner" = { source = "~/dotfiles/karabiner", variants = [{ os = "macos" }] }
-"~/Library/Application Support/com.cmuxterm.app/config.ghostty" = { source = "~/dotfiles/cmux/config.ghostty", variants = [{ os = "macos" }] }
 
 [bootstrap.hooks.post-dotfiles]
 run = 'touch "{{ vars.root }}/zsh/local.zsh"'
