@@ -30,7 +30,6 @@ adopt = true
 "brew:git" = "latest"
 "brew:curl" = "latest"
 "brew:docker" = { os = "macos" }
-"brew:ffmpeg" = { os = "macos" }
 "brew-cask:google-cloud-sdk" = { os = "macos" }
 "brew-cask:google-chrome" = { os = "macos" }
 "brew-cask:karabiner-elements" = { os = "macos" }
