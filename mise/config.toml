@@ -1,5 +1,85 @@
 [settings]
 idiomatic_version_file_enable_tools = ["node"]
 
+[vars]
+root = "{{ config_source | canonicalize | dirname | dirname }}"
+
+[env]
+DOTFILES_ROOT = "{{ vars.root }}"
+
 [tools]
 node = "lts"
+aws-cli = "latest"
+codex = { version = "latest", os = ["macos"] }
+gcloud = { version = "latest", os = ["macos"] }
+gh = "latest"
+jq = "latest"
+lazygit = "latest"
+mas = { version = "latest", os = ["macos"] }
+neovim = "latest"
+peco = "latest"
+pnpm = "latest"
+rtk = "latest"
+sheldon = "latest"
+starship = "latest"
+uv = "latest"
+
+[bootstrap.brew]
+adopt = true
+
+[bootstrap.packages]
+"brew:git" = "latest"
+"brew:curl" = "latest"
+"brew-cask:google-chrome" = { os = "macos" }
+"brew-cask:karabiner-elements" = { os = "macos" }
+"brew-cask:keycastr" = { os = "macos" }
+"brew-cask:zed" = { os = "macos" }
+"brew-cask:docker-desktop" = { os = "macos" }
+"brew-cask:google-japanese-ime" = { os = "macos" }
+"brew-cask:shottr" = { os = "macos" }
+"brew-cask:vorssaint/tap/vorssaint" = { os = "macos" }
+"brew-cask:t3-code" = { os = "macos" }
+"mas:1423210932" = { os = "macos" } # Flow, requires App Store sign-in
+
+[dotfiles]
+"~/.zshrc" = { source = "~/dotfiles/zsh/.zshrc" }
+"~/.config/sheldon/plugins.toml" = { source = "~/dotfiles/zsh/plugins.toml" }
+"~/.config/zsh-abbr/user-abbreviations" = { source = "~/dotfiles/zsh/abbreviations" }
+"~/.config/starship.toml" = { source = "~/dotfiles/zsh/starship.toml" }
+"~/.config/lazygit/config.yml" = { source = "~/dotfiles/lazygit/config.yml" }
+"~/.config/mise/config.toml" = { source = "~/dotfiles/mise/config.toml" }
+"~/.config/rtk/config.toml" = { source = "~/dotfiles/rtk/config.toml" }
+"~/.gitconfig" = { source = "~/dotfiles/.gitconfig" }
+"~/.config/karabiner" = { source = "~/dotfiles/karabiner", variants = [{ os = "macos" }] }
+
+[bootstrap.hooks.post-dotfiles]
+run = 'touch "{{ vars.root }}/zsh/local.zsh"'
+
+[bootstrap.directories."/etc/codex"]
+os = "macos"
+owner = "root"
+group = "wheel"
+mode = "0755"
+
+[bootstrap.files."/etc/codex/managed_config.toml"]
+os = "macos"
+source = "~/dotfiles/codex/managed_config.toml"
+owner = "root"
+group = "wheel"
+mode = "0644"
+
+[bootstrap.files."/etc/pam.d/sudo_local"]
+os = "macos"
+content = "auth       sufficient     pam_tid.so\n"
+owner = "root"
+group = "wheel"
+mode = "0644"
+
+[tasks.bootstrap]
+description = "Initialize RTK and install App Store apps"
+run = '''
+rtk init -g --codex
+if [ "$(uname -s)" = Darwin ]; then
+  mise bootstrap packages apply --manager mas
+fi
+'''

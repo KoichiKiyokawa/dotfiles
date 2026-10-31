@@ -1,50 +1,59 @@
 # dotfiles
 
-This repository contains my macOS dotfiles and Nix-based system setup.
+Dotfiles for Apple Silicon macOS and Linux x86_64/arm64, managed with
+[mise bootstrap](https://mise.jdx.dev/bootstrap.html).
 
-- zsh configuration, with plugins managed by [sheldon](https://github.com/rossmacarthur/sheldon)
-- [Neovim](https://github.com/neovim/neovim) configuration, with plugins managed by [packer.nvim](https://github.com/wbthomason/packer.nvim)
-- macOS system settings, packages, apps, and dotfile links managed with Nix, nix-darwin, and home-manager
+- CLI tools and Node.js are declared in `mise/config.toml` under `[tools]`.
+- Git, curl, native dependencies, and macOS apps use mise's built-in Homebrew managers.
+- Configuration files link directly to this checkout with mise's `[dotfiles]`.
+- zsh plugins use [sheldon](https://github.com/rossmacarthur/sheldon).
 
 ![terminal](https://github.com/user-attachments/assets/c2c655a1-d454-4831-b886-29e0d3f21630)
 
 ## Setup
 
-### Clone and apply the configuration
+Install [mise](https://mise.jdx.dev/getting-started.html) 2026.10.17 or newer.
+On macOS, install Apple's Command Line Tools first with `xcode-select --install`.
+On Linux, install zsh with your distribution's package manager. Homebrew itself
+is optional: mise installs Homebrew packages into `/opt/homebrew` on macOS or
+`/home/linuxbrew/.linuxbrew` on Linux, including their runtime dependencies.
+Source builds may need your distribution's compiler/build tools.
 
 ```sh
-cd ~
-git clone https://github.com/KoichiKiyokawa/dotfiles.git
-cd dotfiles
+# If mise is not already installed:
+curl https://mise.run | sh
+export PATH="$HOME/.local/bin:/opt/homebrew/bin:/home/linuxbrew/.linuxbrew/bin:$PATH"
 
-# Install Nix first
-sh <(curl -L https://nixos.org/nix/install) --daemon
-
-# Apply macOS system packages, CLI packages, and dotfiles
-sh -c 'chsh -s $(which zsh)'
-./apply.sh
+git clone https://github.com/KoichiKiyokawa/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+mise trust ./mise/config.toml
+MISE_GLOBAL_CONFIG_FILE="$PWD/mise/config.toml" mise bootstrap --dry-run
+MISE_GLOBAL_CONFIG_FILE="$PWD/mise/config.toml" mise bootstrap
 exec zsh
 ```
 
-### What Nix manages
+Keep the checkout at `~/dotfiles`, or make that path a symlink to the checkout.
+The configuration sources use this path.
+To make zsh your login shell, run `chsh -s "$(command -v zsh)"` separately.
 
-- CLI packages such as `git`, `gh`, `neovim`, and `starship`
-- macOS apps available in nixpkgs, such as `Raycast`, `Zed`
-- macOS services such as `Tailscale`
-- Homebrew Cask apps such as `Codex`, `Docker Desktop`, `Google Japanese Input`, `Obsidian`, `Shottr`
-- Mac App Store apps such as `Flow`
-- Symlinks for `~/.zshrc`, `~/.gitconfig`, `~/.config/lazygit`, and `~/.config/mise/config.toml`
-- The checked-in dotfiles are linked through the Nix store for reproducible generations
-- `zsh/local.zsh` is created by the switch app and remains a local override file
-- Touch ID authentication for `sudo` on macOS
+Put machine-specific shell settings in `zsh/local.zsh`.
+Bootstrap creates this file if missing and preserves its contents.
+On macOS, Flow requires an Apple Account signed into the App Store.
+System configuration changes may require sudo.
 
-### Homebrew apps
+## Updates and previews
 
-`pnpm`, `uv`, `mise`, `lazygit`, `Codex`, `Docker Desktop`, `T3 Code`, `Google Japanese Input`, `Obsidian`, and `Shottr` are declared through nix-darwin's Homebrew integration. The Homebrew versions of `uv`, `mise`, and `lazygit` replace pinned nixpkgs versions that predate the eMudhra certificate fixes. `Flow` is declared through nix-darwin's Mac App Store integration. Homebrew itself is installed by the flake through `nix-homebrew`.
+```sh
+cd ~/dotfiles
+mise bootstrap --dry-run
+mise bootstrap --update --upgrade
+# Only configuration links, without packages or system tasks:
+mise bootstrap --only dotfiles
+```
 
-macOS activation also runs `security/remove-compromised-ca.py` to remove the incident roots from the system PEM bundle and Xcode's bundled pip certificates. Changed files are backed up beside the originals with the suffix `.before-emudhra-20261023`. Run the script without `--apply` to check the bundles without changing them.
-
-`lazygit` is built from source because its current Homebrew bottle was built with Go 1.27.2, before the certificate fix in Go 1.27.3.
+CLI tools use `latest`; Node.js uses `lts`. `--upgrade` updates installed versions.
+Update mise with its installer or package manager, and pull repository changes
+with `git pull`.
 
 ### Battery charge limit
 
@@ -55,38 +64,8 @@ To extend battery lifespan, set the macOS Charge Limit to 80% manually:
 1. Click the info button next to Charging.
 1. Set Charge Limit to 80%.
 
-This is not managed by nix-darwin. macOS Tahoe 26.4 added the standard Charge Limit setting, but nix-darwin does not currently expose a stable option for it, and the setting does not appear in `pmset` or the usual `defaults` domains.
-
-### Update packages later
-
-```sh
-cd ~/dotfiles
-nix --extra-experimental-features 'nix-command flakes' flake update
-./apply.sh
-```
+This setting is applied manually and is not part of bootstrap.
 
 ### Superpowers
 
 [Superpowers](https://github.com/obra/superpowers) is installed manually. See the repository for per-agent installation instructions.
-
-### Raycast
-
-Raycast is managed with text files only. Generated `.rayconfig` files are ignored by git.
-
-- `raycast/settings.json`: script command directories, command hotkeys, and snippets
-- `raycast/scripts`: script commands
-
-Build an import file:
-
-```sh
-cd ~/dotfiles
-raycast/build-rayconfig.sh
-```
-
-Then import it:
-
-1. In Raycast, run `Import Settings & Data`.
-1. Select `~/dotfiles/raycast/Raycast.rayconfig`.
-1. Import the selected data.
-
-The generated `.rayconfig` is `raycast/settings.json` compressed with gzip. This import format is reverse-engineered. If Raycast stops accepting it, keep `raycast/settings.json` as the source of truth and apply the entries manually through Raycast Settings.
