@@ -34,6 +34,7 @@ adopt = true
 "brew:curl" = "latest"
 "brew:sheldon" = "latest"
 "brew-cask:google-chrome" = { os = "macos" }
+"brew-cask:ghostty" = { os = "macos" }
 "brew-cask:karabiner-elements" = { os = "macos" }
 "brew-cask:keycastr" = { os = "macos" }
 "brew-cask:zed" = { os = "macos" }
