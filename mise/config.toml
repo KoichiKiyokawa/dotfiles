@@ -56,7 +56,6 @@ adopt = true
 "~/.config/mise/config.toml" = { source = "~/dotfiles/mise/config.toml" }
 "~/.config/rtk/config.toml" = { source = "~/dotfiles/rtk/config.toml" }
 "~/.gitconfig" = { source = "~/dotfiles/.gitconfig" }
-"~/AGENTS.md" = { source = "~/dotfiles/AGENTS.md" }
 "~/.config/karabiner" = { source = "~/dotfiles/karabiner", variants = [{ os = "macos" }] }
 "~/Library/Application Support/com.cmuxterm.app/config.ghostty" = { source = "~/dotfiles/cmux/config.ghostty", variants = [{ os = "macos" }] }
 
