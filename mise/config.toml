@@ -14,6 +14,7 @@ aws-cli = "latest"
 codex = { version = "latest", os = ["macos"] }
 gcloud = { version = "latest", os = ["macos"], depends = ["python"] }
 gh = "latest"
+go = "latest"
 jq = "latest"
 lazygit = "latest"
 mas = { version = "latest", os = ["macos"] }
