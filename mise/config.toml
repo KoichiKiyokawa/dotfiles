@@ -10,7 +10,10 @@ DOTFILES_ROOT = "{{ vars.root }}"
 [tools]
 node = "lts"
 aws-cli = "latest"
+codex = { version = "latest", os = ["macos"] }
 delta = "latest"
+docker-cli = { version = "latest", os = ["macos"] }
+gcloud = { version = "latest", os = ["macos"] }
 gh = "latest"
 jq = "latest"
 lazygit = "latest"
@@ -29,13 +32,10 @@ adopt = true
 [bootstrap.packages]
 "brew:git" = "latest"
 "brew:curl" = "latest"
-"brew:docker" = { os = "macos" }
-"brew-cask:google-cloud-sdk" = { os = "macos" }
 "brew-cask:google-chrome" = { os = "macos" }
 "brew-cask:karabiner-elements" = { os = "macos" }
 "brew-cask:keycastr" = { os = "macos" }
 "brew-cask:zed" = { os = "macos" }
-"brew-cask:codex" = { os = "macos" }
 "brew-cask:docker-desktop" = { os = "macos" }
 "brew-cask:google-japanese-ime" = { os = "macos" }
 "brew-cask:shottr" = { os = "macos" }
