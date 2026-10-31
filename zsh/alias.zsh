@@ -4,7 +4,7 @@ alias w="cd ~/workspace"
 alias ..="cd .."
 alias ...="cd ../.."
 
-alias cleanup="curl -s https://raw.githubusercontent.com/mac-cleanup/mac-cleanup-sh/53b2c24/mac-cleanup | bash"
+alias cleanup="curl -fsSL https://raw.githubusercontent.com/mac-cleanup/mac-cleanup-sh/53b2c24/mac-cleanup | sed '/^[[:space:]]*osascript -e /d' | bash"
 
 # incremental search for `git checkout`
 gco() {
