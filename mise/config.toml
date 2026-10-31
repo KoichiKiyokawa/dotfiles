@@ -1,4 +1,5 @@
 [settings]
+minimum_release_age = "7d"
 idiomatic_version_file_enable_tools = ["node"]
 
 [vars]
@@ -11,7 +12,7 @@ DOTFILES_ROOT = "{{ vars.root }}"
 node = "lts"
 aws-cli = "latest"
 codex = { version = "latest", os = ["macos"] }
-gcloud = { version = "latest", os = ["macos"] }
+gcloud = { version = "latest", os = ["macos"], depends = ["python"] }
 gh = "latest"
 jq = "latest"
 lazygit = "latest"
@@ -19,8 +20,8 @@ mas = { version = "latest", os = ["macos"] }
 neovim = "latest"
 peco = "latest"
 pnpm = "latest"
+python = { version = "3.14", os = ["macos"] }
 rtk = "latest"
-sheldon = "latest"
 starship = "latest"
 uv = "latest"
 
@@ -30,6 +31,7 @@ adopt = true
 [bootstrap.packages]
 "brew:git" = "latest"
 "brew:curl" = "latest"
+"brew:sheldon" = "latest"
 "brew-cask:google-chrome" = { os = "macos" }
 "brew-cask:karabiner-elements" = { os = "macos" }
 "brew-cask:keycastr" = { os = "macos" }
