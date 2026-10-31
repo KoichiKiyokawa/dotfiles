@@ -1,50 +1,128 @@
 # dotfiles
 
-This repository contains my macOS dotfiles and Nix-based system setup.
+Dotfiles for Apple Silicon macOS and Linux x86_64/arm64, managed with
+[mise bootstrap](https://mise.jdx.dev/bootstrap.html).
 
-- zsh configuration, with plugins managed by [sheldon](https://github.com/rossmacarthur/sheldon)
-- [Neovim](https://github.com/neovim/neovim) configuration, with plugins managed by [packer.nvim](https://github.com/wbthomason/packer.nvim)
-- macOS system settings, packages, apps, and dotfile links managed with Nix, nix-darwin, and home-manager
+- CLI tools and Node.js are declared in `mise/config.toml` under `[tools]`.
+- Git, curl, native dependencies, and macOS apps use mise's built-in Homebrew managers.
+- Configuration files link directly to this checkout with mise's `[dotfiles]`.
+- zsh plugins use [sheldon](https://github.com/rossmacarthur/sheldon).
 
 ![terminal](https://github.com/user-attachments/assets/c2c655a1-d454-4831-b886-29e0d3f21630)
 
 ## Setup
 
-### Clone and apply the configuration
+Install [mise](https://mise.jdx.dev/getting-started.html) 2026.10.17 or newer.
+On macOS, install Apple's Command Line Tools first with `xcode-select --install`.
+On Linux, install zsh with your distribution's package manager. Homebrew itself
+is optional: mise installs Homebrew packages into `/opt/homebrew` on macOS or
+`/home/linuxbrew/.linuxbrew` on Linux, including their runtime dependencies.
+Source builds may need your distribution's compiler/build tools.
 
 ```sh
-cd ~
-git clone https://github.com/KoichiKiyokawa/dotfiles.git
-cd dotfiles
+# If mise is not already installed:
+curl https://mise.run | sh
+export PATH="$HOME/.local/bin:$PATH"
 
-# Install Nix first
-sh <(curl -L https://nixos.org/nix/install) --daemon
-
-# Apply macOS system packages, CLI packages, and dotfiles
-sh -c 'chsh -s $(which zsh)'
+git clone https://github.com/KoichiKiyokawa/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+mise trust ./mise/config.toml
+./apply.sh --dry-run
 ./apply.sh
 exec zsh
 ```
 
-### What Nix manages
+Keep the checkout at `~/dotfiles`, or make that path a symlink to the checkout.
+The configuration sources use this path. `apply.sh` checks it before applying.
+To make zsh your login shell, run `chsh -s "$(command -v zsh)"` separately.
 
-- CLI packages such as `git`, `gh`, `neovim`, and `starship`
-- macOS apps available in nixpkgs, such as `Raycast`, `Zed`
-- macOS services such as `Tailscale`
-- Homebrew Cask apps such as `Codex`, `Docker Desktop`, `Google Japanese Input`, `Obsidian`, `Shottr`
-- Mac App Store apps such as `Flow`
-- Symlinks for `~/.zshrc`, `~/.gitconfig`, `~/.config/lazygit`, and `~/.config/mise/config.toml`
-- The checked-in dotfiles are linked through the Nix store for reproducible generations
-- `zsh/local.zsh` is created by the switch app and remains a local override file
-- Touch ID authentication for `sudo` on macOS
+`./apply.sh` selects this checkout's global mise config and runs `mise bootstrap`.
+It installs packages, writes macOS system files, links dotfiles, installs CLI tools,
+and runs the final setup task. sudo may be requested for machine-wide changes.
+Normal files at dotfile targets cause a conflict; save or move them before retrying.
+Existing symlinks are repointed. `zsh/local.zsh` is created if missing and retains
+its contents on later runs. Put machine-specific shell settings there.
 
-### Homebrew apps
+On macOS, Flow needs an Apple Account signed into the App Store. Bootstrap installs
+`mas` with Homebrew and retries Flow in the final task, so the first setup also works
+when `mas` was not available at the packages stage. Casks adopt identical existing
+apps rather than replacing them. A differing app can require manual reconciliation.
+Linux installs the shared CLI tools, Git, curl, and dotfiles; macOS apps and system
+settings are skipped.
 
-`pnpm`, `uv`, `mise`, `lazygit`, `Codex`, `Docker Desktop`, `T3 Code`, `Google Japanese Input`, `Obsidian`, and `Shottr` are declared through nix-darwin's Homebrew integration. The Homebrew versions of `uv`, `mise`, and `lazygit` replace pinned nixpkgs versions that predate the eMudhra certificate fixes. `Flow` is declared through nix-darwin's Mac App Store integration. Homebrew itself is installed by the flake through `nix-homebrew`.
+## Migrating an existing Nix setup
 
-macOS activation also runs `security/remove-compromised-ca.py` to remove the incident roots from the system PEM bundle and Xcode's bundled pip certificates. Changed files are backed up beside the originals with the suffix `.before-emudhra-20261023`. Run the script without `--apply` to check the bundles without changing them.
+Commit or save local changes, then use the setup commands above in the existing
+`~/dotfiles` checkout. Nix and its running installation stay installed. Do not run
+`darwin-rebuild` or Home Manager again after migrating, because they would restore
+the old links and services.
 
-`lazygit` is built from source because its current Homebrew bottle was built with Go 1.27.2, before the certificate fix in Go 1.27.3.
+Home Manager links in your home directory are replaced by direct checkout links.
+On macOS, mise refuses to overwrite system symlinks. Before the first apply,
+inspect the following paths with `ls -l` and `readlink`. If they are Nix-managed
+links through `/etc/static` or `/nix/store`, move those links aside:
+
+```sh
+sudo mv /etc/codex/managed_config.toml /etc/codex/managed_config.toml.before-mise
+sudo mv /etc/resolver/ts.net /etc/resolver/ts.net.before-mise
+sudo mv /etc/pam.d/sudo_local /etc/pam.d/sudo_local.before-mise
+```
+
+Only run the commands for Nix-managed links that exist, and first check that the
+backup names are unused. Preserve any local contents before moving them.
+The system-file phase then creates regular root-owned files. These are manual
+migration steps; `apply.sh` does not remove or rename existing system links.
+
+Touch ID sudo is declared as `/etc/pam.d/sudo_local`. The configuration owns this
+whole file; merge any additional local PAM rules into the declaration before
+applying. The MagicDNS resolver is also retained.
+
+Tailscale is installed through Homebrew. Its macOS system daemon is installed
+separately with Tailscale's own command. After packages are installed, run:
+
+```sh
+sudo /opt/homebrew/bin/tailscaled install-system-daemon
+```
+
+This replaces the old daemon with label `com.tailscale.tailscaled` and keeps its
+state. Repeat this command after upgrading Tailscale to refresh its daemon binary.
+Do this before uninstalling Nix so the old service no longer uses a Nix path.
+
+The final task also runs `rtk init -g --codex` and the existing certificate filter
+at `security/remove-compromised-ca.py --apply`. The filter removes the incident
+roots, including the Comodo AAA root previously blocked in Nix, from the system
+PEM bundle and Xcode's bundled pip certificates. Changed bundles retain backups
+with `.before-emudhra-20261023`. To inspect without changing certificates:
+
+```sh
+mise exec -- python3 security/remove-compromised-ca.py
+```
+
+Nix removal is a separate operation after verifying the migrated environment.
+Follow the uninstall instructions for the Nix installer used on that machine.
+Also review Nix-added shell startup entries and `/etc/static` links before removing
+its store. This repository does not delete Nix, old generations, profiles, or data.
+An existing Homebrew installation is reused; it is no longer managed by nix-darwin.
+
+## Updates and previews
+
+```sh
+cd ~/dotfiles
+./apply.sh --dry-run
+./apply.sh --update --upgrade
+# Only configuration links, without packages or system tasks:
+./apply.sh --only dotfiles
+```
+
+CLI declarations use `latest`, Node.js uses `lts`, and Python uses the 3.13 series.
+They are version requests, not a Nix-style locked snapshot. An ordinary apply
+installs missing tools/packages; `--upgrade` updates them within these requests.
+Update mise separately with its installer or package manager. `--update` does not
+pull this repository; use `git pull` explicitly.
+
+The full dry-run prints hooks and the final task without executing them. It may
+fetch package metadata and update mise caches, but does not install software or
+write the declared dotfiles/system files. `--only dotfiles` skips system settings.
 
 ### Battery charge limit
 
@@ -55,15 +133,7 @@ To extend battery lifespan, set the macOS Charge Limit to 80% manually:
 1. Click the info button next to Charging.
 1. Set Charge Limit to 80%.
 
-This is not managed by nix-darwin. macOS Tahoe 26.4 added the standard Charge Limit setting, but nix-darwin does not currently expose a stable option for it, and the setting does not appear in `pmset` or the usual `defaults` domains.
-
-### Update packages later
-
-```sh
-cd ~/dotfiles
-nix --extra-experimental-features 'nix-command flakes' flake update
-./apply.sh
-```
+This setting is applied manually and is not part of bootstrap.
 
 ### Superpowers
 

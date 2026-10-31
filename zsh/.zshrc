@@ -1,18 +1,29 @@
-# Load Nix profile when it is available.
-if [ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
-  . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
-elif [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
-  . "$HOME/.nix-profile/etc/profile.d/nix.sh"
-fi
-
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
 export PATH="$HOME/.local/bin:$PATH"
+for prefix in /opt/homebrew /home/linuxbrew/.linuxbrew; do
+  if [[ -d "$prefix/bin" ]]; then
+    export PATH="$prefix/opt/curl/bin:$prefix/bin:$prefix/sbin:$PATH"
+  fi
+done
+# Resolve the managed link so any checkout location works.
+export DOTFILES_ROOT="${${(%):-%x}:A:h:h}"
+if [[ "$OSTYPE" == darwin* ]]; then
+  export PNPM_HOME="$HOME/Library/pnpm"
+else
+  export PNPM_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/pnpm"
+fi
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+eval "$(mise activate zsh)"
 
 # for cursor (https://scrapbox.io/ygkn/gh_cliをCursor_Agentに実行させると動かない)
 export GH_PAGER=""
 
 eval "$(starship init zsh)"
 eval "$(sheldon source)"
-export PATH="$HOME/.local/share/mise/shims:$PATH"
 
 zsh-defer source "${DOTFILES_ROOT:-$HOME/dotfiles}/zsh/alias.zsh"
 zsh-defer source "${DOTFILES_ROOT:-$HOME/dotfiles}/zsh/local.zsh"
@@ -42,12 +53,3 @@ function peco-select-history() {
 }
 zle -N peco-select-history
 bindkey '^r' peco-select-history
-
-export XDG_CONFIG_HOME="$HOME/.config"
-
-# pnpm is installed by Homebrew because nixpkgs pnpm fails during `pnpm setup`.
-export PNPM_HOME="$HOME/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME/bin:"*) ;;
-  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
-esac

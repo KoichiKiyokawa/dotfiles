@@ -1,28 +1,24 @@
 #!/bin/sh
-
 set -eu
-
-cd "$(dirname "$0")"
-
-export NIX_CONFIG="experimental-features = nix-command flakes${NIX_CONFIG:+
-}${NIX_CONFIG-}"
-
-if ! command -v nix >/dev/null 2>&1; then
-  if [ -f /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh ]; then
-    . /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
-  elif [ -f "$HOME/.nix-profile/etc/profile.d/nix.sh" ]; then
-    . "$HOME/.nix-profile/etc/profile.d/nix.sh"
-  fi
+root=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd -P)
+checkout=$(CDPATH= cd -- "$HOME/dotfiles" 2>/dev/null && pwd -P) || {
+  echo "Clone this repository into ~/dotfiles before applying it." >&2
+  exit 1
+}
+if [ "$checkout" != "$root" ]; then
+  echo "Run ~/dotfiles/apply.sh, or make ~/dotfiles point to this checkout." >&2
+  exit 1
 fi
-
-nix run .#switch -- "$@"
-
-for p in /nix/var/nix/profiles/system /nix/var/nix/profiles/per-user/*/home-manager; do
-  nix-env --delete-generations old -p "$p" 2>/dev/null || true
-done
-
-nix-collect-garbage
-
-if command -v brew >/dev/null 2>&1; then
-  brew cleanup
+case "$(uname -s)" in
+  Darwin) prefix=/opt/homebrew ;;
+  Linux) prefix=/home/linuxbrew/.linuxbrew ;;
+  *) echo "Only Apple Silicon macOS and Linux are supported." >&2; exit 1 ;;
+esac
+export PATH="$prefix/opt/curl/bin:$prefix/bin:$prefix/sbin:$HOME/.local/bin:$PATH"
+if ! command -v mise >/dev/null 2>&1; then
+  echo "Install mise first: https://mise.jdx.dev/getting-started.html" >&2
+  exit 1
 fi
+# Use this checkout even before its global config link exists.
+export MISE_GLOBAL_CONFIG_FILE="$root/mise/config.toml"
+exec mise -C "$HOME" bootstrap "$@"
