@@ -21,7 +21,7 @@ mas = { version = "latest", os = ["macos"] }
 neovim = "latest"
 peco = "latest"
 pnpm = "latest"
-python = { version = "3.14", os = ["macos"] }
+python = { version = "latest", os = ["macos"] }
 rtk = "latest"
 starship = "latest"
 uv = "latest"
