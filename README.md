@@ -36,54 +36,10 @@ Keep the checkout at `~/dotfiles`, or make that path a symlink to the checkout.
 The configuration sources use this path.
 To make zsh your login shell, run `chsh -s "$(command -v zsh)"` separately.
 
-The initial commands select the checkout's config before its global link exists.
-After setup, run `mise bootstrap` directly. It installs packages, writes macOS
-system files, links dotfiles, installs CLI tools,
-and runs the final setup task. sudo may be requested for machine-wide changes.
-Normal files at dotfile targets cause a conflict; save or move them before retrying.
-Existing symlinks are repointed. `zsh/local.zsh` is created if missing and retains
-its contents on later runs. Put machine-specific shell settings there.
-
-On macOS, Flow needs an Apple Account signed into the App Store. Bootstrap installs
-`mas` through mise's `[tools]` and retries Flow in the final task, so the first setup also works
-when `mas` was not available at the packages stage. Casks adopt identical existing
-apps rather than replacing them. A differing app can require manual reconciliation.
-Linux installs the shared CLI tools, Git, curl, and dotfiles; macOS apps and system
-settings are skipped.
-
-## Migrating an existing Nix setup
-
-Commit or save local changes, then use the setup commands above in the existing
-`~/dotfiles` checkout. Nix and its running installation stay installed. Do not run
-`darwin-rebuild` or Home Manager again after migrating, because they would restore
-the old links and services.
-
-Home Manager links in your home directory are replaced by direct checkout links.
-On macOS, mise refuses to overwrite system symlinks. Before the first apply,
-inspect the following paths with `ls -l` and `readlink`. If they are Nix-managed
-links through `/etc/static` or `/nix/store`, move those links aside:
-
-```sh
-sudo mv /etc/codex/managed_config.toml /etc/codex/managed_config.toml.before-mise
-sudo mv /etc/pam.d/sudo_local /etc/pam.d/sudo_local.before-mise
-```
-
-Only run the commands for Nix-managed links that exist, and first check that the
-backup names are unused. Preserve any local contents before moving them.
-The system-file phase then creates regular root-owned files. These are manual
-migration steps; bootstrap does not remove or rename existing system links.
-
-Touch ID sudo is declared as `/etc/pam.d/sudo_local`. The configuration owns this
-whole file; merge any additional local PAM rules into the declaration before
-applying.
-
-The final task runs `rtk init -g --codex` and installs the declared App Store apps.
-
-Nix removal is a separate operation after verifying the migrated environment.
-Follow the uninstall instructions for the Nix installer used on that machine.
-Also review Nix-added shell startup entries and `/etc/static` links before removing
-its store. This repository does not delete Nix, old generations, profiles, or data.
-An existing Homebrew installation is reused; it is no longer managed by nix-darwin.
+Put machine-specific shell settings in `zsh/local.zsh`.
+Bootstrap creates this file if missing and preserves its contents.
+On macOS, Flow requires an Apple Account signed into the App Store.
+System configuration changes may require sudo.
 
 ## Updates and previews
 
@@ -95,15 +51,9 @@ mise bootstrap --update --upgrade
 mise bootstrap --only dotfiles
 ```
 
-CLI declarations use `latest`, and Node.js uses `lts`.
-They are version requests, not a Nix-style locked snapshot. An ordinary apply
-installs missing tools/packages; `--upgrade` updates them within these requests.
-Update mise separately with its installer or package manager. `--update` does not
-pull this repository; use `git pull` explicitly.
-
-The full dry-run prints hooks and the final task without executing them. It may
-fetch package metadata and update mise caches, but does not install software or
-write the declared dotfiles/system files. `--only dotfiles` skips system settings.
+CLI tools use `latest`; Node.js uses `lts`. `--upgrade` updates installed versions.
+Update mise with its installer or package manager, and pull repository changes
+with `git pull`.
 
 ### Battery charge limit
 
