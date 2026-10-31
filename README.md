@@ -55,6 +55,12 @@ CLI tools use `latest`; Node.js uses `lts`. `--upgrade` updates installed versio
 Update mise with its installer or package manager, and pull repository changes
 with `git pull`.
 
+### Vorssaint settings
+
+[Vorssaint Settings.plist](<Vorssaint Settings.plist>) is an exported settings backup.
+After installing Vorssaint, open its settings and use the settings backup import
+to select this file. Import it manually; bootstrap installs the app only.
+
 ### Battery charge limit
 
 To extend battery lifespan, set the macOS Charge Limit to 80% manually:
