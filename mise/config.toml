@@ -17,7 +17,6 @@ lazygit = "latest"
 neovim = "latest"
 peco = "latest"
 pnpm = "latest"
-python = "3.13"
 rtk = "latest"
 sheldon = "latest"
 starship = "latest"
@@ -98,11 +97,10 @@ group = "wheel"
 mode = "0644"
 
 [tasks.bootstrap]
-description = "Initialize RTK and filter macOS certificate bundles"
+description = "Initialize RTK and install App Store apps"
 run = '''
 rtk init -g --codex
 if [ "$(uname -s)" = Darwin ]; then
   mise bootstrap packages apply --manager mas
-  sudo "$(command -v python3)" "$DOTFILES_ROOT/security/remove-compromised-ca.py" --apply
 fi
 '''

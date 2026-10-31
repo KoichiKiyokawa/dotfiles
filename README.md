@@ -88,15 +88,7 @@ This replaces the old daemon with label `com.tailscale.tailscaled` and keeps its
 state. Repeat this command after upgrading Tailscale to refresh its daemon binary.
 Do this before uninstalling Nix so the old service no longer uses a Nix path.
 
-The final task also runs `rtk init -g --codex` and the existing certificate filter
-at `security/remove-compromised-ca.py --apply`. The filter removes the incident
-roots, including the Comodo AAA root previously blocked in Nix, from the system
-PEM bundle and Xcode's bundled pip certificates. Changed bundles retain backups
-with `.before-emudhra-20261023`. To inspect without changing certificates:
-
-```sh
-mise exec -- python3 security/remove-compromised-ca.py
-```
+The final task runs `rtk init -g --codex` and installs the declared App Store apps.
 
 Nix removal is a separate operation after verifying the migrated environment.
 Follow the uninstall instructions for the Nix installer used on that machine.
@@ -114,7 +106,7 @@ cd ~/dotfiles
 ./apply.sh --only dotfiles
 ```
 
-CLI declarations use `latest`, Node.js uses `lts`, and Python uses the 3.13 series.
+CLI declarations use `latest`, and Node.js uses `lts`.
 They are version requests, not a Nix-style locked snapshot. An ordinary apply
 installs missing tools/packages; `--upgrade` updates them within these requests.
 Update mise separately with its installer or package manager. `--update` does not
