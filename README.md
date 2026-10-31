@@ -22,22 +22,23 @@ Source builds may need your distribution's compiler/build tools.
 ```sh
 # If mise is not already installed:
 curl https://mise.run | sh
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:/opt/homebrew/bin:/home/linuxbrew/.linuxbrew/bin:$PATH"
 
 git clone https://github.com/KoichiKiyokawa/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 mise trust ./mise/config.toml
-./apply.sh --dry-run
-./apply.sh
+MISE_GLOBAL_CONFIG_FILE="$PWD/mise/config.toml" mise bootstrap --dry-run
+MISE_GLOBAL_CONFIG_FILE="$PWD/mise/config.toml" mise bootstrap
 exec zsh
 ```
 
 Keep the checkout at `~/dotfiles`, or make that path a symlink to the checkout.
-The configuration sources use this path. `apply.sh` checks it before applying.
+The configuration sources use this path.
 To make zsh your login shell, run `chsh -s "$(command -v zsh)"` separately.
 
-`./apply.sh` selects this checkout's global mise config and runs `mise bootstrap`.
-It installs packages, writes macOS system files, links dotfiles, installs CLI tools,
+The initial commands select the checkout's config before its global link exists.
+After setup, run `mise bootstrap` directly. It installs packages, writes macOS
+system files, links dotfiles, installs CLI tools,
 and runs the final setup task. sudo may be requested for machine-wide changes.
 Normal files at dotfile targets cause a conflict; save or move them before retrying.
 Existing symlinks are repointed. `zsh/local.zsh` is created if missing and retains
@@ -71,7 +72,7 @@ sudo mv /etc/pam.d/sudo_local /etc/pam.d/sudo_local.before-mise
 Only run the commands for Nix-managed links that exist, and first check that the
 backup names are unused. Preserve any local contents before moving them.
 The system-file phase then creates regular root-owned files. These are manual
-migration steps; `apply.sh` does not remove or rename existing system links.
+migration steps; bootstrap does not remove or rename existing system links.
 
 Touch ID sudo is declared as `/etc/pam.d/sudo_local`. The configuration owns this
 whole file; merge any additional local PAM rules into the declaration before
@@ -100,10 +101,10 @@ An existing Homebrew installation is reused; it is no longer managed by nix-darw
 
 ```sh
 cd ~/dotfiles
-./apply.sh --dry-run
-./apply.sh --update --upgrade
+mise bootstrap --dry-run
+mise bootstrap --update --upgrade
 # Only configuration links, without packages or system tasks:
-./apply.sh --only dotfiles
+mise bootstrap --only dotfiles
 ```
 
 CLI declarations use `latest`, and Node.js uses `lts`.
