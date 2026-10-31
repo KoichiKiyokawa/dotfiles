@@ -31,7 +31,6 @@ adopt = true
 "brew:mas" = { os = "macos" }
 "brew:docker" = { os = "macos" }
 "brew:ffmpeg" = { os = "macos" }
-"brew:tailscale" = { os = "macos" }
 "brew-cask:cmux" = { os = "macos" }
 "brew-cask:google-cloud-sdk" = { os = "macos" }
 "brew-cask:karabiner-elements" = { os = "macos" }
@@ -68,22 +67,9 @@ owner = "root"
 group = "wheel"
 mode = "0755"
 
-[bootstrap.directories."/etc/resolver"]
-os = "macos"
-owner = "root"
-group = "wheel"
-mode = "0755"
-
 [bootstrap.files."/etc/codex/managed_config.toml"]
 os = "macos"
 source = "~/dotfiles/codex/managed_config.toml"
-owner = "root"
-group = "wheel"
-mode = "0644"
-
-[bootstrap.files."/etc/resolver/ts.net"]
-os = "macos"
-content = "nameserver 100.100.100.100\n"
 owner = "root"
 group = "wheel"
 mode = "0644"

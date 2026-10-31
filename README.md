@@ -65,7 +65,6 @@ links through `/etc/static` or `/nix/store`, move those links aside:
 
 ```sh
 sudo mv /etc/codex/managed_config.toml /etc/codex/managed_config.toml.before-mise
-sudo mv /etc/resolver/ts.net /etc/resolver/ts.net.before-mise
 sudo mv /etc/pam.d/sudo_local /etc/pam.d/sudo_local.before-mise
 ```
 
@@ -76,18 +75,7 @@ migration steps; bootstrap does not remove or rename existing system links.
 
 Touch ID sudo is declared as `/etc/pam.d/sudo_local`. The configuration owns this
 whole file; merge any additional local PAM rules into the declaration before
-applying. The MagicDNS resolver is also retained.
-
-Tailscale is installed through Homebrew. Its macOS system daemon is installed
-separately with Tailscale's own command. After packages are installed, run:
-
-```sh
-sudo /opt/homebrew/bin/tailscaled install-system-daemon
-```
-
-This replaces the old daemon with label `com.tailscale.tailscaled` and keeps its
-state. Repeat this command after upgrading Tailscale to refresh its daemon binary.
-Do this before uninstalling Nix so the old service no longer uses a Nix path.
+applying.
 
 The final task runs `rtk init -g --codex` and installs the declared App Store apps.
 
