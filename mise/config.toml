@@ -39,7 +39,6 @@ adopt = true
 "brew-cask:codex" = { os = "macos" }
 "brew-cask:docker-desktop" = { os = "macos" }
 "brew-cask:google-japanese-ime" = { os = "macos" }
-"brew-cask:obsidian" = { os = "macos" }
 "brew-cask:shottr" = { os = "macos" }
 "brew-cask:vorssaint/tap/vorssaint" = { os = "macos" }
 "brew-cask:t3-code" = { os = "macos" }
