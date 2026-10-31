@@ -69,4 +69,3 @@ This setting is applied manually and is not part of bootstrap.
 ### Superpowers
 
 [Superpowers](https://github.com/obra/superpowers) is installed manually. See the repository for per-agent installation instructions.
-
