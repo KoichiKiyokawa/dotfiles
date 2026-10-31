@@ -12,7 +12,6 @@ node = "lts"
 aws-cli = "latest"
 codex = { version = "latest", os = ["macos"] }
 delta = "latest"
-docker-cli = { version = "latest", os = ["macos"] }
 gcloud = { version = "latest", os = ["macos"] }
 gh = "latest"
 jq = "latest"
