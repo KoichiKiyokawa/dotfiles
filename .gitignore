@@ -2,7 +2,6 @@ karabiner/*
 !karabiner/(assets|automatic-backups)
 
 .DS_Store
-env.sh
 result
 
 nvim/plugin
