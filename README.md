@@ -70,24 +70,3 @@ This setting is applied manually and is not part of bootstrap.
 
 [Superpowers](https://github.com/obra/superpowers) is installed manually. See the repository for per-agent installation instructions.
 
-### Raycast
-
-Raycast is managed with text files only. Generated `.rayconfig` files are ignored by git.
-
-- `raycast/settings.json`: script command directories, command hotkeys, and snippets
-- `raycast/scripts`: script commands
-
-Build an import file:
-
-```sh
-cd ~/dotfiles
-raycast/build-rayconfig.sh
-```
-
-Then import it:
-
-1. In Raycast, run `Import Settings & Data`.
-1. Select `~/dotfiles/raycast/Raycast.rayconfig`.
-1. Import the selected data.
-
-The generated `.rayconfig` is `raycast/settings.json` compressed with gzip. This import format is reverse-engineered. If Raycast stops accepting it, keep `raycast/settings.json` as the source of truth and apply the entries manually through Raycast Settings.
