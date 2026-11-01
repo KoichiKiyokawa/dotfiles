@@ -26,9 +26,6 @@ rtk = "latest"
 starship = "latest"
 uv = "latest"
 
-[bootstrap.brew]
-adopt = true
-
 [bootstrap.packages]
 "brew:git" = "latest"
 "brew:curl" = "latest"
