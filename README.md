@@ -55,17 +55,8 @@ mise bootstrap --only dotfiles
 
 CLI tools use `latest`; Node.js uses `lts`. `--upgrade` updates installed versions.
 Plain `mise bootstrap` installs missing packages but does not upgrade installed apps.
-The `brew-cask` upgrade command skips apps still managed by Homebrew.
-It also skips running self-updating apps: quit those apps and rerun the command
-from another terminal to update them with mise.
-Run package operations in an interactive terminal so mise can prompt for sudo
-when an installer or a system-owned CLI link requires it. If an operation fails,
-resolve the reported error and rerun it; check for a successful exit before
-treating the update as complete.
-
-Existing app bundles are installed from the declared cask rather than adopted
-unchanged. Replacing a bundle may require granting its macOS privacy permissions
-again.
+Close self-updating apps before upgrading them. Run upgrades in an interactive
+terminal so mise can prompt for sudo when required.
 
 Update mise with its installer or package manager, and pull repository changes
 with `git pull`.
