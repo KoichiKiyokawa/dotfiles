@@ -47,11 +47,16 @@ System configuration changes may require sudo.
 cd ~/dotfiles
 mise bootstrap --dry-run
 mise bootstrap --update --upgrade
+# Only macOS apps managed by brew-cask:
+mise bootstrap packages upgrade --manager brew-cask
 # Only configuration links, without packages or system tasks:
 mise bootstrap --only dotfiles
 ```
 
 CLI tools use `latest`; Node.js uses `lts`. `--upgrade` updates installed versions.
+Plain `mise bootstrap` installs missing packages but does not upgrade installed apps.
+The `brew-cask` upgrade command skips apps still managed by Homebrew and leaves
+running self-updating apps to their own updaters.
 Update mise with its installer or package manager, and pull repository changes
 with `git pull`.
 
