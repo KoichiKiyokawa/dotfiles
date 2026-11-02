@@ -69,14 +69,9 @@ the newly pinned release if it is not already installed.
 ### Vorssaint settings
 
 [Vorssaint Settings.plist](<Vorssaint Settings.plist>) is a tracked XML settings backup.
-On macOS with Vorssaint v3.4.3 or newer, run `mise run vorssaint:export` to
-update the backup through its CLI. The export is validated before replacing
-the tracked file. Review changes for personal settings before committing.
-
-On macOS, `mise bootstrap` imports this file after installing applications.
-The importer quits Vorssaint if it is running, waits for it to exit, restores
-the saved preferences, and reopens the app only if it had been running.
-Run `mise run vorssaint:import` to restore settings without a full bootstrap.
+`mise bootstrap` imports it on macOS after installing apps. Quit Vorssaint
+before bootstrapping; its CLI rejects imports while the app is running.
+To export the current settings, run `mise run vorssaint:export`.
 
 ### Battery charge limit
 
