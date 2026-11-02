@@ -17,6 +17,8 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
+export PATH="$DOTFILES_ROOT/bin:$PATH"
+
 eval "$(mise activate zsh)"
 
 # for cursor (https://scrapbox.io/ygkn/gh_cliをCursor_Agentに実行させると動かない)
