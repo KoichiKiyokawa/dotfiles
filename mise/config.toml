@@ -86,3 +86,7 @@ if [ "$(uname -s)" = Darwin ]; then
   mise bootstrap packages apply --manager mas
 fi
 '''
+
+[tasks."vorssaint:export"]
+description = "Export Vorssaint settings to the tracked plist"
+run = 'bash "{{ vars.root }}/vorssaint/export-settings.sh"'
