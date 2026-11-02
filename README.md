@@ -12,23 +12,21 @@ Dotfiles for Apple Silicon macOS and Linux x86_64/arm64, managed with
 
 ## Setup
 
-Install [mise](https://mise.jdx.dev/getting-started.html) 2026.10.17 or newer.
-On macOS, install Apple's Command Line Tools first with `xcode-select --install`.
-On Linux, install zsh with your distribution's package manager. Homebrew itself
-is optional: mise installs Homebrew packages into `/opt/homebrew` on macOS or
+The committed `bin/mise` script downloads mise 2026.10.17 on first use. An
+existing mise installation is not required. Git, Bash, curl, tar, and a SHA-256
+checksum utility must be available before running it. On macOS, install Apple's
+Command Line Tools first with `xcode-select --install`. On Linux, install zsh
+with your distribution's package manager. Homebrew itself is optional: mise
+installs Homebrew packages into `/opt/homebrew` on macOS or
 `/home/linuxbrew/.linuxbrew` on Linux, including their runtime dependencies.
 Source builds may need your distribution's compiler/build tools.
 
 ```sh
-# If mise is not already installed:
-curl https://mise.run | sh
-export PATH="$HOME/.local/bin:/opt/homebrew/bin:/home/linuxbrew/.linuxbrew/bin:$PATH"
-
 git clone https://github.com/KoichiKiyokawa/dotfiles.git ~/dotfiles
 cd ~/dotfiles
-mise trust ./mise/config.toml
-MISE_GLOBAL_CONFIG_FILE="$PWD/mise/config.toml" mise bootstrap --dry-run
-MISE_GLOBAL_CONFIG_FILE="$PWD/mise/config.toml" mise bootstrap
+./bin/mise trust ./mise/config.toml
+MISE_GLOBAL_CONFIG_FILE="$PWD/mise/config.toml" ./bin/mise bootstrap --dry-run
+MISE_GLOBAL_CONFIG_FILE="$PWD/mise/config.toml" ./bin/mise bootstrap
 exec zsh
 ```
 
@@ -58,8 +56,15 @@ Plain `mise bootstrap` installs missing packages but does not upgrade installed 
 Close self-updating apps before upgrading them. Run upgrades in an interactive
 terminal so mise can prompt for sudo when required.
 
-Update mise with its installer or package manager, and pull repository changes
-with `git pull`.
+The generated wrapper pins mise 2026.10.17 and is placed on `PATH` by
+`zsh/.zshrc`. To change the pinned mise version, regenerate and commit it:
+
+```sh
+mise generate install-script --write ./bin/mise
+```
+
+Pull repository changes with `git pull`. The next wrapper invocation downloads
+the newly pinned release if it is not already installed.
 
 ### Vorssaint settings
 
