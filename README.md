@@ -73,8 +73,10 @@ On macOS with Vorssaint v3.4.3 or newer, run `mise run vorssaint:export` to
 update the backup through its CLI. The export is validated before replacing
 the tracked file. Review changes for personal settings before committing.
 
-After installing Vorssaint, open its settings and use the settings backup import
-to select this file. Import it manually; bootstrap installs the app only.
+On macOS, `mise bootstrap` imports this file after installing applications.
+The importer quits Vorssaint if it is running, waits for it to exit, restores
+the saved preferences, and reopens the app only if it had been running.
+Run `mise run vorssaint:import` to restore settings without a full bootstrap.
 
 ### Battery charge limit
 

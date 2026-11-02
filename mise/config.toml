@@ -77,16 +77,21 @@ group = "wheel"
 mode = "0644"
 
 [tasks.bootstrap]
-description = "Initialize agent integrations and install App Store apps"
+description = "Initialize integrations, install App Store apps, and import Vorssaint settings"
 run = '''
 rtk init -g --codex
 if [ "$(uname -s)" = Darwin ]; then
   codex plugin marketplace upgrade context-mode
   codex plugin add context-mode@context-mode
   mise bootstrap packages apply --manager mas
+  bash "$DOTFILES_ROOT/vorssaint/import-settings.sh"
 fi
 '''
 
 [tasks."vorssaint:export"]
 description = "Export Vorssaint settings to the tracked plist"
 run = 'bash "{{ vars.root }}/vorssaint/export-settings.sh"'
+
+[tasks."vorssaint:import"]
+description = "Import tracked Vorssaint settings"
+run = 'bash "{{ vars.root }}/vorssaint/import-settings.sh"'
