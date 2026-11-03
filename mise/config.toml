@@ -67,6 +67,7 @@ mode = "0644"
 description = "Reapply App Store packages after [tools] installs mas on the first run; restore Vorssaint settings on every bootstrap"
 run = '''
 if [ "$(uname -s)" = Darwin ]; then
+  nvram StartupMute 2>/dev/null | grep -q '%01' || sudo nvram StartupMute=%01
   mise bootstrap packages apply --manager mas
   "/Applications/Vorssaint.app/Contents/MacOS/Vorssaint" --import-settings "$DOTFILES_ROOT/Vorssaint Settings.plist"
 fi
