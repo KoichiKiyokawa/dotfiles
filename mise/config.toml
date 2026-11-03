@@ -76,13 +76,6 @@ Dragging = true
 DragLock = false
 TrackpadThreeFingerDrag = false
 
-# Caps Lock -> left Control via native macOS modifier-key preferences.
-[[bootstrap.macos.defaults_entries]]
-domain = "NSGlobalDomain"
-key = "com.apple.keyboard.modifiermapping.0-0-0"
-host = "current"
-value = [{ HIDKeyboardModifierMappingSrc = 30064771129, HIDKeyboardModifierMappingDst = 30064771296 }]
-
 [tasks.bootstrap]
 description = "Reapply App Store packages after [tools] installs mas on the first run; restore Vorssaint settings on every bootstrap"
 run = '''
