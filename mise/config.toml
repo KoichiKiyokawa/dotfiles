@@ -56,19 +56,6 @@ uv = "latest"
 [bootstrap.hooks.post-dotfiles]
 run = 'touch "{{ vars.root }}/zsh/local.zsh"'
 
-[bootstrap.directories."/etc/codex"]
-os = "macos"
-owner = "root"
-group = "wheel"
-mode = "0755"
-
-[bootstrap.files."/etc/codex/managed_config.toml"]
-os = "macos"
-source = "~/dotfiles/codex/managed_config.toml"
-owner = "root"
-group = "wheel"
-mode = "0644"
-
 [bootstrap.files."/etc/pam.d/sudo_local"]
 os = "macos"
 content = "auth       sufficient     pam_tid.so\n"
@@ -77,14 +64,23 @@ group = "wheel"
 mode = "0644"
 
 [tasks.bootstrap]
-description = "Initialize agent integrations, install App Store apps, and import Vorssaint settings"
+description = "Reapply App Store packages after [tools] installs mas on the first run; restore Vorssaint settings on every bootstrap"
+run = '''
+if [ "$(uname -s)" = Darwin ]; then
+  mise bootstrap packages apply --manager mas
+  "/Applications/Vorssaint.app/Contents/MacOS/Vorssaint" --import-settings "$DOTFILES_ROOT/Vorssaint Settings.plist"
+fi
+'''
+
+[tasks."codex:setup"]
+description = "Manually install Codex managed configuration and initialize RTK and context-mode integrations"
 run = '''
 rtk init -g --codex
 if [ "$(uname -s)" = Darwin ]; then
+  sudo install -d -o root -g wheel -m 0755 /etc/codex
+  sudo install -o root -g wheel -m 0644 "$DOTFILES_ROOT/codex/managed_config.toml" /etc/codex/managed_config.toml
   codex plugin marketplace upgrade context-mode
   codex plugin add context-mode@context-mode
-  mise bootstrap packages apply --manager mas
-  "/Applications/Vorssaint.app/Contents/MacOS/Vorssaint" --import-settings "$DOTFILES_ROOT/Vorssaint Settings.plist"
 fi
 '''
 
