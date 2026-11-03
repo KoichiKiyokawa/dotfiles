@@ -377,6 +377,10 @@
       "selected": true,
       "simple_modifications": [
         {
+          "from": { "key_code": "caps_lock" },
+          "to": [{ "key_code": "left_control" }]
+        },
+        {
           "from": { "key_code": "left_control" },
           "to": [{ "key_code": "left_command" }]
         }
@@ -389,6 +393,10 @@
     {
       "name": "大西配列",
       "simple_modifications": [
+        {
+          "from": { "key_code": "caps_lock" },
+          "to": [{ "key_code": "left_control" }]
+        },
         {
           "from": { "key_code": "a" },
           "to": [{ "key_code": "e" }]
