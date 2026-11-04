@@ -82,7 +82,18 @@ run = '''
 if [ "$(uname -s)" = Darwin ]; then
   nvram StartupMute 2>/dev/null | grep -q '%01' || sudo nvram StartupMute=%01
   mise bootstrap packages apply --manager mas
-  "/Applications/Vorssaint.app/Contents/MacOS/Vorssaint" --import-settings "$DOTFILES_ROOT/Vorssaint Settings.plist"
+  osascript -e 'if application id "com.vorssaint.utils" is running then tell application id "com.vorssaint.utils" to quit' || exit $?
+  attempts=0
+  while pgrep -x Vorssaint >/dev/null || [ "$(osascript -e 'application id "com.vorssaint.utils" is running')" = true ]; do
+    if [ "$attempts" -ge 10 ]; then
+      echo "Vorssaint did not quit within 10 seconds" >&2
+      exit 1
+    fi
+    sleep 1
+    attempts=$((attempts + 1))
+  done
+  "/Applications/Vorssaint.app/Contents/MacOS/Vorssaint" --import-settings "$DOTFILES_ROOT/Vorssaint Settings.plist" || exit $?
+  open -a /Applications/Vorssaint.app
 fi
 '''
 
