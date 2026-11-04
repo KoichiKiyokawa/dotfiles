@@ -144,6 +144,14 @@
 		<string></string>
 		<key>commandBarHidden</key>
 		<string></string>
+		<key>commandBarLinks</key>
+		<data>
+		W3siaWQiOiJDQjM5MzQwMy0zREE2LTQ0MkYtODc4MS1CNjZEQTA3OEFCOTYi
+		LCJraW5kIjoic2NyaXB0IiwicnVuc1dpdGhvdXRBcmd1bWVudCI6dHJ1ZSwi
+		cnVuc0RpcmVjdGx5IjpmYWxzZSwiZGVzdGluYXRpb24iOiJcL1VzZXJzXC9r
+		b2ljaGlcL2RvdGZpbGVzXC9zY3JpcHRzXC91dWlkLnNoIiwibmFtZSI6InV1
+		aWQifV0=
+		</data>
 		<key>commandBarPins</key>
 		<string></string>
 		<key>commandBarPositionOffset</key>
@@ -1390,7 +1398,7 @@
 		<key>screenshotWatermarkPresets</key>
 		<string>[]</string>
 		<key>screenshotWatermarkStyle</key>
-		<string>{"size":0.3,"anchor":"bottomTrailing","opacity":0.4,"rotation":0,"text":"","color":"white","kind":"none"}</string>
+		<string>{"rotation":0,"anchor":"bottomTrailing","color":"white","kind":"none","size":0.3,"opacity":0.4,"text":""}</string>
 		<key>scrollHorizontalEnabled</key>
 		<false/>
 		<key>scrollHorizontalModifier</key>
