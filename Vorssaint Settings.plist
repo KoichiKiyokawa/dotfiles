@@ -7,7 +7,7 @@
 		<key>appAppearance</key>
 		<string>system</string>
 		<key>appLanguage</key>
-		<string>en-US</string>
+		<string>ja</string>
 		<key>appOutputDevices</key>
 		<dict/>
 		<key>appUpdatesCheckFrequency</key>
@@ -47,6 +47,7 @@
 		<array>
 			<string>com.apple.finder</string>
 			<string>com.apple.mobilephone</string>
+			<string>cc.ffitch.shottr</string>
 		</array>
 		<key>batteryLimitPercent</key>
 		<integer>10</integer>
@@ -397,7 +398,7 @@
 		<key>homebrewGroupDependencies</key>
 		<true/>
 		<key>hotkeyEnabled</key>
-		<true/>
+		<false/>
 		<key>includeBetaUpdates</key>
 		<false/>
 		<key>keepAwakeActiveIcon</key>
@@ -1398,7 +1399,7 @@
 		<key>screenshotWatermarkPresets</key>
 		<string>[]</string>
 		<key>screenshotWatermarkStyle</key>
-		<string>{"rotation":0,"anchor":"bottomTrailing","color":"white","kind":"none","size":0.3,"opacity":0.4,"text":""}</string>
+		<string>{"anchor":"bottomTrailing","opacity":0.4,"rotation":0,"text":"","color":"white","size":0.3,"kind":"none"}</string>
 		<key>scrollHorizontalEnabled</key>
 		<false/>
 		<key>scrollHorizontalModifier</key>
