@@ -49,7 +49,12 @@ setopt hist_ignore_space
 setopt hist_reduce_blanks
 alias distinct='awk '\''!a[$0]++'\'
 function peco-select-history() {
-    BUFFER=$(\history -n -r 1 | distinct | peco --query "$LBUFFER")
+    local selected history_number
+    zmodload zsh/parameter || return
+    selected=$(builtin history -r 1 | peco --query "$LBUFFER") || return
+    read -r history_number selected <<< "$selected"
+    [[ $history_number == <-> ]] || return
+    BUFFER=${history[$history_number]}
     CURSOR=$#BUFFER
     zle reset-prompt
 }
