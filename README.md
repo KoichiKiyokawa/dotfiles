@@ -12,7 +12,7 @@ Dotfiles for Apple Silicon macOS and Linux x86_64/arm64, managed with
 
 ## Setup
 
-The committed `bin/mise` script downloads mise 2026.10.17 on first use. An
+The committed `bin/mise` script downloads the pinned mise release on first use. An
 existing mise installation is not required. Git, Bash, curl, tar, and a SHA-256
 checksum utility must be available before running it. On macOS, install Apple's
 Command Line Tools first with `xcode-select --install`. On Linux, install zsh
@@ -56,15 +56,13 @@ Plain `mise bootstrap` installs missing packages but does not upgrade installed 
 Close self-updating apps before upgrading them. Run upgrades in an interactive
 terminal so mise can prompt for sudo when required.
 
-The generated wrapper pins mise 2026.10.17 and is placed on `PATH` by
-`zsh/.zshrc`. To change the pinned mise version, regenerate and commit it:
+To update mise itself, replace `VERSION` with the desired release and run these
+commands from the repository root.
 
 ```sh
-mise generate install-script --write ./bin/mise
+./bin/mise generate install-script --version VERSION --write ./bin/mise
+./bin/mise --version
 ```
-
-Pull repository changes with `git pull`. The next wrapper invocation downloads
-the newly pinned release if it is not already installed.
 
 ### Vorssaint settings
 
