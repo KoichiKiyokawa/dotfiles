@@ -38,6 +38,29 @@ autoload -Uz edit-command-line
 zle -N edit-command-line
 bindkey '^F' edit-command-line
 
+# Repair trailing blanks after line continuations in pasted commands.
+function repair-pasted-continuations() {
+    emulate -L zsh -o extendedglob
+    local text=${PASTED%$'\n'} line
+    [[ $CONTEXT == start && -z $BUFFER && $text == *$'\n'* ]] || return 0
+
+    local -a lines words
+    local -i index
+    lines=("${(@f)text}")
+    for (( index = 1; index < $#lines; ++index )); do
+        line=$lines[index]
+        [[ ${lines[index + 1]} == [[:blank:]]* || ${lines[index + 1]} == -* ]] || return 0
+        words=("${(@Z:C:)line}")
+        [[ ${words[-1]} == (\\|\\[[:blank:]]) ]] || return 0
+        [[ -z ${words[(r)<<]} && -z ${words[(r)<<-]} ]] || return 0
+        lines[index]=${line%%[[:blank:]]#}
+    done
+    PASTED="${(F)lines}${PASTED#"$text"}"
+}
+autoload -Uz bracketed-paste-magic
+zle -N bracketed-paste bracketed-paste-magic
+zstyle ':bracketed-paste-magic' paste-init repair-pasted-continuations
+
 # Ctrl + R to search history with peco
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
