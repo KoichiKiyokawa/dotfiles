@@ -39,7 +39,6 @@ uv = "latest"
 "brew-cask:google-japanese-ime" = { os = "macos" }
 "brew-cask:shottr" = { os = "macos" }
 "brew-cask:vorssaint/tap/vorssaint" = { os = "macos" }
-"brew-cask:t3-code" = { os = "macos" }
 "mas:1423210932" = { os = "macos" } # Flow, requires App Store sign-in
 
 [dotfiles]
