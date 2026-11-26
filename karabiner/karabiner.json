@@ -46,6 +46,19 @@
             ]
           },
           {
+            "description": "右Shift + o でOrcaを起動",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "o",
+                  "modifiers": { "mandatory": ["right_shift"] }
+                },
+                "to": [{ "shell_command": "open -b com.stablyai.orca" }],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "Change right_command+hjkl to arrow keys",
             "manipulators": [
               {
