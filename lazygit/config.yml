@@ -1,10 +1,6 @@
 gui:
   language: en
   showIcons: true
-git:
-  diffRenderers:
-    - colorArg: always
-      command: delta --no-gitconfig --paging=never
 customCommands:
   - key: '!'
     context: 'commits'
