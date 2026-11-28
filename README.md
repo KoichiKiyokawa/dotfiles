@@ -34,6 +34,9 @@ Keep the checkout at `~/dotfiles`, or make that path a symlink to the checkout.
 The configuration sources use this path.
 To make zsh your login shell, run `chsh -s "$(command -v zsh)"` separately.
 
+Run `mise run codex:setup` to configure Codex and install pstack skills in
+`~/.agents/skills/`. To install pstack alone, run `mise run codex:pstack`.
+
 Put machine-specific shell settings in `zsh/local.zsh`.
 Bootstrap creates this file if missing and preserves its contents.
 On macOS, Flow requires an Apple Account signed into the App Store.
@@ -82,7 +85,3 @@ To extend battery lifespan, set the macOS Charge Limit to 80% manually:
 1. Set Charge Limit to 80%.
 
 This setting is applied manually and is not part of bootstrap.
-
-### Superpowers
-
-[Superpowers](https://github.com/obra/superpowers) is installed manually. See the repository for per-agent installation instructions.

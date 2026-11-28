@@ -98,7 +98,8 @@ fi
 '''
 
 [tasks."codex:setup"]
-description = "Manually install Codex managed configuration and initialize RTK and context-mode integrations"
+description = "Install Codex managed configuration, pstack skills, and RTK and context-mode integrations"
+depends = ["codex:pstack"]
 run = '''
 rtk init -g --codex
 if [ "$(uname -s)" = Darwin ]; then
@@ -107,6 +108,14 @@ if [ "$(uname -s)" = Darwin ]; then
   codex plugin marketplace upgrade context-mode
   codex plugin add context-mode@context-mode
 fi
+'''
+
+[tasks."codex:pstack"]
+description = "Install pstack skills for Codex"
+run = '''
+pnpm dlx skills@1.9.1 add \
+  https://github.com/cursor/plugins/tree/b7b93c36be9bcc36a74db438e0fd385d660bc559/pstack/skills \
+  --agent codex --skill '*' --global --yes
 '''
 
 [tasks."vorssaint:export"]
